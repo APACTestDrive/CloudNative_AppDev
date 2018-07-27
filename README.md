@@ -13,7 +13,7 @@ There are two parts to this project and you can select the path based on your ta
 
 The Demo is good for discovery workshops and meetings with C-level executives, architects and project leads. It takes about 30 minutes to complete.
 
-The [Demo Script](https://github.com/kwanwan/CafeSupremo/blob/demo/DEMOscript.md) showcases the following:
+The [Demo Script](https://github.com/kwanwan/CafeSupremo/blob/master/DEMOscript.md) showcases the following:
 
 *	Continuous Integration and Continuous Delivery through automation in Oracle Developer Cloud Service
 *	Task creation using Oracle Developer Cloud Service Issue tracking system
@@ -21,13 +21,13 @@ The [Demo Script](https://github.com/kwanwan/CafeSupremo/blob/demo/DEMOscript.md
 *	Pushing the changes from a remote repository
 *	Scaling up and scaling out of ACCS and JCS
 
-This requires a working demo that was previously configured. Please follow the [Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/demo/CICDlab.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
+This requires a working demo that was previously configured. Please follow the [Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
 
 ## CICD Lab
 
 The CICD lab is good for deep dive workshops with architects, project leads and developers. This requires more time to complete and it takes about 3 hours to complete.
 
-The [CICD Lab](https://github.com/kwanwan/CafeSupremo/blob/demo/CICDlab.md) provide a hands on experience in setting up the complete end-to-end CICD pipeline on Oracle Cloud Platform. This shows you how prepare a Developer Cloud Service for:
+The [CICD Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md) provide a hands on experience in setting up the complete end-to-end CICD pipeline on Oracle Cloud Platform. This shows you how prepare a Developer Cloud Service for:
 
 *	Project creation, configuration, and user management
 *	Agile development
