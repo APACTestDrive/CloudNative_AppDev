@@ -133,28 +133,32 @@ Once completed, you will find the **rewardservice** cache instance available to 
 
 ### **STEP 4**: Create a ACCS Application Instance
 
-- Go back to the Application Container Service Console.
+- Go back to the Application Container Service Console
 
 - Click **Create Application**
 
-- Click on the **Node** icon to select your application platform in the Create Application popup box
+- Click on the **Node** icon to select your application platform in the **Create Application** popup box
 
   ![](images/11.png)
   
   
-  - Enter the **Application Name** e.g. *rewardservice*
-
-  - Click on Choose File to Upload Archive *pointsystem.zip* for **Application**
+- You are now presented with the **Application** configuration popup box
   
-    - The pointsystem.zip can be download it from this link. You must be an Oracle employee to download this.
+  ![](images/.png)
 
-  - Select 1 **Instances**
-  
-  - Select 1 GB of **Memory (GB)**
+- Enter the following parameters:
+
+  - **Name:** `rewardservice`
+  - **Application:** Click on Choose File to Upload Archive
+    - Select `pointsystem.zip` from your folder
+    - The `pointsystem.zip` can be downloaded it here. You must be an Oracle employee to download this.
+
+  - **Instances:** `1`
+  - **Memory (GB):** `1`
 
   - Click on **More Options** to expand the configuration page
 
-  - Click the **Application Cache** dropdown box to select the **rewardpoints** Application Cache you created in the previous step
+  - **Application Cache:** Select `rewardpoints` from the dropdown box. This is Application Cache you created in the previous step
 
 - Click **Create**
 
