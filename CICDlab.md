@@ -144,7 +144,7 @@ Once completed, you will find the **rewardservice** cache instance available to 
   
 - You are now presented with the **Application** configuration popup box
   
-  ![](images/.png)
+  ![](images/78.png)
 
 - Enter the following parameters:
 
@@ -162,7 +162,6 @@ Once completed, you will find the **rewardservice** cache instance available to 
 
 - Click **Create**
 
-  ![](images/12.png)
 
 
 **NOTE**: Your ACCS Application instance will be ready in about 10 minutes.
