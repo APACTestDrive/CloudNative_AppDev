@@ -2,12 +2,16 @@
 
 ![](images/header04.png)
 
-This documentation contains the instruction to the hands on lab. This is also the same instruction for the demo setup. This will take approximately 3 hours to complete.
 
+## Introduction
+
+This workshop will walk you through the process of moving an existing application into a CI/CD pipeline and deploying it to a WebLogic cluster and a ACCS Node.js instance in the Oracle Public Cloud.
+
+You will take on 2 personas during the workshop. The **Lead Developer Persona** will be responsible for configuring the parts of the automated build and deploy process that involve details about the application itself. The **DevOps Engineer Persona** will configure the parts of the automation involving the JCS and ACCS infrastructure. To automate the building and deploying of this application you will make use of Developer Cloud Service for CI/CD, JCS for hosting JET UI frontend, and ACCS for hosting the Rewards Service.
 
 ## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
 
-Before you can start defining your CICD pipeline, you must provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and ACCS instance. You must have access to a:
+During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and Application Container Cloud Service instance. You must have access to a:
 
 - GitHub account
 - Oracle Public Cloud Service account including Java, Application Container, Developer, Database and Storage Cloud Service
