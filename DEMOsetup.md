@@ -1,6 +1,6 @@
 # Cafe Supremo Demo Setup Guide
 
-This documentation contains the instruction to the demo setup. The steps are same as the [CICD Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md).
+This documentation contains the instruction to the demo setup. The steps are same as the [CICD Hands On Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md).
 
 ## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
 
@@ -13,6 +13,6 @@ The current release of the demo no longer requires a database for storing custom
 
 Oracle Database Cloud Service is required by Java Cloud Service to host only the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
-[Follow CICD Lab for Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md)
+[Follow CICD Hands On Lab for Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md)
 
 [Back to Cafe Supremo Home](https://github.com/kwanwan/CafeSupremo)
