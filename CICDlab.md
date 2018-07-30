@@ -1,4 +1,4 @@
-# Cafe Supremo CICD Hands On Lab
+# Cafe Supremo CI/CD Hands On Lab
 
 ![](images/header04.png)
 
@@ -18,7 +18,7 @@ During this part of the lab, you will take on the **DevOps Engineer Persona**. Y
 
 The current release of the application no longer requires a database for storing customer data. Customer data is now stored in a ACCS cache and is automatically populated upon the start up of the RewardService ACCS instance. This is to keep the lab duration short and to avoid the laborious effort in uploading the data to a database. However, a datbase would be required as a persistent storage in real case scenario.
 
-Oracle Database Cloud Service is required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
+However, an Oracle Database Cloud Service is still required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
 
 
@@ -41,20 +41,18 @@ Oracle Database Cloud Service is required by Java Cloud Service to host the Orac
 
 ### **STEP 2.1**: Basic Instance Configuration
 
-- Complete the new Create New Instance Page as illustrated below:
+- Complete the Create Instance Page as illustrated below:
 
   ![](images/02.png)
 
+- Enter the following parameters:
   
-  - Enter the Instance Name e.g. *demoDB*
-  
-  - Select the default *12c Release 1 Software*
+  - **Instance Name:** `demoDB`
+  - **Software Release:** `12c Release 1 Software`
+  - **Software Edition:** `Enterprise Edition software edition`
+  - **Database Type:** `Single Instance`
 
-  - Select the *Enterprise Edition software edition*
-
-  - Select *Single Instance* for the Database Type
-
-  - Click the **Next** button
+- Click the **Next** button
 
 
 
@@ -67,19 +65,111 @@ The last input page is the Service Details page.
   
 The following parameters have to be provided:
 
-  + **Administration Password**: DB's password. Don't forget to note the provided password
-  + **Compute Shape**: number of OCPU and size of the RAM. Choose the smallest (default) one is OC3
-  + **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key. Use the same publicKey what was generated for Database Cloud Service instance. Click on Edit button and select [previously saved (during Database Cloud Service creation)](../dbcs-create/README.md) `GIT_REPO_LOCAL_CLONE/cloud-utils/publicKey`. You can also copy the content of *publicKey* into Key Value field. If you don't have or want to  to create different keypair select **Create a New Key** option and download the newly generated keypair for later usage.
-  + **Storage Username**: Your Oracle Cloud username
+  - **Administration Password**: DB's password. Don't forget to note the provided password
+  - **Compute Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This the smallest one (default)
+  - **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key.
+    - If you don't have or want to  to create different keypair select **Create a New Key** option and download the newly generated keypair for later usage
+  + **Storage Username**: Your Oracle Cloud username e.g. `cloud.admin`
   + **Storage Password**: Cloud Account password
-  + **Create Cloud Storage Container**: Leave to default of checked
-  + **Create Instance from Existing Backup**: Leave to default of No
+  + **Create Cloud Storage Container**: Leave to default of `Checked`
+  + **Create Instance from Existing Backup**: Leave to default of `No`
 
 - Click **Next**
 
-- Confirms the details on the next page and then create
+- Confirms the details on the next page and then click **Create**
 
-**NOTE**:  You DBCS instance will take about 30 minutes to complete. Please wait until the DBCS instance has been completed before creating a JCS instance.
+
+**NOTE**:  Your DBCS instance will take about 30 minutes to complete. Please wait until the DBCS instance has been completed before creating a JCS instance. Whilst we are for the DBCS instance to be provisioned, we can work on other infrastructure components such as ACCS.
+
+
+
+## Provision a ACCS Cache Instance
+
+
+### **STEP 3**: Create a ACCS Cache Instance
+
+- On the dashboard click the hamburger icon on the **Application Container** tile. Select **Open Service Console**.
+
+  ![](images/07.png)
+  
+
+- Once in the Application Container Cloud Service Console page, click the hamburger icon by the **Welcome!** text at the top right corner and then select **Application Cache** by scrolling down the the list as shown below.
+
+  ![](images/08.png)
+
+
+- On the Application Caches page, create a new instance by clicking **Create Instance** button.
+
+
+
+### **STEP 3.1**: Instance Configuration
+
+- Complete the new Create New Instance Page as illustrated below:
+
+  ![](images/09.png)
+
+
+- Enter the following parameters:
+
+  - **Instance Name** `rewardservice`
+  
+  - Leave evertyhing else to their defaults
+  
+- Click **Next**
+  
+- Click **Create** on the Confirm Page
+
+
+**NOTE**: Your ACCS Cache instance will be ready in about 10 minutes.
+
+Once completed, you will find the **rewardservice** cache instance available to use as illustrated below.
+
+  ![](images/10.png)
+
+
+
+## Provision a ACCS Application Instance
+
+
+### **STEP 4**: Create a ACCS Application Instance
+
+- Go back to the Application Container Service Console.
+
+- Click **Create Application**
+
+- Click on the **Node** icon to select your application platform in the Create Application popup box
+
+  ![](images/11.png)
+  
+  
+  - Enter the **Application Name** e.g. *rewardservice*
+
+  - Click on Choose File to Upload Archive *pointsystem.zip* for **Application**
+  
+    - The pointsystem.zip can be download it from this link. You must be an Oracle employee to download this.
+
+  - Select 1 **Instances**
+  
+  - Select 1 GB of **Memory (GB)**
+
+  - Click on **More Options** to expand the configuration page
+
+  - Click the **Application Cache** dropdown box to select the **rewardpoints** Application Cache you created in the previous step
+
+- Click **Create**
+
+  ![](images/12.png)
+
+
+**NOTE**: Your ACCS Application instance will be ready in about 10 minutes.
+
+Once ready, you will find your rewardservice available in the Application Container Service Console.
+
+- Take note of the instance URL.
+
+  ![](images/13.png)
+
+
 
 
 
@@ -151,89 +241,6 @@ When the request has been accepted the Java Cloud Service Console page appears a
 
 **NOTE**: Your JCS instance will be ready in about 30 minutes.
 
-
-
-## Provision a ACCS Cache Instance
-
-
-### **STEP 4**: Create a ACCS Cache Instance
-
-- On the dashboard click the hamburger icon on the **Application Container** tile. Select **Open Service Console**.
-
-  ![](images/07.png)
-  
-
-- Once in the Application Container Cloud Service Console page, click the hamburger icon by the **Welcome!** text at the top right corner and then select **Application Cache** by scrolling down the the list as shown below.
-
-  ![](images/08.png)
-
-
-- On the Application Caches page, create a new instance by clicking **Create Instance** button.
-
-
-
-### **STEP 4.1**: Instance Configuration
-
-- Complete the new Create New Instance Page as illustrated below:
-
-  ![](images/09.png)
-
-  - Enter the Instance Name e.g. *rewardpoints*
-  
-  - Leave evertyhing else to their defaults
-  
-  - Click **Next**
-  
-  - Click **Create** on the Confirm Page
-  
-**NOTE**: Your ACCS Cache instance will be ready in about 15 minutes.
-
-Once completed, you will find the **rewardpoints** cache instance available to use.
-
-  ![](images/10.png)
-
-
-
-## Provision a ACCS Application Instance
-
-
-### **STEP 5**: Create a ACCS Application Instance
-
-- Go back to the Application Container Service Console.
-
-- Click **Create Application**
-
-- Click on the **Node** icon to select your application platform in the Create Application popup box
-
-  ![](images/11.png)
-  
-  
-  - Enter the **Application Name** e.g. *rewardservice*
-
-  - Click on Choose File to Upload Archive *pointsystem.zip* for **Application**
-  
-    - The pointsystem.zip can be download it from this link. You must be an Oracle employee to download this.
-
-  - Select 1 **Instances**
-  
-  - Select 1 GB of **Memory (GB)**
-
-  - Click on **More Options** to expand the configuration page
-
-  - Click the **Application Cache** dropdown box to select the **rewardpoints** Application Cache you created in the previous step
-
-- Click **Create**
-
-  ![](images/12.png)
-
-
-**NOTE**: Your ACCS Application instance will be ready in about 10 minutes.
-
-Once ready, you will find your rewardservice available in the Application Container Service Console.
-
-- Take note of the instance URL.
-
-  ![](images/13.png)
 
 
 
