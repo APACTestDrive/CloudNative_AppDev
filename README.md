@@ -1,6 +1,8 @@
 
 # Cloud Native Development with Oracle AppDev Platform - Café Supremo Demo and Workshop
 
+![](images/Title01.png)
+
 ## Introduction
 
 This Oracle Cloud project contains the demo script and lab material to demonstrate a typical DevOps workflow of a cloud native application using Oracle AppDev Platform. Participants will be able appreciate and experience how to use Oracle Cloud Services to implement cloud native applications using a real use case scenario based on a loyalty rewards system for a coffe shop. This includes services such as Oracle Developer Cloud Service, Java Cloud Service, Application Container Cloud Service and Database Cloud Service.
