@@ -229,8 +229,8 @@ On the Service Details page.
 
 The following parameters have to be provided:
 	
-  - **Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This is the smallest one (default)
-  - **Server Count**: `1` Which means one managed server
+  - **Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` this is the smallest one (default)
+  - **Server Count**: `1` which means one managed server
   - **Domain Partitions**: `zero` for no partitions (default)
   - **Enable access to Administration Console**: `Checked` to get access to the Admin console
   - **Deploy Sample Application**: `Unchecked`
@@ -270,7 +270,9 @@ You have two choices for Developer Cloud Service:
   - Traditional Developer Cloud Service
   - Autonomous Developer Cloud Service
   
-It is recommeneded to use the Autonomous Developer Cloud Service as it offers a dedicated Buid VM for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. This is particularly important so that the customer would see the full potential of our service and would bring out the key benefits in Continuous Integration and Continuous Delivery.
+It is recommeneded to use the Autonomous Developer Cloud Service as it offers a dedicated Buid VM for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. The use of the Autonomous Developer Cloud Service is particularly important as one would see the full potential of our service and would bring out the key benefits in Continuous Integration and Continuous Delivery.
+
+Oracle Developer Cloud Build VMs run on Oracle Linux 6 and Oracle Linux 7, and support a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software in Build VMs are defined by Build VM templates.
 
 
 
@@ -286,22 +288,27 @@ It is recommeneded to use the Autonomous Developer Cloud Service as it offers a 
 
 ### **STEP 6.1**: Create a VM Template
 
-- Select **Organization** from the User dropdown options
+In this section, you learn how to create a basic Build VM template that includes the minimum required software.
+
+- Select **Organization** from the user name dropdown options
 
   ![](images/15.png)
 
-- Select **VM TEMPLATES** on the Organization page
+- Click **VM TEMPLATES** on the Organization Administration page
 
   ![](images/16.png)
   
-- Click on **New Template**
+- Click on **New Template** in the Build VM Templates page
+
+![](images/79.png)
+
+- In the New VM Template dialog box, enter the following details:
+
+  - Enter **CafeSupremo** as the name in the **New VM Template** popup box
+
+  - Select **Oracle Linux 7** for the **Platform** from the dropdown list
 
 ![](images/20.png)
-
-
-- Enter **CafeSupremo** as the name in the **New VM Template** popup box
-
-- Select **Oracle Linux 7** for the **Platform** from the dropdown list
 
 - Click **Create**
 
