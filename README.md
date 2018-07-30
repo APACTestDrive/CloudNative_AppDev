@@ -23,11 +23,11 @@ The [Demo Script](https://github.com/kwanwan/CafeSupremo/blob/master/DEMOscript.
 
 This requires a working demo that was previously configured. Please follow the [Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
 
-## CICD Lab
+## CICD Hands On Lab
 
 The CICD lab is good for deep dive workshops with architects, project leads and developers. This requires more time to and it takes about 3 hours to complete.
 
-The [CICD Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md) provide a hands on experience in setting up the complete end-to-end CICD pipeline on Oracle Cloud Platform. This shows you how prepare a Developer Cloud Service for:
+The [CICD Hands On Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md) provide a hands on experience in setting up the complete end-to-end CICD pipeline on Oracle Cloud Platform. This shows you how prepare a Developer Cloud Service for:
 
 *	Project creation, configuration, and user management
 *	Agile development
@@ -76,3 +76,7 @@ A project manager will be logging into Developer Cloud Service and manage the Ca
 *	Some familiarity with the Git source control system
 *	Some familiarity with Hudson Continuous Integration system
 
+
+[Go To Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/master/DEMOsetup.md)
+
+[Go To CICD Hands On Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md)
