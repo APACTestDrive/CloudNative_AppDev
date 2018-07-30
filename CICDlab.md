@@ -1,4 +1,6 @@
-# Cafe Supremo CICD Hands On Lab / Demo Setup Guide
+# Cafe Supremo CICD Hands On Lab
+
+This documentation contains the instruction to the hands on lab. This is also the same instruction for the demo setup.
 
 ## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
 
