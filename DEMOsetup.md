@@ -1,5 +1,7 @@
 # Cafe Supremo Demo Setup Guide
 
+![](images/header03.png)
+
 This documentation contains the instruction to the demo setup. The steps are same as the [CICD Hands On Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md).
 
 ## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
