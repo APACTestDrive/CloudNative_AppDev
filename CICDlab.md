@@ -1,4 +1,4 @@
-# Cafe Supremo CICD Demo Setup Guide
+# Cafe Supremo CICD Hands On Lab / Demo Setup Guide
 
 ## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
 
