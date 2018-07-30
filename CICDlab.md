@@ -47,10 +47,10 @@ However, an Oracle Database Cloud Service is still required by Java Cloud Servic
 
 - Enter the following parameters:
   
-  - **Instance Name:** `demoDB`
-  - **Software Release:** `12c Release 1 Software`
-  - **Software Edition:** `Enterprise Edition software edition`
-  - **Database Type:** `Single Instance`
+  - **Instance Name**: `demoDB`
+  - **Software Release**: `12c Release 1 Software`
+  - **Software Edition**: `Enterprise Edition software edition`
+  - **Database Type**: `Single Instance`
   - Leave the rest to default
 
 - Click **Next**
@@ -67,7 +67,7 @@ The last input page is the Service Details page.
 The following parameters have to be provided:
 
   - **Administration Password**: DB's password. Don't forget to note the provided password
-  - **Compute Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This the smallest one (default)
+  - **Compute Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This is the smallest  (default)
   - **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key.
     - If you don't have or want to  to create different keypair select **Create a New Key** option and download the newly generated keypair for later usage
   - **Storage Username**: Your Oracle Cloud username e.g. `cloud.admin`
@@ -158,12 +158,12 @@ Once completed, you will find the **rewardservice** cache instance available to 
     - Select `pointsystem.zip` from your folder
     - The `pointsystem.zip` can be downloaded it here. You must be an Oracle employee to download this.
 
-  - **Instances:** `1`
-  - **Memory (GB):** `1`
+  - **Instances**: `1`
+  - **Memory (GB)**: `1`
 
   - Click on **More Options** to expand the configuration page
 
-  - **Application Cache:** Select `rewardpoints` from the dropdown box. This is Application Cache you created in the previous step
+  - **Application Cache**: Select `rewardpoints` from the dropdown box. This is Application Cache you created in the previous step
 
 - Click **Create**
 
@@ -210,10 +210,10 @@ For this part of the lab, you would need a DBCS instance to complete the JCS con
   
 - Enter the following parameters:
 
-  - **Instance Name:** `demoJCS`
-  - **Service Level:** `Java Cloud Service`
-  - **Software Release:** `12c Software Release (12.2.1.2)`
-  - **Software Edition:** `Enterprise Edition software edition`
+  - **Instance Name**: `demoJCS`
+  - **Service Level**: `Java Cloud Service`
+  - **Software Release**: `12c Software Release (12.2.1.2)`
+  - **Software Edition**: `Enterprise Edition software edition`
   - Leave the rest to default
 
 - Click **Next**
@@ -229,16 +229,17 @@ On the Service Details page.
 
 The following parameters have to be provided:
 	
-  - **Shape**: number of OCPU and size of the RAM. Choose the smallest (default) one is OC3.
-  - **Server Count**: 1. Which means one managed server.
-  - **Domain Partitions**: Take the default zero for no partitions.
-  - **Enable Administration Console**: because this instance will be available on public internet the default is that the WebLogic Admin console is not enabled. Do not forget to check in to get access to the Admin console.
+  - **Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This is the smallest one (default)
+  - **Server Count**: `1` Which means one managed server
+  - **Domain Partitions**: `zero` for no partitions (default)
+  - **Enable access to Administration Console**: `Checked` to get access to the Admin console
+  - **Deploy Sample Application**: `Unchecked`
+  - **Enable authentication with Oracle Identity Cloud Service**: `Unchecked`
   - **SSH Public Key**: public key which will be uploaded to the VM during the creation
     - It allows to connect to the VM through ssh connection using the private key.
     - Click on **Edit** button and select the same publicKey what was generated for Database Cloud Service instance    
   - **Username**: `weblogic` username of WebLogic administrator
   - **Password**: WebLogic administrator's password. Don't forget to note the provided password.
-  - **Deploy Sample Application**: `Unchecked`
   - **Database Instance Name**: `demoDB` Database Cloud Service name to store WebLogic repository data. Your provisioned DBCS instance will appear in the dropdown list.
   - **PDB Name**: `<use default>` If you have choosen default (PDB1) during Database Cloud Service creation then leave the default here too
   - **Administrator User Name**: Enter: **sys**. DBA admin to create repository schema for Java Cloud Service instance.
