@@ -1,7 +1,7 @@
 
 # Cloud Native Development with Oracle AppDev Platform - Café Supremo Demo and Workshop
 
-![](images/Title01.png)
+![](images/header01.png)
 
 ## Introduction
 
