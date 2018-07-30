@@ -51,8 +51,9 @@ However, an Oracle Database Cloud Service is still required by Java Cloud Servic
   - **Software Release:** `12c Release 1 Software`
   - **Software Edition:** `Enterprise Edition software edition`
   - **Database Type:** `Single Instance`
+  - Leave the rest to default
 
-- Click the **Next** button
+- Click **Next**
 
 
 
@@ -69,10 +70,10 @@ The following parameters have to be provided:
   - **Compute Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This the smallest one (default)
   - **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key.
     - If you don't have or want to  to create different keypair select **Create a New Key** option and download the newly generated keypair for later usage
-  + **Storage Username**: Your Oracle Cloud username e.g. `cloud.admin`
-  + **Storage Password**: Cloud Account password
-  + **Create Cloud Storage Container**: Leave to default of `Checked`
-  + **Create Instance from Existing Backup**: Leave to default of `No`
+  - **Storage Username**: Your Oracle Cloud username e.g. `cloud.admin`
+  - **Storage Password**: Cloud Account password
+  - **Create Cloud Storage Container**: Leave to default of `Checked`
+  - **Create Instance from Existing Backup**: Leave to default of `No`
 
 - Click **Next**
 
@@ -80,6 +81,8 @@ The following parameters have to be provided:
 
 
 **NOTE**:  Your DBCS instance will take about 30 minutes to complete. Please wait until the DBCS instance has been completed before creating a JCS instance. Whilst we are for the DBCS instance to be provisioned, we can work on other infrastructure components such as ACCS.
+
+*You have now completed the provisioning of a DBCS instance for use with JCS.*
 
 
 
@@ -127,6 +130,8 @@ Once completed, you will find the **rewardservice** cache instance available to 
   ![](images/10.png)
 
 
+*You have now completed the provisioning of an ACCS Cache instance for use with an ACCS application instance.*
+
 
 ## Provision a ACCS Application Instance
 
@@ -173,14 +178,21 @@ Once ready, you will find your rewardservice available in the Application Contai
   ![](images/13.png)
 
 
-
+*You have now completed the provisioning of the Reward Service Node.js ACCS application instance.*
 
 
 
 ## Provision a JCS Instance
 
+For this part of the lab, you would need a DBCS instance to complete the JCS configuration.
 
-### **STEP 3**: Create a JCS Instance
+- Please verify the provisioning of a DBCS instance in **Step 2** has completed and is up and running
+
+- If this is running, then proceed to the following steps, otherwise, please wait until it is ready.
+
+
+
+### **STEP 5**: Create a JCS Instance
 
 - On the dashboard click the hamburger icon on the **Java** tile. Select **Open Service Console**.
 
@@ -190,61 +202,63 @@ Once ready, you will find your rewardservice available in the Application Contai
 - Once in the Java Cloud Service Console page, create a new instance by clicking **Create Service** button.
 
 
-### **STEP 3.1**: Basic Instance Configuration
+### **STEP 5.1**: Basic Instance Configuration
 
 - Complete the new Create New Instance Page as illustrated below:
 
   ![](images/05.png)
+  
+- Enter the following parameters:
 
-  - Enter the Instance Name e.g. *demoJCS*
+  - **Instance Name:** `demoJCS`
+  - **Service Level:** `Java Cloud Service`
+  - **Software Release:** `12c Software Release (12.2.1.2)`
+  - **Software Edition:** `Enterprise Edition software edition`
+  - Leave the rest to default
 
-  - Select the default *Java Cloud Service*
-
-  - Select the default *12c Software Release (12.2.1.2)*
-
-  - Select the *Enterprise Edition software edition*
-
-  - Click the **Next** button.
+- Click **Next**
 
 
-### **STEP 3.2**: Detailed Instance Configuration
+### **STEP 5.2**: Detailed Instance Configuration
 
-The last input page is the Service Details page.
+On the Service Details page.
 
-- Click the **Advanced** button to show additional configuration options.
+- Click **Advanced** to show additional configuration options
 
   ![](images/06.png)
 
 The following parameters have to be provided:
 	
-  + **Shape**: number of OCPU and size of the RAM. Choose the smallest (default) one is OC3.
-  + **Server Count**: 1. Which means one managed server.
-  + **Domain Partitions**: Take the default zero for no partitions.
-  + **Enable Administration Console**: because this instance will be available on public internet the default is that the WebLogic Admin console is not enabled. Do not forget to check in to get access to the Admin console.
-  + **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key. Use the same publicKey what was generated for Database Cloud Service instance. Click on Edit button and select [previously saved (during Database Cloud Service creation)](../dbcs-create/README.md) `GIT_REPO_LOCAL_CLONE/cloud-utils/publicKey`. You can also copy the content of *publicKey* into Key Value field. If you don't have or want to  to create different keypair select **Create a New Key** option and download the newly generated keypair for later usage.
-  + **Username**: username of WebLogic administrator. For demo purposes you can use: weblogic
-  + **Password**: WebLogic administrator's password. Don't forget to note the provided password.
-  + **Deploy Sample Application**: Unchecked.
-  + **Database Configuration / Name**: Database Cloud Service name to store WebLogic repository data. Basically the list populated with database services within the same identity domain.
-  + **Database Configuration / PDB Name**: pluggable database service identifier of the Database Cloud Service instance -provided above- which will be used to store repository schema. If you have choosen default (PDB1) during Database Cloud Service creation then leave the default here too.
-  + **Database Configuration / Administrator User Name**: Enter: **sys**. DBA admin to create repository schema for Java Cloud Service instance.
-  + **Database Configuration / Password**: DBA admin password you provided during Database Cloud Service creation.
-  + **Database Configuration / For Application Schema**: Leave this No Application Schema added.
-  + **Provision Load Balancer**: the save resources for sample application we will not create Load Balancer instance. Leave default: No
-  + **Backup Destination**: Leave to default of None.
+  - **Shape**: number of OCPU and size of the RAM. Choose the smallest (default) one is OC3.
+  - **Server Count**: 1. Which means one managed server.
+  - **Domain Partitions**: Take the default zero for no partitions.
+  - **Enable Administration Console**: because this instance will be available on public internet the default is that the WebLogic Admin console is not enabled. Do not forget to check in to get access to the Admin console.
+  - **SSH Public Key**: public key which will be uploaded to the VM during the creation
+    - It allows to connect to the VM through ssh connection using the private key.
+    - Click on **Edit** button and select the same publicKey what was generated for Database Cloud Service instance    
+  - **Username**: `weblogic` username of WebLogic administrator
+  - **Password**: WebLogic administrator's password. Don't forget to note the provided password.
+  - **Deploy Sample Application**: `Unchecked`
+  - **Database Instance Name**: `demoDB` Database Cloud Service name to store WebLogic repository data. Your provisioned DBCS instance will appear in the dropdown list.
+  - **PDB Name**: `<use default>` If you have choosen default (PDB1) during Database Cloud Service creation then leave the default here too
+  - **Administrator User Name**: Enter: **sys**. DBA admin to create repository schema for Java Cloud Service instance.
+  - **Password**: DBA admin password you provided during Database Cloud Service creation
+  + **Add Application Schema**: `No Application Schema added`
+  + **Provision Load Balancer**: `No` to save resources, we will not create a Load Balancer instance
+  + **Backup Destination**: `None`
 
 - Click **Next**
 
-The final page is the summary page about the configuration before submit the instance creation request.
+The final page is the summary page about the configuration before submitting the instance creation request.
 
 - Click **Create** to start the provisioning of the new service instance.
 
 
-When the request has been accepted the Java Cloud Service Console page appears and shows the new instance. The instance now is in Maintenance (Progress) mode. Click **In Progress** link to get more information about the status.
+When the request has been accepted, the Java Cloud Service Console page appears and shows the new instance. The instance now is in Maintenance (Progress) mode. Click **In Progress** link to get more information about the status.
 
-**NOTE**: Your JCS instance will be ready in about 30 minutes.
+**NOTE**: Your JCS instance will be ready in about 30 minutes. Whilst we are for the JCS instance to be provisioned, we can work on other components such as Developer Cloud Service.
 
-
+*You have now completed the provisioning of the JET UI frontend JCS instance.*
 
 
 
