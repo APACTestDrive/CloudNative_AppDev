@@ -514,14 +514,12 @@ To import project data from Oracle Cloud Infrastructure Object Storage Classic i
   
   - Click on **Connect**
 
-- Once connected, the page will expand with the **Create Job** configuration. Complete the elements with the follwoing:
+- Once connected, the page will expand with the **Create Job** configuration. Complete the elements with the following:
 
   ![](images/36.png)
 
   - **Type**: `Import`
-
   - **Storage Container**: `tmp`
-  
   - **Storage Object**: Select the archive file your uploaded to the Object Storage Container
   
   - Click **Import**
@@ -540,18 +538,18 @@ To import project data from Oracle Cloud Infrastructure Object Storage Classic i
   
   ![](images/38.png)
   
-- Verify the rest of the project has been imported properly. There should be issues, agile boards, and code. However, there are no project members, build jobs or deployment configuration as these cannot be exported with the original project. Therefore we would need to rebuild these configurations in the following steps.
+- Verify the rest of the project has been imported properly by nagvigating into different tools on the navigation bar. There should be issues, agile boards, and code. However, there are no project members, build jobs or deployment configuration as these cannot be exported with the original project. Therefore we would need to rebuild these configurations in the following steps.
 
 
 ### **STEP 8**: Add New Members To The Project
 
-Project members are not exported with the orignal project, therefore we will need to a add users back into the project. These users are referenced in the issues tracking and agile board. Hence we will need to add the users back into the project.
+Project members are not exported with the orignal project. These members are referenced in the issues tracking and agile tool. Hence we will need to add these users back into the project.
 
 - Go to the project home page
 
 - Click on the **Team** icon to see the project members
 
-  There should just be the owner of the project e.g. *cloud.admin*
+  There should only one member in the team and that is the owner of the project **cloud.admin**
 
   ![](images/39.png)
   
@@ -569,37 +567,40 @@ Project members are not exported with the orignal project, therefore we will nee
 
 ### **STEP 9**: Create The Build Pipelines
 
-Now that we have imported the project archive for our demo, we can start creating our CICD pipelines for the JETUI frontend and the RewardSerivce microservice. This includes creating the build job configurations and the deployment configurations.
+Now that we have imported the project archive for our demo, we can start creating our CI/CD pipelines for the JETUI frontend and the RewardSerivce microservice. This includes creating the build job configurations and the deployment configurations.
 
 
 
 ### **STEP 9.1**: Create The JETUI Frontend Build Job
 
-The first task in our CICD pipeline is to build the JETUI frontend application. We need to create a build job for this. And we want the build to be triggered automatically whenever there is a code change. The build process can be automated and deployed automatically to a designated JCS environment.
+The first task in our CI/CD pipeline is to build the JETUI frontend application. We need to create a build job for this. And we want the build to be triggered automatically whenever there is a code commit. The build process can be automated and deployed automatically to a designated JCS environment.
 
-- Switch to Build tab and create a new job. There should be no build job initially.
+- Switch to Build tab on the navigation. There should be no build job initially.
 
 - Click on **New Job**
 
   ![](images/42.png)
-  
-- Enter *JETUI_JCS_Build* as the **Job Name**
 
-- Select *CafeSupremo* from the dropdown list for **Software Template**
+- Complete the fields with:
+  
+- **Job Name**: `JETUI_JCS_Build`
+- **Software Template**: `CafeSupremo`
 
 - Click **Create Job**
 
   ![](images/43.png)
 
-- Configure the build job by specifying the Git repo to build from. On the **Source Control** tab click on **Add Source Control**
+- Now you will be presented with the Job Configuration page
+
+- Configure the build job by specifying the Git repo to build from. On the *Source Control* tab click on **Add Source Control**
 
   ![](images/44.png)
 
-- Select *CafeSupremo.git* from the dropdown box for **Repository**
+- Select `CafeSupremo.git` from the dropdown box for **Repository**
 
   ![](images/51.png)
   
-- On the **Builders** tab click on **Add Builder** button and select **Unix Shell Builder** from the context option list
+- On the *Builders* tab click on **Add Builder** button and select **Unix Shell Builder** from the context option list
 
   ![](images/45.png)
   
@@ -616,11 +617,11 @@ The first task in our CICD pipeline is to build the JETUI frontend application. 
 
   ![](images/46.png)
 
-- On the **Post Build** tab click on **Add Post Build Action** button and select **Artifact Archiver** from the context option list
+- On the *Post Build* tab click on **Add Post Build Action** button and select **Artifact Archiver** from the context option list
 
   ![](images/47.png)
   
-- Enter `target/cafesupremo.war` in the *Files to archive* field to define the location of the build output which it will be used for deployment.
+- Enter `target/cafesupremo.war` in the **Files to archive** field to define the location of the build output which it will be used for deployment
 
   ![](images/48.png)
   
@@ -634,13 +635,13 @@ The first task in our CICD pipeline is to build the JETUI frontend application. 
 
 - Click **Save** to save the configuration
 
-- Let’s test the build job configuration by running a build now. Click **Build Now** to build
+- Let’s test the build job configuration by running a build now. Click **Build Now** to build.
 
 - The build should complete without any error
 
   ![](images/54.png)
   
-  You have now completed the **JETUI_JCS_Build** build job
+  Congratulate! You have now completed your build.
   
   
   
@@ -661,14 +662,13 @@ The first task in our CICD pipeline is to build the JETUI frontend application. 
 
 - Configure the build job by specifying the Git repo to build from. On the **Source Control** tab click on **Add Source Control**
 
-- Select *RewardService.git* from the dropdown box for **Repository**
+- Select `RewardService.git` from the dropdown box for **Repository**
 
   ![](images/55.png)
   
-- On the **Builders** tab click on **Add Builder** button and select **Unix Shell Builder** from the context option list
+- On the *Builders* tab click on **Add Builder** and select **Unix Shell Builder** from the context option list
 
-  
-- Copy and paste the npm install script into the command field
+- Copy and paste the npm install script into the command field. The script also archive the build into a zip file for deployment to ACCS.
 
   ```
   npm install
@@ -679,7 +679,7 @@ The first task in our CICD pipeline is to build the JETUI frontend application. 
 
 - On the **Post Build** tab click on **Add Post Build Action** button and select **Artifact Archiver** from the context option list
   
-- Enter `*` in the *Files to archive* field to define the location of the build output which it will be used for deployment.
+- Enter `*` in the **Files to archive** field to define the location of the build output which it will be used for deployment.
 
   ![](images/57.png)
   
@@ -703,7 +703,7 @@ The first task in our CICD pipeline is to build the JETUI frontend application. 
 
 ### **STEP 9.3**: Create The JETUI Frontend Deployment Configuration
 
-Let's create a deployment configuration for the JET UI Frontent. The deployment runtime is the JCS environment which you previsioned earlier.
+The next part of the CI/CD pipeline is the deployment of the builds. Let's create a deployment configuration for the JETUI frontent. The deployment runtime is the JCS environment which you previsioned earlier.
 
 - Go to the **Deploy** page
 
@@ -713,17 +713,13 @@ Let's create a deployment configuration for the JET UI Frontent. The deployment 
 
 - Complete the New Create New Configuration as illustrated below:
 
-  - Enter `Deploy2cafesupremoJETUI` as the **Configuration Name**
+  - **Configuration Name**: `Deploy2cafesupremoJETUI`
+  - **Application Name**: `cafesupremo`
+  - **Type**: `Automatic` and check `Deploy stable builds only`
+  - **Job**: `JETUI_JCS_Build`
+  - **Artifact**: `target/cafesupremo.war`
 
-  - Enter `cafesupremo` as the **Application Name**
-  
-  - Check *Automatic*
-
-  - Select *JETUI_JCS_Build* from the **Job** option list
-
-  - Select *target/cafesupremo.war* from the **Artifact** option list
-
-  - Click the **New** button
+- Click **New**
   
 - Select the **Java Cloud Service** from the context option list
   
@@ -731,16 +727,12 @@ Let's create a deployment configuration for the JET UI Frontent. The deployment 
   
 - Complete the **Deploy to Java Cloud Service** popup configuration as illustrated below:
 
-  - Use the default *Oracle Weblogic Server 12c (12.2.x or higher)
-  
-  - Use the default *Oracle Weblogic RESTFul Management Interface*
-  
-  - Enter the IP address for your JCS environment as the **Host**
-  
-  - Use the default *HTTPS Port**
-
-  - Enter your Weblogic **Username** and **Password**
-  
+  - **Version**: `Oracle Weblogic Server 12c (12.2.x or higher)`
+  - **Protocol**: `Oracle Weblogic RESTFul Management Interface`
+  - **Host**: The IP address for your JCS environment
+  - **HTTPS Port**: `7002`
+  - **Username**: `weblogic`
+  - **Password**: You weblogic password 
   - Click on **Find Targets**
   
   ![](images/61.png)
@@ -749,11 +741,11 @@ Let's create a deployment configuration for the JET UI Frontent. The deployment 
 
 - Check the **demoJCS_cluster**
 
-- Click on **OK**
+- Click **OK**
 
   ![](images/62.png)
   
-- You should see the **Deployment Target** completed
+- You should see the **Deployment Target** field completed with your JCS environment
 
 - Click on **Save**
 
@@ -765,9 +757,9 @@ Let's create a deployment configuration for the JET UI Frontent. The deployment 
 
   ![](images/64.png)
   
-- Select the latest build from the ** Build** dropdown list
+- Select the latest build from the **Build** dropdown list
 
-- Click on **Deploy**
+- Click **Deploy**
 
   ![](images/65.png)
 
@@ -775,15 +767,16 @@ Let's create a deployment configuration for the JET UI Frontent. The deployment 
 
   ![](images/66.png)
   
-- Verify your deployment by going to the JETUI Frontend URL
+- Verify your deployment by going to the JETUI frontend URL
 
-- Enter *http:ip address/cafesupremo* in your browser
+- Enter `http:<JCS ip address>/cafesupremo` in your browser
 
   ![](images/77.png)
   
+Congratulation if you can load the Cafe Supremo home page.  
   
   
-  ### **STEP 9.4**: Create The Reward Service Deployment Configuration
+### **STEP 9.4**: Create The Reward Service Deployment Configuration
 
 Now we create a deployment configuration for the Reward Service. The deployment runtime is the ACCS environment which you previsioned earlier.
 
@@ -793,31 +786,26 @@ Now we create a deployment configuration for the Reward Service. The deployment 
 
 - Complete the New Create New Configuration as illustrated below:
 
-  - Enter `Deploy2rewardserviceNODE` as the **Configuration Name**
+  - **Configuration Name**: `Deploy2rewardserviceNODE`
+  - **Application Name**: `rewardservice` 
+  - **Type**: `Automatic`
+  - **Job**: `RewardService_Build`
+  - **Artifact**: `rewardservice.zip`
 
-  - Enter `rewardservice` as the **Application Name**
-  
-  - Check *Automatic*
-
-  - Select *RewardService_Build* from the **Job** option list
-
-  - Select *rewardservice.zip* from the **Artifact** option list
-
-  - Click the **New** button
+- Click **New**
   
 - Select the **Application Container Cloud...** from the context option list
   
   ![](images/67.png)
   
-  - Complete the **Deploy to Application Container Cloud** popup configuration as illustrated below:
+- Complete the **Deploy to Application Container Cloud** popup configuration as illustrated below:
 
-  - Select your **Data Center** from the dropdown list
+  - **Data Center**: `US Commercial2 - us2`
+  - **Identity Domain**: Your domain ID
+  - **Username**: Your Cloud username
+  - **Password**: Your Cloud user password
   
-  - Enter your **Identity Domain**
-  
-  - Enter your Cloud **Username** and **Password**
-  
-  - Click on **Test Connection**
+  - Click **Test Connection**
   
   ![](images/68.png)
   
@@ -825,11 +813,11 @@ Now we create a deployment configuration for the Reward Service. The deployment 
 
   ![](images/69.png)
 
-- Check the **Use Connection**
+- Check **Use Connection**
 
-- Check on **Node** in the **ACCS Properties** list
+- Check **Node** in the **ACCS Properties** list
 
-- Click on **Save** to save the configuration
+- Click **Save** to save the configuration
 
   ![](images/70.png)
 
@@ -839,31 +827,35 @@ Now we create a deployment configuration for the Reward Service. The deployment 
 
   ![](images/71.png)
   
-- Select the latest build from the ** Build** dropdown list
+- Select the latest build from the **Build** dropdown list
 
-- Click on **Deploy**
+- Click **Deploy**
 
   ![](images/72.png)
 
-- The deployment should complete successfull with a deployment succeeded message as below
+- The deployment should complete successfully with a deployment succeeded message as below
 
   ![](images/73.png)
   
 - Verify your deployment by going to the JETUI Frontend URL
 
-- Enter *http:ip address/cafesupremo* in your browser
+- Enter `http:<JCS ip address>/cafesupremo` in your browser
 
-- Click on the hamberger icon at the top left hand corner
+- Click on the hamberger icon at the top left hand corner of the Cafe Supremo home page to up the navigation menu
 
 - Click on **Rewards**
 
   ![](images/74.png)
   
-- Verify you can Credit a Star and Redeem Coffee
+- Verify you have access to the RewardService by clicking on **Credit A Star**. This should increment the counter above
+
+- When you have exceeded more than 3 stars points, you will see a **Free Coffee** coupon for redemption
+
+- Click on **Free Coffee** to bring up the QR code
 
   ![](images/75.png)
   
 
-Congratulation!! You have completed the setup and have a working demo.
+Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.
 
 Click here to go back to the home page.
