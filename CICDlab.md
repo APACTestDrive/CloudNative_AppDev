@@ -371,7 +371,7 @@ Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute 
   
 - Click on **Save**
 
-You have now created a Build VM for for your build jobs.
+You have now created a Build VM for for your build jobs. The initial status will be in the STOPPED state.
 
   ![](images/24.png)
 
@@ -399,7 +399,7 @@ We will create a project for the Café Supremo and bring all the components into
 
 - Click **Next** and followed by **Finish**
 
-Project creation will start upon selecting Finish.
+  Project creation will start upon selecting Finish.
 
 **NOTE**: The project creation will take approximately 2 minutes to complete.
 
@@ -420,6 +420,8 @@ Before you can upload the project archive, you must first configure a storage to
   ![](images/82.png)
 
 - On the Service Details page, in the Additional Information section of the Overview tab, note the value of **REST Endpoint** and **Auth V1 Endpoint**. These will be required in the following steps.
+
+  ![](images/83.png)
 
 - Go back to the Developer Cloud Service Organization Administration Page
 
