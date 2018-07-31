@@ -455,6 +455,8 @@ Before you can upload the project archive, you must first configure a storage to
 
 ### **STEP 7.3**: Uploading The Project Archive To The Storage
 
+You can import project data from the Oracle Cloud Infrastructure Object Storage Classic container into the Oracle Developer Cloud Service project. Hence we need to upload our project archive to a Object Storage Classic container. We will now create the container and upload the archive.
+
 - On the dashboard click the hamburger icon on the **Storage Classic** tile. Select **Open Service Console**.
 
   ![](images/30.png)
@@ -463,19 +465,20 @@ Before you can upload the project archive, you must first configure a storage to
 
   ![](images/31.png)
   
-- Enter a name for your container e.g. *tmp*
-
-- Click on **Create**
+- Enter `tmp` as the **name** for your container and click **Create**
 
   ![](images/32.png)
-  
-- Click on the container you just created e.g. *tmp*
+
+- Your newly created container **tmp** should appear in the *Container List*
+
+- Click on **tmp**
 
 - Click **Upload Objects**
 
   ![](images/33.png)
   
-- Select your archive file and upload  
+- Select your archive file and upload
+  If you have not downloaded the project archived, you can download it from here.
 
 The project archive is now ready to be imported into the CafeSupremo project.
 
@@ -484,54 +487,55 @@ The project archive is now ready to be imported into the CafeSupremo project.
 
 ### **STEP 7.4**: Importing a Project Archive
 
-- Click on the **Administration** option on the left hand side of the page
+When you import data from Oracle Cloud Infrastructure Object Storage Classic, it overwrites all the data in the project. All issues, Git repositories, and wiki pages of the project are replaced with the components of the imported project.
+
+To import project data from Oracle Cloud Infrastructure Object Storage Classic into Oracle Developer Cloud Service:
+
+- In the navigation bar on the left click **Administration**
 
 - Select **Data Export/Import** from the popup context option list or from the Administration page
 
   ![](images/34.png)
  
-- Complete the Data Export/Import Page as illustrated below:
+- Complete the Data Export/Import Page as illustrated below using the REST Endpoint URL you obtained in Section 7.2:
 
-  The REST Endpoint URL you  uses the following syntax: <storage_service_url>/v1/<storage_service_name>-<identity_domain>
-  
-  For example, if the REST Endpoint URL of your service is https://gse00002222.storage.oraclecloud.com/v1/Storage-gse00002222, then enter the following values in the Storage Account Connection fields:
 
   ![](images/35.png)
-
   
-  - Enter the **Storage Service URL**
+   You would need to extrapolate from the REST Endpoint URL and break it down into separate elements uses the following syntax: <storage_service_url>/v1/<storage_service_name>-<identity_domain>
   
-    You can locate the Storage Service URL on the Storage Classic View Details Page
+  For example, if the REST Endpoint URL of your service is https://gse00002222.storage.oraclecloud.com/v1/Storage-gse00002222, then enter the following value: 
   
-  - Enter **Storage** as the **Storage Service Name** 
-
-  - Enter the **Identity Domain**
-
-  - Enter the **Storage Account Username** and **Storage Account Password**
+  - **Storage Service URL**: `https://gse00002222.storage.oraclecloud.com`
+  - **Storage Service Name**: `Storage`
+  - **Identity Domain**: `gse00002222`
+  - **Storage Account Username**: Your Cloud username
+  - **Storage Account Password**: Your Cloud user password
   
   - Click on **Connect**
 
-- Once connected, the page will expand with the **Create Job** configuration.
+- Once connected, the page will expand with the **Create Job** configuration. Complete the elements with the follwoing:
 
   ![](images/36.png)
 
-  - Select *Import* from the dropdown **Type**
+  - **Type**: `Import`
 
-  - Enter *tmp* as the **Storage Container**
+  - **Storage Container**: `tmp`
   
-  - Select the zip file from the **Storage Object** dropdown box
+  - **Storage Object**: Select the archive file your uploaded to the Object Storage Container
   
-  - Click on **Import**
+  - Click **Import**
   
   - Check the *Import project data into 'CafeSupremo'* and Click **Yes**
   
     ![](images/37.png)
+    
   
 **NOTE:** The project archive import will begin and will take about 10 minutes to complete
 
-Once completed, you will be presented with two Git repositories:
+- Once completed, you will be presented with two Git repositories:
 
-  - **CafeSupremo.git** that holds the JETUI frontend code
+  - **CafeSupremo.git** that holds the JET UI frontend code
   - **RewardService.git** that holds the Node.js microservice code
   
   ![](images/38.png)
