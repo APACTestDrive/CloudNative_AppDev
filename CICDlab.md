@@ -342,11 +342,11 @@ Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute 
 
 - In another browser tab or window, open Oracle Cloud Dashboard
 
-- In the Compute Classic tile, click the hamburger icon, and select **View Details*
+- In the **Compute Classic** tile, click the hamburger icon, and select **View Details**
 
   ![](images/80.png)
 
-- On the Service Details page, in the Additional Information section of the Overview tab, note the values of **Service Instance ID** and **REST Endpoint**.
+- On the Service Details page, in the Additional Information section of the Overview tab, note the values of **Service Instance ID** and **REST Endpoint**
 
   ![](images/81.png)
 
@@ -387,58 +387,60 @@ We will create a project for the Café Supremo and bring all the components into
 
 - Go back to the Developer Cloud Service Console
 
-- Create a new project by clicking the **New Project** button
+- Create a new project by clicking **New Project**
 
 - Click **Next**
 
   ![](images/25.png)
 
-- Select an **Empty Project**
-
-  We will upload the Git repositories later from an archive project
+- Select an **Empty Project** for now and we will upload the Git repositories later from a project archive
 
   ![](images/26.png)
 
-- Click **Next**
-
-- Click **Finnish**
+- Click **Next** and followed by **Finish**
 
 Project creation will start upon selecting Finish.
 
-
+**NOTE**: The project creation will take approximately 2 minutes to complete.
 
 
 ### **STEP 7.2**: Setup The Storage For Importing a Project Archive
 
-A previously configured CafeSupremo project was exported as an archive. This contains the Git repositories, mock issues and agile boards to give a sense of a realistic project.
+A previously configured CafeSupremo project was exported as an archive. This contains the Git repositories for the source code, mock issues and agile boards to illustrate a working project.
+
+Before you can upload the project archive, you must first configure storage to upload the project archive to.
 
 **NOTE :** You can download the project archive from here.
 
 
-- You must first configure storage to upload the project archive to
+- In another browser tab or window, open Oracle Cloud Dashboard
 
-- Go back to the Organization Page
+- In the **Storage Classic** tile, click the hamburger icon, and select **View Details**
+
+  ![](images/82.png)
+
+- On the Service Details page, in the Additional Information section of the Overview tab, note the value of **REST Endpoint** and **Auth V1 Endpoint**. These will be required in the following steps.
+
+- Go back to the Developer Cloud Service Organization Administration Page
 
 - Select **STORAGE**
 
   ![](images/27.png)
   
-- Click on **Create**
+- Click **Create**
 
-- Enter the **Service ID** for your storage
+- Enter the following on the Edit Storage Configuration popup:
 
-  The Service ID is made up of **Storage-domain ID**
+  - **Service ID**: This is made up of `Storage-<domain ID>`. Just type Storage and append your domain ID to the end.
+  - **Username**: Your Cloud username
+  - **Password**: Your Cloud user password
+  - **Authorization URL**: You found this in the previous step on the Storage Classic View Details page
 
-- Enter your Cloud **Username** and **Password**
-
-- Enter the **Authorization URL**
-
-  You can locate the Authorization URL on the Storage Classic View Details Page
 
   ![](images/28.png)
   
   
-- Click on **Save** to save the configuration
+- Click on **Update** to save the configuration
   
 - Click on **Test Connection** to validate connectivity to your storage and you should get a **Connection successful** in response
 
@@ -487,6 +489,10 @@ The project archive is now ready to be imported into the CafeSupremo project.
   ![](images/34.png)
  
 - Complete the Data Export/Import Page as illustrated below:
+
+  The REST Endpoint URL you  uses the following syntax: <storage_service_url>/v1/<storage_service_name>-<identity_domain>
+  
+  For example, if the REST Endpoint URL of your service is https://gse00002222.storage.oraclecloud.com/v1/Storage-gse00002222, then enter the following values in the Storage Account Connection fields:
 
   ![](images/35.png)
 
