@@ -326,7 +326,7 @@ The CafeSupremo template contains the minimum software required to run basic bui
 
   ![](images/17.png)
   
-  - Select **Gradle 4** and **Node.js 6** from the list of software
+  - Select **Gradle 4** and **Node.js 6** from the list of software by clicking the **Add** `+` icon on that tile.
   
   ![](images/18.png)
   
@@ -338,31 +338,40 @@ The CafeSupremo template contains the minimum software required to run basic bui
   
 ### **STEP 6.3**: Create a Virtual Machine for Build and Develop
 
-- Go back to the Organization Page
+Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute Classic virtual machines (VMs) to run builds. To use the VM we need to connect the VM with Oracle Developer Cloud Service and we need to capture some service detail about the VM for configuration.
+
+- In another browser tab or window, open Oracle Cloud Dashboard
+
+- In the Compute Classic tile, click the hamburger icon, and select **View Details*
+
+  ![](images/80.png)
+
+- On the Service Details page, in the Additional Information section of the Overview tab, note the values of **Service Instance ID** and **REST Endpoint**.
+
+  ![](images/81.png)
+
+- Go back to the Developer Cloud Service Organization Administration Page
 
 - Select **VIRTUAL MACHINES**
 
   ![](images/21.png)
   
-- Click on **Configure Compute Account**
+- On the Virtual Machine page, click **Configure Compute Account**
 
   ![](images/22.png)
 
-- Enter your **Cloud Username** and **Password**
+- In the Configure Compute Account dialog box, enter the following values:
 
-- Enter **Service Instance ID**
-
-  You can locate the Service Instance ID on the Compute Classic View Details Page
-
-- Enter the **REST Endpoint**
-
-  You can locate the REST Endpoint on the Compute Classic View Details Page
+  - **Username**: `Cloud Username`
+  - **Password**: `Password`
+  - **Service Instance ID**: *ID assigned to the Oracle Cloud Infrastructure Compute Classic instance* (The value must match the Service Instance ID field that appears on the Oracle Cloud Infrastructure Compute Classic Service Details page.)
+  - **REST Endpoint**: *REST API endpoint URL for the Oracle Cloud Infrastructure Compute Classic instance* (The value must match the REST Endpoint field that appears on the Oracle Cloud Infrastructure Compute Classic Service Details page.)
 
   ![](images/23.png)
   
 - Click on **Save**
 
-You have now created build VM for for your build jobs.
+You have now created a Build VM for for your build jobs.
 
   ![](images/24.png)
 
