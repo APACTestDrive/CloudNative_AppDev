@@ -32,7 +32,7 @@ However, an Oracle Database Cloud Service is still required by Java Cloud Servic
 
 ### **STEP 2**: Create a DBCS Instance
 
-- On the dashboard click the hamburger icon on the **Database** tile. Select **Open Service Console**.
+- On the dashboard click the hamburger icon on the **Database** tile and select **Open Service Console**.
 
   ![](images/01.png)
 
@@ -362,8 +362,8 @@ Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute 
 
 - In the Configure Compute Account dialog box, enter the following values:
 
-  - **Username**: `Cloud Username`
-  - **Password**: `Password`
+  - **Username**: Your Cloud Username
+  - **Password**: Your Cloud User Password
   - **Service Instance ID**: *ID assigned to the Oracle Cloud Infrastructure Compute Classic instance* (The value must match the Service Instance ID field that appears on the Oracle Cloud Infrastructure Compute Classic Service Details page.)
   - **REST Endpoint**: *REST API endpoint URL for the Oracle Cloud Infrastructure Compute Classic instance* (The value must match the REST Endpoint field that appears on the Oracle Cloud Infrastructure Compute Classic Service Details page.)
 
@@ -406,16 +406,16 @@ Project creation will start upon selecting Finish.
 
 ### **STEP 7.2**: Setup The Storage For Importing a Project Archive
 
-A previously configured CafeSupremo project was exported as an archive. This contains the Git repositories for the source code, mock issues and agile boards to illustrate a working project.
+You should have an empty project after the project creation completes. We now need to populate the project with data such as source code and build configurations. A previously configured CafeSupremo project was exported as an archive. This contains the Git repositories for the source code, mock issues and agile boards to illustrate a working project. We will now import this archive and configure the build pipelines.
 
-Before you can upload the project archive, you must first configure storage to upload the project archive to.
+Before you can upload the project archive, you must first configure a storage to upload the project archive to. This is a storage that can be accessed by the Developer Cloud Service.
 
 **NOTE :** You can download the project archive from here.
 
 
 - In another browser tab or window, open Oracle Cloud Dashboard
 
-- In the **Storage Classic** tile, click the hamburger icon, and select **View Details**
+- On the dashboard click the hamburger icon on the **Storage Classic** tile, and select **View Details**
 
   ![](images/82.png)
 
@@ -431,7 +431,7 @@ Before you can upload the project archive, you must first configure storage to u
 
 - Enter the following on the Edit Storage Configuration popup:
 
-  - **Service ID**: This is made up of `Storage-<domain ID>`. Just type Storage and append your domain ID to the end.
+  - **Service ID**: This is made up of `Storage-<domain ID>`. Just type *Storage-* and append your *domain ID* to the end.
   - **Username**: Your Cloud username
   - **Password**: Your Cloud user password
   - **Authorization URL**: You found this in the previous step on the Storage Classic View Details page
@@ -447,7 +447,7 @@ Before you can upload the project archive, you must first configure storage to u
   ![](images/29.png)
   
 
-- Click **Close** on the top right hand corner of the Organization page
+- Click **Close** on the top right hand corner of the Organization Administration page
 
 
 
