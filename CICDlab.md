@@ -298,26 +298,31 @@ In this section, you learn how to create a basic Build VM template that includes
 
   ![](images/16.png)
   
-- Click on **New Template** in the Build VM Templates page
+- Click **New Template** in the Build VM Templates page
 
 ![](images/79.png)
 
 - In the New VM Template dialog box, enter the following details:
 
-  - Enter **CafeSupremo** as the name in the **New VM Template** popup box
-
-  - Select **Oracle Linux 7** for the **Platform** from the dropdown list
+  - **Name**: `CafeSupremo`
+  - **Description**: `A Build VM template with minimum required software`
+  - **Platform**: `Oracle Linux 7`
 
 ![](images/20.png)
 
 - Click **Create**
 
+A Build VM template named **CafeSupremo** is created. It includes just the required Build VM components. The right side of the page displays the details for this Build VM.
 
-### **STEP 6.2**: Configure the Software Packages for The VM Template
 
-The CafeSupremo template would be created and we need to put the necessary build software on it.
 
-  - Click on **Configue Software** for the CafeSupremo template
+### **STEP 6.2**: Configure the Software of a Build VM Template
+
+The CafeSupremo template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend and Node.js RewardService microservice.
+
+  - In the **Build VM Templates** tab, select the template named **CafeSupremo**
+  
+  - On the right side of the page, click **Configue Software**
 
   ![](images/17.png)
   
