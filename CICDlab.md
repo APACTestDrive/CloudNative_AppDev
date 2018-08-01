@@ -850,14 +850,69 @@ Now we create a deployment configuration for the Reward Service. The deployment 
 
 
 
+# Continuouse Integration & Delivery (CI/CD): Using Brackets, Commit and Push Code Change to Oracle Developer Cloud Service
+
+
 ### **STEP 10**: Developing with Brackets
 
-To enable a developer to develop code and commit it to the Git repository in Developer Cloud, you can use your favourite IDE or a simple text editor with Git command line interface. However, we are going to strike a balance and use something that is pretty lightweight but has built in integration with Git. Brackets is an open source editor written in HTML, CSS, and JavaScript with a primary focus on web development. You can install a Git plug-in to synchronise the commits and pushs process to Developer Cloud's Git repositories.
+To enable a developer to develop code and commit it to the Git repository in Developer Cloud, you can use your favourite IDE or a simple text editor with Git command line interface. However, we are going to strike a balance and use something that is pretty lightweight but has built in integration with Git. Brackets is an open source editor written in HTML, CSS, and JavaScript with a primary focus on web development. You can install a Git plug-in to synchronise the commits and push process to Developer Cloud's Git repositories.
+
+- You must have installed Brackets and Git extension as well as Git Client. If you haven't done this already please follow the guides below.
+
+  *[Click HERE for Brackets and Git Extension installation detail](BRACKETSinstall.md)*
+  *[Click HERE for Git Client installation details](GITCLIENTinstall.md)*
+
+
+# Cloning the Git Repository from Developer Cloud Service
+
+- Start the Brackets Text Editor, in the **File** pull-down menu, choose **Open Folder...**
+
+  ![](images/84.png)
+
+- Navigate to the target destination directory to store the source code, for example: `D:\oracle`
+
+- Click **New Folder** to create a new folder in the destination directory
+
+- Enter `CafeSupremo` as the name of the new folder and click **Create**
+
+- Click **Open** after it has been created
+
+  ![](images/85.png)
+  
+- Click on GIT icon on the right hand side of the editor to open the Git panel below the editor
+
+  ![](images/86.png)
+  
+- Click **Clone** in the Git panel
+
+  ![](images/87.png)
+
+- Switch back to the Developer Cloud Service dashboard. Click the square **Copy** button by the *CafeSupremo.git* URL to copy the link
+
+  ![](images/88.png)
+  
+- Switch back to the Brackets editor and paste the copied URL from Developer Cloud Service into the **Enter Git URL of the repository you want to clone:**. Username should be populated automatically.
+
+- Enter the password and select **Save credentials to remote url**
+
+- Click **OK**
+
+  ![](images/89.png)
+
+- Wait for Brackets to clone your remote project to local folder
+
+  ![](images/90.png)
+
+- You now have a local copy of the Git repository
+
+  ![](images/91.png)
 
 
 
 
 
+Keep the LoyaltyManagement folder selected and click Select Folder button at bottom.
+  
   
 
 Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.
