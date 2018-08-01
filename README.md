@@ -63,7 +63,7 @@ A project manager will be logging into Developer Cloud Service and manage the Ca
 
 - The demo and lab requires an Oracle Public Cloud account
 - You will also need to install a lightweight IDE - [Brackets](http://brackets.io/). Brackets installer will be provided by instructor or you can download it from [GitHub HERE](https://github.com/adobe/brackets/releases).  
-- You need to have a Git Client. If you are already using Github Desktop, Eclipse or other IDE, you probably have Git already. Git installer will be provided by the instructor or you can download from [here](https://git-scm.com/downloads)
+- You need to have a Git Client. If you are already using Github Desktop, Eclipse or other IDE, you probably have Git already. Git installer will be provided by the instructor or you can download from [here](https://git-scm.com/downloads).
 - *[Click HERE for Brackets installation detail](BRACKETSinstall.md)*
 - *[Click HERE for Git installation details](GITCLIENTinstall.md)*
 
