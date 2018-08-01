@@ -837,23 +837,24 @@ Now we create a deployment configuration for the Reward Service. The deployment 
 
   ![](images/73.png)
   
-- Verify your deployment by going to the JETUI Frontend URL
+- Verify your deployment to see if you can retreive the current status for reward points and coupons.
 
-- Enter `http:<JCS ip address>/cafesupremo` in your browser
+  - Enter `https://<rewardservice IP>/loyalty/v2/points/10001` in your browser substituting the host IP with the rewardservice IP you just obtained
 
-- Click on the hamberger icon at the top left hand corner of the Cafe Supremo home page to up the navigation menu
-
-- Click on **Rewards**
-
-  ![](images/74.png)
+    If successful, you should see a return text of `{"points":0}` indicating zero reward points
   
-- Verify you have access to the RewardService by clicking on **Credit A Star**. This should increment the counter above
+  - Enter `https://<rewardservice IP>/loyalty/v2/coupon/10001` in your browser substituting the host IP with the rewardservice IP you just obtained
 
-- When you have exceeded more than 3 stars points, you will see a **Free Coffee** coupon for redemption
+    If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
-- Click on **Free Coffee** to bring up the QR code
 
-  ![](images/75.png)
+
+
+
+
+
+
+
   
 
 Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.
