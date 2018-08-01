@@ -81,4 +81,6 @@ A project manager will be logging into Developer Cloud Service and manage the Ca
 
 [Go To Demo Setup](DEMOsetup.md)
 
-[Go To CICD Hands On Lab](CICDlab.md)
+or
+
+[Go To CI/CD Hands On Lab](CICDlab.md)
