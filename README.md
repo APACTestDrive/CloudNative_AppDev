@@ -79,8 +79,8 @@ A project manager will be logging into Developer Cloud Service and manage the Ca
 *	Some familiarity with Hudson Continuous Integration system
 
 
-[Go To Demo Setup](DEMOsetup.md)
+[Go to Demo Setup](DEMOsetup.md)
 
 or
 
-[Go To CI/CD Hands On Lab](CICDlab.md)
+[Go to CI/CD Hands On Lab](CICDlab.md)
