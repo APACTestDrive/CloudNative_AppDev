@@ -863,4 +863,4 @@ Congratulation!! You have completed the lab and have a working CI/CD pipeline fo
 
 
 
-[Back To Cafe Supremo Home](README.md)
+[Back to Cafe Supremo Home](README.md)
