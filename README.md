@@ -15,7 +15,7 @@ There are two parts to this project, a quick demo and a hands on lab. And you ca
 
 The Demo is good for discovery workshops and meetings with C-level executives, architects and project leads. It takes about 30 minutes to complete. The demo comes in two parts, a guided script that walks through the demo steps and the setup procedure.
 
-The [Demo Script](https://github.com/kwanwan/CafeSupremo/blob/master/DEMOscript.md) showcases the following:
+The [Demo Script](DEMOscript.md) showcases the following:
 
 *	Continuous Integration and Continuous Delivery through automation in Oracle Developer Cloud Service
 *	Task creation using Oracle Developer Cloud Service Issue tracking system
@@ -23,13 +23,13 @@ The [Demo Script](https://github.com/kwanwan/CafeSupremo/blob/master/DEMOscript.
 *	Pushing the changes from a remote repository
 *	Scaling up and scaling out of ACCS and JCS
 
-This requires a working demo that was previously configured. Please follow the [Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
+This requires a working demo that was previously configured. Please follow the [Demo Setup](CICDlab.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
 
 ## CICD Hands On Lab
 
 The CICD lab is good for deep dive workshops with architects, project leads and developers. This requires more time to and it takes about 3 hours to complete.
 
-The [CICD Hands On Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md) provide a hands on experience in setting up the complete end-to-end CICD pipeline on Oracle Cloud Platform. This shows you how prepare a Developer Cloud Service for:
+The [CICD Hands On Lab]CICDlab.md) provide a hands on experience in setting up the complete end-to-end CICD pipeline on Oracle Cloud Platform. This shows you how prepare a Developer Cloud Service for:
 
 *	Project creation, configuration, and user management
 *	Agile development
@@ -79,6 +79,6 @@ A project manager will be logging into Developer Cloud Service and manage the Ca
 *	Some familiarity with Hudson Continuous Integration system
 
 
-[Go To Demo Setup](https://github.com/kwanwan/CafeSupremo/blob/master/DEMOsetup.md)
+[Go To Demo Setup](DEMOsetup.md)
 
-[Go To CICD Hands On Lab](https://github.com/kwanwan/CafeSupremo/blob/master/CICDlab.md)
+[Go To CICD Hands On Lab](CICDlab.md)
