@@ -59,24 +59,14 @@ Different developers or teams can work independently on the JET UI frontend and 
 A project manager will be logging into Developer Cloud Service and manage the Café Supremo project from issue tracking to tracking the build, deploy and release progress.
 
 
-## What Do You Need?
+## Prerequisites ##
 
-*	Access to an Oracle Developer Cloud Service instance
-*	Access to an Oracle Application Cloud Service instance
-*	Access to an Oracle Java Cloud Service instance
-*	Access to a mobile phone
-*	One of the following supported browsers:
-    *	Firefox 31 or above
-    *	Chrome 37 (also for Android)
-    *	Safari 7, 8 or 9
-    *	Safari Mobile 5 (iOS)
-*	An installation of Brackets with Bracket Git by Martin Zagora extension installed
-*	An installation to mirror your mobile screen to the projector
-*	Some familiarity with Oracle Java Cloud Service
-*	Some familiarity with Oracle Application Cloud Service
-*	Some familiarity with Brackets
-*	Some familiarity with the Git source control system
-*	Some familiarity with Hudson Continuous Integration system
+- The demo and lab requires an Oracle Public Cloud account
+- You will also need to install a lightweight IDE - [Brackets](http://brackets.io/). Brackets installer will be provided by instructor or you can download it from [GitHub HERE](https://github.com/adobe/brackets/releases).  
+- You need to have a Git Client. If you are already using Github Desktop, Eclipse or other IDE, you probably have Git already. Git installer will be provided by the instructor or you can download from [here](https://git-scm.com/downloads)
+- *[Click HERE for Brackets installation detail](BRACKETSinstall.md)*
+- *[Click HERE for Git installation details](GITCLIENTinstall.md)*
+
 
 
 [Go to Demo Setup](DEMOsetup.md)
