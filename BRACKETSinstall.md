@@ -64,4 +64,4 @@ Select your target Brackets Destination Folder, and then click `Next` button.
 
 ![](images/brackets/12.brackets.done.png)
 
-[Back to JavaAppLab Home](README.md)
+[Back to Cafe Supremo Home](README.md)
