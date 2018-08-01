@@ -839,17 +839,19 @@ Now we create a deployment configuration for the Reward Service. The deployment 
   
 - Verify your deployment to see if you can retreive the current status for reward points and coupons.
 
-  - Enter `https://<rewardservice IP>/loyalty/v2/points/10001` in your browser substituting the host IP with the rewardservice IP you just obtained
+  - Enter `https://<rewardservice hostname>/loyalty/v2/points/10001` in your browser substituting the hostname of the URL with the rewardservice instance URL's hostname you obtained from Step 4
 
     If successful, you should see a return text of `{"points":0}` indicating zero reward points
   
-  - Enter `https://<rewardservice IP>/loyalty/v2/coupon/10001` in your browser substituting the host IP with the rewardservice IP you just obtained
+  - Enter `https://<rewardservice hostname>/loyalty/v2/coupon/10001` in your browser substituting the hostname of the URL with the rewardservice instance URL's hostname you obtained from Step 4
 
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
 
 
+### **STEP 10**: Developing with Brackets
 
+To enable a developer to develop code and commit it to the Git repository in Developer Cloud, you can use your favourite IDE or a simple text editor with Git command line interface. However, we are going to strike a balance and use something that is pretty lightweight but has built in integration with Git. Brackets is an open source editor written in HTML, CSS, and JavaScript with a primary focus on web development. You can install a Git plug-in to synchronise the commits and pushs process to Developer Cloud's Git repositories.
 
 
 
