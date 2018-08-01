@@ -543,4 +543,4 @@ We can scale up or scale out of our JET UI application in JCS as well as the Rew
 
 
 
-[Back To Cafe Supremo Home](README.md)
+[Back to Cafe Supremo Home](README.md)
