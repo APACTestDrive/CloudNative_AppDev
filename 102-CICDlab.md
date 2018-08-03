@@ -1,4 +1,4 @@
-# Create Continuous Integration and Continuous Deliver Pipeline in Developer Cloud Service
+# Create Continuous Integration and Continuous Delivery Pipeline in Developer Cloud Service
 
 
   
