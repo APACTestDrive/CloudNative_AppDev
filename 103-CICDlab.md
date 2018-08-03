@@ -1,6 +1,6 @@
 
 
-# Continuouse Integration & Delivery (CI/CD): Using Brackets, Commit and Push Code Change to Oracle Developer Cloud Service
+# Putting It All Together - Continuous Integration and Delivery
 
 
 ### **STEP 10**: Developing with Brackets
