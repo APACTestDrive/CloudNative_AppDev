@@ -908,11 +908,51 @@ To enable a developer to develop code and commit it to the Git repository in Dev
   ![](images/91.png)
 
 
+# Commit and Push Code Changes
 
+- Expand the left nagivation tree and open *reward.js* file (*Under src->js->viewModels*)
 
+  ![](images/92.png)
 
-Keep the LoyaltyManagement folder selected and click Select Folder button at bottom.
+- On the main window, locate line 27, 47, 72 and 99 in *rewards.js* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4. These the API calls to from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this RewardService is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
   
+  Get the current points of memeber
+  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/points/10001
+  
+  Get the current coupon of memeber
+  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/coupon/10001
+  
+  Credit memember with one point
+  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/points/10001
+
+  Consume one coupon
+  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/coupon/10001
+
+  ![](images/93.png)
+
+- Check the box next to **Commit** to select all modified files - this means the checkbox below (reward.js) will automatically be checked.
+
+- Click **Commit** to commit changes to the local cloned Git repository
+
+  ![](images/94.png)
+
+- In the Git commit pop up enter the comment: `Replaced hostname in API calls` and then click **OK**. This will commit the changes to your local git repository.
+
+  ![](images/95.png)
+
+- Click **Git Push** icon on the right side of the Git panel
+
+  ![](images/96.png)
+  
+- In the Push to remote pop up window, leave all defaults and click **OK**
+
+  ![](images/97.png)
+  
+- Once Git Push completes, click **OK**
+
+  ![](images/98.png)
+
+
   
 
 Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.
