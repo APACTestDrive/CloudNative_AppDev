@@ -974,13 +974,30 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
   ![](images/101.png)
   
-  
 - Click on the Deploy Configuration tab and wait till you see the *Last deployment succeeded* message in the *cafesupremo* configuration tile. Reload page if you don't see any dates.
 
   ![](images/102.png)
 
+- Let's verify your changes to see if the JET UI frontend is able to call the APIs in the RewardService backend. Enter
 
+  http:`<JCS IP address>`/cafesupremo in your browser replacing the JCS IP address with your JCS instance
+  
+  Don't forget to open this in a the Developer Tools mode for a mobile device
+  
+  ![](images/77.png)
+  
+- Click on the hamburger icon on at the top left hand corner to expand the menu
 
+  ![](images/77.png)
+  
+- Click on **Rewards**
+
+  ![](images/74.png)
+  
+- Click on **Credit A Star** to see the counter increments and try to redeem a coffee once you have been awarded with a coupon.
+
+  ![](images/75.png)
+  
 
 
 
