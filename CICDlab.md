@@ -21,7 +21,7 @@ The current release of the application no longer requires a database for storing
 However, an Oracle Database Cloud Service is still required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
 
-# Lab Exercise
+# Lab Exercises
 
 There are three parts to the lab with each focusing on different aspect of Cloud Native Application development, from provisioning of a cloud environment to importing your code and creating you CI/CD pipeline. Please begin your exercise in the following order:
 
