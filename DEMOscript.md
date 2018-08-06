@@ -75,10 +75,13 @@ You are an application developer who will be developing a brand new cloud native
 
 ## Step 1: Introduce The Application
 
-The application basically consists of two parts:
+With reference to the architecture diagram above, describe the application. The application basically consists of two parts:
 
-* The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
-* The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance
+1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
+2. The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance
+3. Customer data is stored in Database Cloud Service and is also cached in Application Container Cloud Cache instance.
+4. Customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account.
+5. This makes a REST API call to the Node.js Rewards Service on ACCS instance
 
 The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams.
 
@@ -90,12 +93,12 @@ The JET UI and the Reward Service are being developed in parallel independent of
 
 ## Step 2: Explore The Application
 
-* Show how the JET UI frontend looks like by going into the **Discover** and **Stores** options to discover the coffees on sale at store and the locations of the stores
+* Show how the JET UI frontend looks like by going into the **Discover** and **Stores** options to discover the coffees on sale at store and locations of the stores
 * Highlight the  **Rewards** option has not been completed and hence it is greyed out. This is the option to credit and redeem your coffee rewards.
 * When the **Rewards** option is availble and clicked, it makes a REST API call to the Rewards Service
 * The Reward Service is being implemented as a Microservice in Node.js and deployed to an ACCS instance
 * The two services JET UI frontend and Reward Service are implemented independently by two teams using different languages and tools
-* Code are stored in separate Git repositories and they are built differently, and separately
+* Code are stored in separate Git repositories and they are built differently and separately
 * We will show how you can improve your team’s productivity and quickly rollout new services by adopting CI/CD in Oracle AppDev Platform
 
 ![](images/cafemenu_no_rewards.png)
@@ -105,17 +108,8 @@ The JET UI and the Reward Service are being developed in parallel independent of
 
 ## Step 3: 
 
-* Here you are going to be requested to enter the information needed to access your cloud account
 
-![](images/oraclecloud.png)
 
-* Enter your Identity Domain
-* Click GO
-* Login with the credentials
-* Enter your Password
-* Click Sign In
-
-# Step 4
 
 * At a high level describe the different services; DevCS for Agile and CI/CD, JCS for Java and JET UI, ACCS for polyglot Microservices
 * Mention that DBCS, JCS and ACCS have already been provisioned
