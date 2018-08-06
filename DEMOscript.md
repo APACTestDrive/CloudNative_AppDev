@@ -84,25 +84,24 @@ The JET UI and the Reward Service are being developed in parallel independent of
 
 ![](images/cafehome.png)
 
-* Mirror your mobile phone opening your browser in the Developer Tools mode for a Mobile Device
+* Mirror your mobile phone by opening your browser in the Developer Tools mode for a Mobile Device
 * Enter Café Supremo URL - `http://<JCS IP address>/cafesupremo` in your browser
 * Click on the hamburger icon at the top left hand corner of the Cafe Supremo home page
 
 ## Step 2: Explore The Application
 
-* Show how this JET UI looks like by going into the Discover and Stores options
-* Highlight that the Rewards Service option has not been completed and hence it is greyed out
-* The Reward Service is being implemented as a Microservice in Node.js
-* Since the two services are implemented separately, using different languages and tools, there is very little integration and collaboration between the two teams
-* Code are stored in separate Git repositories and they are built differently, but manually.
+* Show how the JET UI frontend looks like by going into the **Discover** and **Stores** options to discover the coffees on sale at store and the locations of the stores
+* Highlight the  **Rewards** option has not been completed and hence it is greyed out. This is the option to credit and redeem your coffee rewards.
+* When the **Rewards** option is availble and clicked, it makes a REST API call to the Rewards Service
+* The Reward Service is being implemented as a Microservice in Node.js and deployed to an ACCS instance
+* The two services JET UI frontend and Reward Service are implemented independently by two teams using different languages and tools
+* Code are stored in separate Git repositories and they are built differently, and separately
 * We will show how you can improve your team’s productivity and quickly rollout new services by adopting CI/CD in Oracle AppDev Platform
 
 ![](images/cafemenu_no_rewards.png)
 ![](images/cafemap.png)
 
-* Click on each option to show what they do such as discovering the coffee on sale at the store and the locations of the store
-* Highlight the **Rewards** option is greyed out and this is the option to credit and redeem your coffee rewards
-  The reason why this is greyed out is because the team developing the Reward Service is not completed and not ready to integrate. The Reward Service is being developed as a Node.js microservice to be deployed to an ACCS instance. When the **Rewards** option is clicked, it makes a REST API call to the Rewards Service.
+
 
 ## Step 3: 
 
