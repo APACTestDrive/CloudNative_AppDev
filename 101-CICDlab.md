@@ -378,7 +378,7 @@ You have now created a Build VM for for your build jobs. The initial status will
 
 You have finished this lab section.
 
-[Procced to Lab 102: Create CI/CD Pipeline in DevCS](102-CICDlab.md)
+[Proceed to Lab 102: Create CI/CD Pipeline in DevCS](102-CICDlab.md)
 
 or
 
