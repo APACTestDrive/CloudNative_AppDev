@@ -73,22 +73,22 @@ A project manager will be logging in to an Oracle Developer Cloud Service and ma
 
 You are an application developer who will be developing a brand new cloud native loyalty application for Café Supremo, which will be deployed to the Oracle Cloud.
 
-# Step 1
+## Step 1: Introduce The Application
 
-Introduce the application. The application basically consists of two parts:
+The application basically consists of two parts:
 
 * The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
-* The Reward Service is a Microservice written in node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance
+* The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance
 
 The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams.
 
 ![](images/cafehome.png)
 
-* Mirror your mobile phone
-* Enter Café Supremo URL - http://xxx.xxx.xxx.xxx/cafesupremo
-* Click on the Menu icon
+* Mirror your mobile phone opening your browser in the Developer Tools mode for a Mobile Device
+* Enter Café Supremo URL - `http://<JCS IP address>/cafesupremo` in your browser
+* Click on the hamburger icon at the top left hand corner of the Cafe Supremo home page
 
-# Step 2
+## Step 2: Explore The Application
 
 * Show how this JET UI looks like by going into the Discover and Stores options
 * Highlight that the Rewards Service option has not been completed and hence it is greyed out
@@ -97,12 +97,12 @@ The JET UI and the Reward Service are being developed in parallel independent of
 * Code are stored in separate Git repositories and they are built differently, but manually.
 * We will show how you can improve your team’s productivity and quickly rollout new services by adopting CI/CD in Oracle AppDev Platform
 
-![](images/cafemenu.png)
+![](images/cafemenu_no_rewards.png)
 ![](images/cafemap.png)
 
 * Click on each option to show what they do and highlight the Reward Service option is greyed as it has not be completed
 
-# Step 3
+## Step 3: 
 
 * Here you are going to be requested to enter the information needed to access your cloud account
 
