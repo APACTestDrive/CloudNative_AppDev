@@ -1,6 +1,6 @@
-# Prepare Your Cloud Environments
+# Lab 101: Prepare Your Cloud Environments
 
-## Lab 101: Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
+## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
 
 During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and Application Container Cloud Service instance. You must have access to a:
 
@@ -57,7 +57,6 @@ In this exercise, we will:
 - Click **Next**
 
 
-
 ### **STEP 2.2**: Detailed Instance Configuration
 
 The last input page is the Service Details page.
@@ -87,7 +86,7 @@ The following parameters have to be provided:
 
 
 
-## Provision a ACCS Cache Instance
+## Provision ACCS Caching
 
 
 ### **STEP 3**: Create a ACCS Cache Instance
