@@ -90,7 +90,7 @@ Before you can upload the project archive, you must first configure a storage to
 
 ### **STEP 3**: Uploading The Project Archive To The Storage
 
-You can import project data from the Oracle Cloud Infrastructure Object Storage Classic container into the Oracle Developer Cloud Service project. Hence we need to upload our project archive to a Object Storage Classic container. We will now create the container and upload the archive.
+You can import project data from the Oracle Cloud Infrastructure Object Storage Classic container into the Oracle Developer Cloud Service project. Hence we need to upload our project archive to an Object Storage Classic container. To do we must first create a container in Object Storage and upload the project archive there.
 
 - On the dashboard click the hamburger icon on the **Storage Classic** tile. Select **Open Service Console**.
 
@@ -113,7 +113,8 @@ You can import project data from the Oracle Cloud Infrastructure Object Storage 
   ![](images/33.png)
   
 - Select your archive file and upload
-  If you have not downloaded the project archived, you can download it from here.
+
+  If you have not downloaded the project archived, you can download it from [here].
 
 The project archive is now ready to be imported into the CafeSupremo project.
 
@@ -125,13 +126,13 @@ When you import data from Oracle Cloud Infrastructure Object Storage Classic, it
 
 To import project data from Oracle Cloud Infrastructure Object Storage Classic into Oracle Developer Cloud Service:
 
-- In the navigation bar on the left click **Administration**
+- Move over to the navigation bar on the left and click the **Administration** icon
 
 - Select **Data Export/Import** from the popup context option list or from the Administration page
 
   ![](images/34.png)
  
-- Complete the Data Export/Import Page as illustrated below using the REST Endpoint URL you obtained in Section 7.2:
+- Complete the Data Export/Import Page as illustrated below using the REST Endpoint URL you obtained in Step 2
 
 
   ![](images/35.png)
@@ -146,7 +147,7 @@ To import project data from Oracle Cloud Infrastructure Object Storage Classic i
   - **Storage Account Username**: Your Cloud username
   - **Storage Account Password**: Your Cloud user password
   
-  - Click on **Connect**
+- Click on **Connect**
 
 - Once connected, the page will expand with the **Create Job** configuration. Complete the elements with the following:
 
@@ -156,11 +157,11 @@ To import project data from Oracle Cloud Infrastructure Object Storage Classic i
   - **Storage Container**: `tmp`
   - **Storage Object**: Select the archive file your uploaded to the Object Storage Container
   
-  - Click **Import**
+- Click **Import**
   
-  - Check the *Import project data into 'CafeSupremo'* and Click **Yes**
+- Check the *Import project data into 'CafeSupremo'* and Click **Yes**
   
-    ![](images/37.png)
+  ![](images/37.png)
     
   
 **NOTE:** The project archive import will begin and will take about 10 minutes to complete
@@ -172,7 +173,9 @@ To import project data from Oracle Cloud Infrastructure Object Storage Classic i
   
   ![](images/38.png)
   
-- Verify the rest of the project has been imported properly by nagvigating into different tools on the navigation bar. There should be issues, agile boards, and code. However, there are no project members, build jobs or deployment configuration as these cannot be exported with the original project. Therefore we would need to rebuild these configurations in the following steps.
+- Verify the rest of the project has been imported properly by navigating into different tools on the navigation bar.
+
+  There should be issues, agile boards, and code. However, there are no project members, build jobs or deployment configuration as these cannot be exported with the original project. Therefore we would need to rebuild these configurations in the following steps.
 
 
 ### **STEP 5**: Add New Members To The Project
@@ -209,7 +212,7 @@ Now that we have imported the project archive for our demo, we can start creatin
 
 The first task in our CI/CD pipeline is to build the JETUI frontend application. We need to create a build job for this. And we want the build to be triggered automatically whenever there is a code commit. The build process can be automated and deployed automatically to a designated JCS environment.
 
-- Switch to Build tab on the navigation. There should be no build job initially.
+- Switch to Build tab on the navigation bar. There should be no build job initially.
 
 - Click on **New Job**
 
@@ -217,8 +220,8 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
 - Complete the fields with:
   
-- **Job Name**: `JETUI_JCS_Build`
-- **Software Template**: `CafeSupremo`
+  - **Job Name**: `JETUI_JCS_Build`
+  - **Software Template**: `CafeSupremo` this is the Build Template you create in Lab 101
 
 - Click **Create Job**
 
@@ -269,13 +272,13 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
 - Click **Save** to save the configuration
 
-- Let’s test the build job configuration by running a build now. Click **Build Now** to build.
+- Click **Build Now** to test the build job configuration by running it
 
 - The build should complete without any error
 
   ![](images/54.png)
   
-  Congratulate! You have now completed your build.
+Congratulate! You have now completed your first build.
   
   
   
@@ -283,16 +286,16 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 ### **STEP 7**: Create The Reward Service Node.js Build Job
   
   
-- Switch to Build tab and create a new job. There should be no build job initially.
+- Switch back to the Build tab and create a new job. There should be only be one job and that is the *JETUI_JCS_Build* you just created.
 
 - Click on **New Job**
-  
-- Enter *RewardService_Build* as the **Job Name**
 
-- Select *CafeSupremo* from the dropdown list for **Software Template**
+- Complete the fields with:
+  
+  - **Job Name**: `RewardService_Build`
+  - **Software Template**: `CafeSupremo` this is the Build Template you create in Lab 101
 
 - Click **Create Job**
-
 
 - Configure the build job by specifying the Git repo to build from. On the **Source Control** tab click on **Add Source Control**
 
@@ -325,7 +328,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
 - Click **Save** to save the configuration
 
-- Let’s test the build job configuration by running a build now. Click **Build Now** to build
+- Click **Build Now** to test the build job configuration by running it 
 
 - The build should complete without any error
 
@@ -335,9 +338,9 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
 
 
-### **STEP 8**: Create The JETUI Frontend Deployment Configuration
+### **STEP 8**: Create The JET UI Frontend Deployment Configuration
 
-The next part of the CI/CD pipeline is the deployment of the builds. Let's create a deployment configuration for the JETUI frontent. The deployment runtime is the JCS environment which you previsioned earlier.
+The next part of the CI/CD pipeline is the deployment of the builds. Let's create a deployment configuration for the JET UI frontend. The deployment runtime is the JCS environment which you provisioned earlier.
 
 - Go to the **Deploy** page
 
@@ -367,7 +370,8 @@ The next part of the CI/CD pipeline is the deployment of the builds. Let's creat
   - **HTTPS Port**: `7002`
   - **Username**: `weblogic`
   - **Password**: You weblogic password 
-  - Click on **Find Targets**
+
+- Click on **Find Targets**
   
   ![](images/61.png)
   
@@ -397,22 +401,24 @@ The next part of the CI/CD pipeline is the deployment of the builds. Let's creat
 
   ![](images/65.png)
 
-- The deployment should complete successfull with a deployment succeeded message as below
+- The deployment should complete successfully with a *Last deployment succeeded* message as below
 
   ![](images/66.png)
   
-- Verify your deployment by going to the JETUI frontend URL
+- Verify your deployment by going to the JET UI frontend URL
 
-- Enter `http:<JCS ip address>/cafesupremo` in your browser
+  Enter `http:<JCS IP address>/cafesupremo` in your browser, replacing the `<JCS IP address>` with the external IP address of your JCS instnace.
 
   ![](images/77.png)
   
-Congratulation if you can load the Cafe Supremo home page.  
+Congratulation if you can load the Cafe Supremo home page.
+
+- Explore the JET UI by selecting the menu options from the hamburger icon at the top left hand corner of the Cafe Supremo home page
   
   
 ### **STEP 9**: Create The Reward Service Deployment Configuration
 
-Now we create a deployment configuration for the Reward Service. The deployment runtime is the ACCS environment which you provisioned earlier.
+Now we create a deployment configuration for the Node.js Reward Service backend. The deployment runtime is the ACCS environment which you provisioned earlier.
 
 - Go to the **Deploy** page
 
@@ -439,11 +445,11 @@ Now we create a deployment configuration for the Reward Service. The deployment 
   - **Username**: Your Cloud username
   - **Password**: Your Cloud user password
   
-  - Click **Test Connection**
+- Click **Test Connection**
   
   ![](images/68.png)
   
-- This will return successfully only if all the parameters are entered correctly.
+- This will return successfully only if all the parameters are entered correctly
 
   ![](images/69.png)
 
@@ -455,7 +461,9 @@ Now we create a deployment configuration for the Reward Service. The deployment 
 
   ![](images/70.png)
 
-- You have now completed the deployment configuration for the RewardService. Let's try deploying a build to ACCS instance.
+
+You have now completed the deployment configuration for the RewardService. Let's try deploying a build to ACCS instance.
+
 
 - Select the **Redeploy** option from the Settings dropdown options.
 
@@ -463,28 +471,28 @@ Now we create a deployment configuration for the Reward Service. The deployment 
   
 - Select the latest build from the **Build** dropdown list
 
-- Click **Deploy**
-
   ![](images/72.png)
 
-- The deployment should complete successfully with a deployment succeeded message as below
+- Click **Deploy**
+
+- The deployment should complete successfully with a *Last deployment succeeded* message as below
 
   ![](images/73.png)
   
-- Verify your deployment to see if you can retreive the current status for reward points and coupons.
+- Verify your deployment to see if you can retreive the current status for reward points and coupons
 
-  - Enter `https://<rewardservice hostname>/loyalty/v2/points/10001` in your browser substituting the hostname of the URL with the rewardservice instance URL's hostname you obtained from Step 4
+  - Enter `https://<rewardservice hostname>/loyalty/v2/points/10001` in your browser substituting the hostname of the URL with the **rewardservice** instance URL's hostname you obtained in Step 4 from the previous Lab 101
 
     If successful, you should see a return text of `{"points":0}` indicating zero reward points
   
-  - Enter `https://<rewardservice hostname>/loyalty/v2/coupon/10001` in your browser substituting the hostname of the URL with the rewardservice instance URL's hostname you obtained from Step 4
+  - Enter `https://<rewardservice hostname>/loyalty/v2/coupon/10001` in your browser substituting the hostname of the URL with the **rewardservice** instance URL's hostname you obtained in Step 4 from the previous Lab 101
 
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
 
 You have finished this lab section.
 
-[Procced to Lab 103: Putting It All Together - CICD](103-CICDlab.md)
+[Proceed to Lab 103: Putting It All Together - CICD](103-CICDlab.md)
 
 or
 
