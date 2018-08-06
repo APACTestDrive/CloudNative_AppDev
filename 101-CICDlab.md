@@ -1,6 +1,6 @@
 # Prepare Your Cloud Environments
 
-## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
+## Lab 101: Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
 
 During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and Application Container Cloud Service instance. You must have access to a:
 
@@ -11,22 +11,33 @@ The current release of the application no longer requires a database for storing
 
 However, an Oracle Database Cloud Service is still required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
-# Provision a DBCS Instance
+
+### About This Exercise
+
+In this exercise, we will:
+- Create and configure a Database Cloud Service (DBCS) instance to hold the JCS (WebLogic) configuration
+- Create and configure a Java Cloud Service (JCS) (WebLogic) instance to host the JET UI frontend
+- Create and configure a Application Container Cloud Service (ACCS) to host the Node.js backend Reward Service
+- Create and configure a Developer Cloud Service (DevCS) project to build our application
+
+
+
+## Provision a DBCS Instance
 
 
 ### **STEP 1**: Sign Into The Oracle Cloud Service Account
 
-- Sign into your Oracle Cloud Service account.
+- Sign into your Oracle Cloud Service account
 
 
 
 ### **STEP 2**: Create a DBCS Instance
 
-- On the dashboard click the hamburger icon on the **Database** tile and select **Open Service Console**.
+- On the dashboard click the hamburger icon on the **Database** tile and select **Open Service Console**
 
   ![](images/01.png)
 
-- Once in the Database Cloud Service Console page, create a new instance by clicking **Create Service** button.
+- Once in the Database Cloud Service Console page, create a new instance by clicking **Create Service** button
 
 
 ### **STEP 2.1**: Basic Instance Configuration
@@ -372,6 +383,6 @@ You have finished this lab section.
 
 or
 
-[Back to Cafe Supremo Home](README.md)
+[Return to Cafe Supremo Home](README.md)
 
   
