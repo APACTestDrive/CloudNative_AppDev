@@ -102,7 +102,7 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
   https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/coupon/10001
   ```
   
-  - Select **Save** to save the code changes
+- Select **Save** to save the code changes
   
   ![](images/93.png)
 
@@ -161,13 +161,19 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
   
 - Click on the hamburger icon on at the top left hand corner to expand the menu
 
-  ![](images/77.png)
+  ![](images/74.png)
   
 - Click on **Rewards**
 
-  ![](images/74.png)
+  ![](images/76.png)
   
-- Click on **Credit A Star** to see the counter increments and try to redeem a coffee once you have been awarded with a coupon.
+- Click on **Credit A Star** to see the counter increments
+
+- Once you have accumulated 3 or more stars, you will be credited with a **Free Coffee** coupon
+
+- Click on **Free Coffee** to reveal the QR code and a **Redeem** button
+
+- Click **Redeem** to redeem coffee. This will reset the coupon counter
 
   ![](images/75.png)
   
