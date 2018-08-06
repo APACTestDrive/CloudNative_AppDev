@@ -29,4 +29,4 @@ There are three parts to the lab with each focusing on different aspect of Cloud
 [Click Here to Lab 103: Putting It All Together - CICD](103-CICDlab.md)
 
 
-[Back to Cafe Supremo Home](README.md)
+[Return to Cafe Supremo Home](README.md)
