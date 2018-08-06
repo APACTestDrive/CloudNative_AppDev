@@ -472,6 +472,10 @@ Now we create a deployment configuration for the Reward Service. The deployment 
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
 
+You have finished this lab section.
 
+[Procced to Lab 103: Putting It All Together - CICD](103-CICDlab.md)
+
+or
 
 [Back to Cafe Supremo Home](README.md)
