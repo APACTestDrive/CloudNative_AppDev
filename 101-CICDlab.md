@@ -1,4 +1,4 @@
-# Prepare Your Cloud Environment
+# Prepare Your Cloud Environments
 
 ## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
 
@@ -366,5 +366,12 @@ You have now created a Build VM for for your build jobs. The initial status will
   ![](images/24.png)
 
 
+You have finished this lab section.
+
+[Procced to Lab 102: Create CI/CD Pipeline in DevCS](102-CICDlab.md)
+
+or
+
+[Back to Cafe Supremo Home](README.md)
 
   
