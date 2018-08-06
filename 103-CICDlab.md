@@ -1,9 +1,23 @@
 
 
-# Putting It All Together - Continuous Integration and Delivery
+# Lab 103: Putting It All Together - Continuous Integration and Delivery
+
+On the completion of the previous lab - Lab 102, you should be able to build and deploy the Cafe Supremo JET UI frontend and the Node.js Reward Service backend as well as loading the Cafe Supremo app on your browser. However, you may noticed that the **Rewards** menu option on the JET UI frontend did not work. That's because the REST API in the JET UI frontend is using an obsolete Reward Service.
+
+In this lab we will demonstrate the complete end-to-end of our CI/CD lifecycle by updating the REST API call in the JET UI frontend code to point to our newly provisioned Reward Service. By doing so, it will trigger an automtated build and deployment of the JET UI frontend.
+
+### About This Exercise
+
+In this exercise, we will:
+
+- Clone the DevCS Git repository to your local laptop
+- Configure Brakcets as your code editor
+- Make changes to your code and trigger a build
+- Observe the CI/CD process in action
+- Validate your Cafe Supremo application
 
 
-### **STEP 10**: Developing with Brackets
+## Developing with Brackets
 
 To enable a developer to develop code and commit it to the Git repository in Developer Cloud, you can use your favourite IDE or a simple text editor with Git command line interface. However, we are going to strike a balance and use something that is pretty lightweight but has built in integration with Git. Brackets is an open source editor written in HTML, CSS, and JavaScript with a primary focus on web development. You can install a Git plug-in to synchronise the commits and push process to Developer Cloud's Git repositories.
 
@@ -13,7 +27,7 @@ To enable a developer to develop code and commit it to the Git repository in Dev
   *[Click HERE for Git Client installation details](GITCLIENTinstall.md)*
 
 
-# Cloning the Git Repository from Developer Cloud Service
+### STEP 1: Cloning the Git Repository from Developer Cloud Service
 
 - Start the Brackets Text Editor, in the **File** pull-down menu, choose **Open Folder...**
 
@@ -37,7 +51,7 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
   ![](images/87.png)
 
-- Switch back to the Developer Cloud Service dashboard. Click the square **Copy** button by the *CafeSupremo.git* URL to copy the link
+- Switch back to the Developer Cloud Service dashboard. Click the square **Copy** icon by the *CafeSupremo.git* URL to copy the link
 
   ![](images/88.png)
   
@@ -58,30 +72,36 @@ To enable a developer to develop code and commit it to the Git repository in Dev
   ![](images/91.png)
 
 
-# Commit and Push Code Changes
+### STEP 2: Commit and Push Code Changes
+
+Let's try out the CI/CD pipeline by making code changes and pushing the committed changes to the DevCS master Git repository. We will work with the cloned Git repository, locate the REST API calls and replace the hostname with the hostname of the newly provisioned Reward Service instance.
 
 - Expand the left nagivation tree and open *reward.js* file (*Under src->js->viewModels*)
 
   ![](images/92.png)
 
-- On the main window, locate line 27, 47, 72 and 99 in *rewards.js* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4. These are the API calls to from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this RewardService is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
+- On the main window, locate line 27, 47, 72 and 99 in *rewards.js* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls to from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this RewardService is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
   
-  Get the current points of memeber
-  
+  ```
+  // Get the current points of memeber
   https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/points/10001
+  ```
   
-  Get the current coupon of memeber
-  
+  ```
+  // Get the current coupon of memeber
   https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/coupon/10001
+  ```
   
-  Credit memeber with one point
-  
+  ```
+  // Credit memeber with one point
   https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/points/10001
-
-  Consume one coupon
+  ```
   
+  ```
+  // Consume one coupon
   https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/coupon/10001
-
+  ```
+  
   ![](images/93.png)
 
 - Save the changes **Save**
