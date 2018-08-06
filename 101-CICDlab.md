@@ -18,7 +18,7 @@ In this exercise, we will:
 - Create and configure a Database Cloud Service (DBCS) instance to hold the JCS (WebLogic) configuration
 - Create and configure a Java Cloud Service (JCS) (WebLogic) instance to host the JET UI frontend
 - Create and configure a Application Container Cloud Service (ACCS) to host the Node.js backend Reward Service
-- Create and configure a Developer Cloud Service (DevCS) project to build our application
+- Create and configure a Developer Cloud Service (DevCS) Build VM to build our application
 
 
 
