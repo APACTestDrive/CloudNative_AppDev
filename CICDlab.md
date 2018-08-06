@@ -18,15 +18,15 @@ There are three parts to the lab with each focusing on different aspect of Cloud
 
 ## 101: Prepare Your Oracle Cloud Environments
 
-[Click Here to 101: Prepare Your Oracle Cloud Environments](101-CICDlab.md)
+[Click Here to Lab 101: Prepare Your Oracle Cloud Environments](101-CICDlab.md)
 
 ## 102: Create Continuous Integration and Continuous Devlivery Pipeline in Oracle Developer Cloud Service
 
-[Click Here to 102: Create CI/CD Pipeline in DevCS](102-CICDlab.md)
+[Click Here to Lab 102: Create CI/CD Pipeline in DevCS](102-CICDlab.md)
 
 ## 103: Putting It All Together - Continuous Integration and Delivery 
 
-[Click Here to 103: Putting It All Together - CICD](103-CICDlab.md)
+[Click Here to Lab 103: Putting It All Together - CICD](103-CICDlab.md)
 
 
 [Back to Cafe Supremo Home](README.md)
