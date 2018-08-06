@@ -1,13 +1,24 @@
-# Create Continuous Integration and Continuous Delivery Pipeline in Developer Cloud Service
+# Lab 102: Create Continuous Integration and Continuous Delivery Pipeline in Developer Cloud Service
+
+We will create a project for the Café Supremo in Developer Cloud Service and bring all the components into this project so that we can automate the build and deploy process. We will also examine other chain tools that comes with DevCS such as branch merge request, issue tracking, Agile development, release management and team collaboration.
+
+### About This Exercise
+
+In this exercise, we will:
+
+- Create and configure a Developer Cloud Service (DevCS) Project
+- Configure storage for uploading project archives
+- Importing project data
+- Create and configure build jobs and deploy configurations
+- Deployment of JET UI frontend to JCS
+- Deployment of Node.js Reward Service to ACCS
+- Explore Issue Tracking, Agile development, Release Management and Source Code Management
 
 
-  
-### **STEP 7**: Create a Developer Cloud Project
-
-We will create a project for the Café Supremo and bring all the components into this project so that we can automate the build and deploy process.
+## Create a Developer Cloud Project and Configure CI/CD Pipeline
 
 
-### **STEP 7.1**: Create a DevCS Project
+### **STEP 1**: Create a DevCS Project
 
 - Go back to the Developer Cloud Service Console
 
@@ -28,7 +39,7 @@ We will create a project for the Café Supremo and bring all the components into
 **NOTE**: The project creation will take approximately 2 minutes to complete.
 
 
-### **STEP 7.2**: Setup The Storage For Importing a Project Archive
+### **STEP 2**: Setup The Storage For Importing a Project Archive
 
 You should have an empty project after the project creation completes. We now need to populate the project with data such as source code and build configurations. A previously configured CafeSupremo project was exported as an archive. This contains the Git repositories for the source code, mock issues and agile boards to illustrate a working project. We will now import this archive and configure the build pipelines.
 
@@ -77,7 +88,7 @@ Before you can upload the project archive, you must first configure a storage to
 
 
 
-### **STEP 7.3**: Uploading The Project Archive To The Storage
+### **STEP 3**: Uploading The Project Archive To The Storage
 
 You can import project data from the Oracle Cloud Infrastructure Object Storage Classic container into the Oracle Developer Cloud Service project. Hence we need to upload our project archive to a Object Storage Classic container. We will now create the container and upload the archive.
 
@@ -108,8 +119,7 @@ The project archive is now ready to be imported into the CafeSupremo project.
 
 
 
-
-### **STEP 7.4**: Importing a Project Archive
+### **STEP 4**: Importing a Project Archive
 
 When you import data from Oracle Cloud Infrastructure Object Storage Classic, it overwrites all the data in the project. All issues, Git repositories, and wiki pages of the project are replaced with the components of the imported project.
 
@@ -165,7 +175,7 @@ To import project data from Oracle Cloud Infrastructure Object Storage Classic i
 - Verify the rest of the project has been imported properly by nagvigating into different tools on the navigation bar. There should be issues, agile boards, and code. However, there are no project members, build jobs or deployment configuration as these cannot be exported with the original project. Therefore we would need to rebuild these configurations in the following steps.
 
 
-### **STEP 8**: Add New Members To The Project
+### **STEP 5**: Add New Members To The Project
 
 Project members are not exported with the orignal project. These members are referenced in the issues tracking and agile tool. Hence we will need to add these users back into the project.
 
@@ -189,13 +199,13 @@ Project members are not exported with the orignal project. These members are ref
 
 
 
-### **STEP 9**: Create The Build Pipelines
+## Create The Build Pipelines
 
 Now that we have imported the project archive for our demo, we can start creating our CI/CD pipelines for the JETUI frontend and the RewardSerivce microservice. This includes creating the build job configurations and the deployment configurations.
 
 
 
-### **STEP 9.1**: Create The JETUI Frontend Build Job
+### **STEP 6**: Create The JETUI Frontend Build Job
 
 The first task in our CI/CD pipeline is to build the JETUI frontend application. We need to create a build job for this. And we want the build to be triggered automatically whenever there is a code commit. The build process can be automated and deployed automatically to a designated JCS environment.
 
@@ -270,7 +280,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
   
   
   
-### **STEP 9.2**: Create The Reward Service Node.js Build Job
+### **STEP 7**: Create The Reward Service Node.js Build Job
   
   
 - Switch to Build tab and create a new job. There should be no build job initially.
@@ -325,7 +335,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
 
 
-### **STEP 9.3**: Create The JETUI Frontend Deployment Configuration
+### **STEP 8**: Create The JETUI Frontend Deployment Configuration
 
 The next part of the CI/CD pipeline is the deployment of the builds. Let's create a deployment configuration for the JETUI frontent. The deployment runtime is the JCS environment which you previsioned earlier.
 
@@ -400,9 +410,9 @@ The next part of the CI/CD pipeline is the deployment of the builds. Let's creat
 Congratulation if you can load the Cafe Supremo home page.  
   
   
-### **STEP 9.4**: Create The Reward Service Deployment Configuration
+### **STEP 9**: Create The Reward Service Deployment Configuration
 
-Now we create a deployment configuration for the Reward Service. The deployment runtime is the ACCS environment which you previsioned earlier.
+Now we create a deployment configuration for the Reward Service. The deployment runtime is the ACCS environment which you provisioned earlier.
 
 - Go to the **Deploy** page
 
