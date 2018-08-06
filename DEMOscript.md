@@ -100,7 +100,9 @@ The JET UI and the Reward Service are being developed in parallel independent of
 ![](images/cafemenu_no_rewards.png)
 ![](images/cafemap.png)
 
-* Click on each option to show what they do and highlight the Reward Service option is greyed as it has not be completed
+* Click on each option to show what they do such as discovering the coffee on sale at the store and the locations of the store
+* Highlight the **Rewards** option is greyed out and this is the option to credit and redeem your coffee rewards
+  The reason why this is greyed out is because the team developing the Reward Service is not completed and not ready to integrate. The Reward Service is being developed as a Node.js microservice to be deployed to an ACCS instance. When the **Rewards** option is clicked, it makes a REST API call to the Rewards Service.
 
 ## Step 3: 
 
