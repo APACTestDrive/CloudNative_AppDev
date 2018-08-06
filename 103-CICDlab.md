@@ -80,33 +80,34 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
   ![](images/92.png)
 
-- On the main window, locate line 27, 47, 72 and 99 in *rewards.js* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls to from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this RewardService is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
+- On the main window, locate line 27, 47, 72 and 99 in *rewards.js* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this Reward Service is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
   
   ```
   // Get the current points of memeber
-  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/points/10001
+  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/points/10001
   ```
   
   ```
   // Get the current coupon of memeber
-  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/coupon/10001
+  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/coupon/10001
   ```
   
   ```
   // Credit memeber with one point
-  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/points/10001
+  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/points/10001
   ```
   
   ```
   // Consume one coupon
-  https://`rewardservice-gse00014208.uscom-east-1.oraclecloud.com`/loyalty/v2/coupon/10001
+  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/coupon/10001
   ```
+  
+  - Select **Save** to save the code changes
   
   ![](images/93.png)
 
-- Save the changes **Save**
 
-- Check the box next to **Commit** to select all modified files - this means the checkbox below (reward.js) will automatically be checked.
+- Check the box next to **Commit** to select all modified files - this means the checkbox below (reward.js) will automatically be checked
 
   ![](images/94.png)
   
@@ -120,7 +121,7 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
   ![](images/96.png)
   
-- In the Push to remote pop up window, leave fields to their defaults and click **OK**. This will begin the Git push to the Developer Cloud *CafeSupremo.git* master repository.
+- In the *Push to remote* pop up window, leave fields to their defaults and click **OK**. This will begin the Git push to the Developer Cloud *CafeSupremo.git* master repository.
 
   ![](images/97.png)
   
@@ -130,13 +131,15 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
   
   
   
-# Verify Your Build
+### STEP 3: Observe Your CI/CD Pipeline
 
-- Switch back to your Developer Cloud Project home page and you should see your changes has been pushed to the DevCS master repository.
+- Switch back to your Developer Cloud Project home page and you should see your changes has been pushed to the DevCS master repository
 
   ![](images/99.png)
 
-- Click on the Build Job tab and you should see your changes has automatically trigger a build. Follow the build as it moves from the build queue to running the build.
+- Click on the Build Job tab and you should see your changes has automatically trigger a build
+
+- Follow the build as it moves from the build queue to running the build
 
   ![](images/100.png)
   
@@ -144,15 +147,15 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
   ![](images/101.png)
   
-- Click on the Deploy Configuration tab and wait till you see the *Last deployment succeeded* message in the *cafesupremo* configuration tile. Reload page if you don't see any dates.
+- Click on the Deploy Configuration tab and wait till you see the *Last deployment succeeded* message in the **cafesupremo** configuration tile. Reload page if you don't see any dates.
 
   ![](images/102.png)
 
-- Let's verify your changes to see if the JET UI frontend is able to call the APIs in the RewardService backend. Enter
+- Let's verify your changes to see if the JET UI frontend is able to call the APIs in the Reward Service backend. Enter
 
-  http:`<JCS IP address>`/cafesupremo in your browser replacing the JCS IP address with your JCS instance
+  http:`<JCS IP address>`/cafesupremo in your browser replacing the `<JCS IP address>` with the IP address of your newly provisioned JCS instance
   
-  Don't forget to open this in a the Developer Tools mode for a mobile device
+  Don't forget to open this in the Developer Tools mode for a Mobile Device
   
   ![](images/77.png)
   
