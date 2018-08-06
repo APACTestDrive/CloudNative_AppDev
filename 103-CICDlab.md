@@ -84,22 +84,22 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
   
   ```
   // Get the current points of memeber
-  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/points/10001
+  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/points/10001
   ```
   
   ```
   // Get the current coupon of memeber
-  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/coupon/10001
+  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/coupon/10001
   ```
   
   ```
   // Credit memeber with one point
-  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/points/10001
+  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/points/10001
   ```
   
   ```
   // Consume one coupon
-  https://rewardservice-gse00014208.uscom-east-1.oraclecloud.com/loyalty/v2/coupon/10001
+  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/coupon/10001
   ```
   
 - Select **Save** to save the code changes
