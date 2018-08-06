@@ -79,9 +79,11 @@ With reference to the architecture diagram above, describe the application. The 
 
 1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
 2. The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance
-3. Customer data is stored in Database Cloud Service and is also cached in Application Container Cloud Cache instance.
-4. Customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account.
-5. This makes a REST API call to the Node.js Rewards Service on ACCS instance
+
+The application flow 
+* Customer data is stored in Database Cloud Service and is also cached in Application Container Cloud Cache instance.
+* Customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account.
+* This makes a REST API call to the Node.js Rewards Service on ACCS instance
 
 The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams.
 
