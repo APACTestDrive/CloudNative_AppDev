@@ -164,7 +164,7 @@ Think of yourself as the project manager for the Café Supremo Reward applicatio
 
 To build the application we have two build jobs, one for the JET UI frontend and one for the Reward Service. Each build job is configured to pull soruce from different Git repositories and built for a different runtime platform.
 
-* Switch to Build tab from the navigation panel
+* Switch to *Build* tab from the navigation panel
 
 * There are two build jobs **JETUI_JCS_Build** and **RewardService_Build**
 
@@ -176,7 +176,7 @@ To build the application we have two build jobs, one for the JET UI frontend and
 
 * You can see the build history, whether they've been successful or not and the duration of each build
 
-* Click **Configure**
+* Click **Configure** to see the *Job Configuration*
 
   ![](images/110.png)
   
@@ -201,16 +201,51 @@ To build the application we have two build jobs, one for the JET UI frontend and
   ![](images/114.png)
   
   * This is where I have set the trigger to base on *Source Code Management Polling*
-  * The trigger is set to monitor code commits every minute and if there are any code changes that has been committed to the Git repository, then this build job will automatically start
+  * The trigger is set to monitor code commits every minute and if there are any code changes that has been committed to the Git repository, then this build job will start automatically
   * Hence we have automated the build part of our CI/CD pipeline
 
-
+* Click **Cancel** to exit the *Job Configuration* page
   
-  
-  
+* Go back to the **Build** page and click on **RewardService_Build* job
+
+* Quickly go through the job configuration which is very similar to the **JETUI_JCS_Build**. So there is no need to spend too long on this
 
 
-# Building the JET UI Application
+
+## Step 5: Explore The Deployments
+
+The next part of our CI/CD pipeline is the deployment configuration. There are two deployment configuration, one for the JET UI frontend and one for the Reward Service. Each deployment is configured to deploy to different runtime platform. The JET UI frontend will be deployed to a JCS instance and the Reward Service backend will be deployed to a ACCS instance.
+
+* Switch to *Deploy* tab from the navigation panel
+
+  ![](images/115.png)
+
+1. The deployment configurations will be listed on the left side of the page. Note the runtime information about deployment such as the cluster name, IP address of the JCS instance and the build job it is deploying from
+2. The deployment history for each deployment configuration will appear on the right hand side. This shows whether it is success of not and you can access the logs for more information
+
+* Explore the **cafesupremo** deployment configuration by selecting **Edit Configuration** from the **Gear Wheel** icon
+
+  ![](images/116.png)
+
+* This will open up the *Edit Configuration* page for **cafesupremo** which is the runtime configuration for our JEY UI frontend.
+
+  ![](images/117.png)
+
+  - This deployment configuration takes the output from the **JETUI_JCS_Build** job
+  - And defines the location of the artifact
+  - An important setting here is the **Automatic** check box. This denotes that this deployment job will be triggered automatically if the previous step of the pipeline was executed successfully.
+  - And it should deploy a stable build only
+  
+* Do the same for the **rewardservice** and open up the deployment configuration
+
+  ![](images/118.png)
+  
+  - The configuration is similar to **cafesupremo** but uses a ACCS runtime instead of JCS
+
+
+
+
+## Step 6: Building the JET UI Application
 
 Now that we have imported the source code for our JET UI frontend, we can start creating our CICD pipeline. So the first task in our CICD pipeline is to build the application. We can create a build job for this. And we want the build to be triggered automatically whenever there is a code change. The default CI engine that comes out of the box in DevCS is Hudson. The build process can be automated and deployed automatically to a designated JCS environment.
 
