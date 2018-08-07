@@ -137,7 +137,7 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
   ![](images/99.png)
 
-- Click on the Build Job tab and you should see your changes has automatically trigger a build
+- Click on the Build Job tab and you should see your changes has automatically triggered a build
 
 - Follow the build as it moves from the build queue to running the build
 
