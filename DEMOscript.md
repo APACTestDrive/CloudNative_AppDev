@@ -340,12 +340,11 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
   
 
 
-## Step 8: Explore Releases, Agile and Wiki
+## Step 8: Explore Release Management
 
-In a real world scenario where you need to continuously integrate and deploy your application to a test environment, you also need to promote it to the UAT and production environments. You can do this in DevCS by creating multiple deployment configuration for different environments.
+In a real world scenario where you need to continuously integrate and deploy your application to a test environment, you also need to promote it to different environments such as test, UAT and production. You can automate the deployment to different environments in DevCS by creating multiple deployment configurations. However, if this is not desirable, you can also take an official release of a build offline to be deployed manually to different environments.
 
-Release can also be managed and recorded in DevCS. With multiple releases, we also need a better way to manage our code. Branching is common practice in development for releasing multiple versions of an application
-We can scale up or scale out of our JET UI application in JCS as well as the Rewards Microservice in ACCS.
+Developer Cloud Service supports release management throught the Release tool. We can create multiple releases, with each built from different code base or branches and with different dependencies.
 
 
 * Explore the Releases feature, click on **Releases** option on the navigation panel on the left
@@ -357,8 +356,15 @@ We can scale up or scale out of our JET UI application in JCS as well as the Rew
 * You can also download the archive to be deployed manually on premise
 
 
+## Step 9: Explore Agile Development
 
-* Explore the Agile feature, click on **Agile** option on the navigation panel on the left
+The Agile methodology of software development is a type of incremental model that focuses on process adaptability and customer satisfaction. In Oracle Developer Cloud Service, you use the Agile methodology to manage issues using Scrum and Kanban boards.
+
+If you are new to Agile, see http://agilemethodology.org/ for more information.
+
+From the Agile page, you can create or open a board. Use the filter views available to filter the board list, or use the Filter Boards search box to search for it. In the list, Kanban Kanban indicates a Kanban board and Scrum Scrum indicates a Scrum board.
+
+* Explore Agile development, click on **Agile** option on the navigation panel on the left
 
 * Walkthrough the **Backlog**
 
