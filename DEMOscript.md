@@ -297,12 +297,17 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
 - Follow the build as it moves from the build queue to running the build
 
   ![](images/100.png)
-  
-- Wait until the build completes
 
-  ![](images/101.png)
+- Follow your build status
+
+  ![](images/124.png)
   
-- Click on the Deploy Configuration tab and wait till you see the *Last deployment succeeded* message in the **cafesupremo** configuration tile. Reload page if you don't see any dates.
+1. Wait until the build completes
+2. You can also follow the build progress by examining the console output
+
+  ![](images/125.png)
+  
+- Once the build completes successfully, click on the **Deploy Configuration** tab and wait till you see the *Last deployment succeeded* message in the **cafesupremo** configuration tile. Reload page if you don't see any dates.
 
   ![](images/102.png)
 
