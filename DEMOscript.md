@@ -77,21 +77,21 @@ You are an application developer who will be developing a brand new cloud native
 
 * With reference to the architecture diagram above, describe the application. The application basically consists of two parts:
 
-  1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
-  2. The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance with a ACCS Cache to cache customer data
+  - The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
+  - The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance with a ACCS Cache to cache customer data
 
 * The application flows like this:
 
-  1. A customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account
-  2. This makes a REST API call to the Node.js Rewards Service on the ACCS instance
-  3. The Reward Service looks up the customer database for the customer details and cache it in the ACCS Cache
-  4. Returns the rewards detail back to JET UI frontend
+  - A customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account
+  - This makes a REST API call to the Node.js Rewards Service on the ACCS instance
+  - The Reward Service looks up the customer database for the customer details and cache it in the ACCS Cache
+  - Returns the rewards detail back to JET UI frontend
 
 * The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams:
 
-  1. The JET UI frontend is developed in JET, basically Java Script
-  2. The Reward Service microservice is developed in Node.js
-  3. The source code are stored in separate Git repositories to provide isolation and built differently
+  - The JET UI frontend is developed in JET, basically Java Script
+  - The Reward Service microservice is developed in Node.js
+  - The source code are stored in separate Git repositories to provide isolation and built differently
 
 * Show the Cafe Supremo JET UI frontend to the audience
 
@@ -129,18 +129,32 @@ Think of yourself as the project manager for the Café Supremo Reward applicatio
 
   ![](images/103.png)
   
-  1. All your recent activities are logged here, things such as code commits, builds and deployments
-  2. If there are any running activities it will be show at the top
-  3. On the right is our Git repositories and you can see we have two separate repositories; **CafeSupremo.git** and **RewardService.git**
+1. All your recent activities are logged here, things such as code commits, builds and deployments
+2. If there are any running activities it will be show at the top
+3. On the right is our Git repositories and you can see we have two separate repositories; **CafeSupremo.git** and **RewardService.git**
   
 * Click on the **TEAM** icon on the right
 
   ![](images/104.png)
+  
+1. The **TEAM** icon switches to the TEAM organisation pane
+2. Here you can see all the memebers of your team and you can add new member to this team/project by clicking **New Member**
 
 * Expand the nagvigation pane on the left and describe the available tools in DevCS
 
   ![](images/105.png)
 
+* Select **Code** from the navigation pane and highlight that you can switch between repositories by selecting the repo from the dropdown menu
+
+  ![](images/106.png)
+
+* You can also look at the history of changes in graphical form
+
+  ![](images/107.png)
+  
+1. Click on **Logs** option
+2. Click on **History in Graph view**
+3. Scroll down the graph to show branches and merge requests
 
 
 
