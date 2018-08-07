@@ -75,27 +75,27 @@ You are an application developer who will be developing a brand new cloud native
 
 ## Step 1: Introduce The Application
 
-With reference to the architecture diagram above, describe the application. The application basically consists of two parts:
+* With reference to the architecture diagram above, describe the application. The application basically consists of two parts:
 
-1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
-2. The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance with a ACCS Cache to cache customer data
+  1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
+  2. The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance with a ACCS Cache to cache customer data
 
-The application flows like this:
+* The application flows like this:
 
-1. A customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account
-2. This makes a REST API call to the Node.js Rewards Service on the ACCS instance
-3. The Reward Service looks up the customer database for the customer details and cache it in the ACCS Cache
-4. Returns the rewards detail back to JET UI frontend
+  1. A customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account
+  2. This makes a REST API call to the Node.js Rewards Service on the ACCS instance
+  3. The Reward Service looks up the customer database for the customer details and cache it in the ACCS Cache
+  4. Returns the rewards detail back to JET UI frontend
 
-The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams:
+* The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams:
 
-1. The JET UI frontend is developed in JET, basically Java Script
-2. The Reward Service microservice is developed in Node.js
-3. The source code are stored in separate Git repositories to provide isolation and built differently
+  1. The JET UI frontend is developed in JET, basically Java Script
+  2. The Reward Service microservice is developed in Node.js
+  3. The source code are stored in separate Git repositories to provide isolation and built differently
 
 * Show the Cafe Supremo JET UI frontend to the audience
 
-![](images/cafehome.png)
+  ![](images/cafehome.png)
 
 * Either mirror your mobile phone on screen or open your browser in the Developer Tools mode to simulate a Mobile Device
 * Enter Café Supremo URL - `http://<JCS IP address>/cafesupremo` in your browser
@@ -109,24 +109,37 @@ The JET UI and the Reward Service are being developed in parallel independent of
 * Since the Rewards Serivce is developed by a different team, this microservice will be integrated once ready
 * We will show how you can improve your team’s productivity and quickly rollout new services by adopting CI/CD in Oracle AppDev Platform
 
-![](images/cafemenu_no_rewards.png)
-![](images/cafemap.png)
+  ![](images/cafemenu_no_rewards.png)
+  ![](images/cafemap.png)
 
 
 
-## Step 3: Introduc Developer Cloud Service
+## Step 3: Introduce Developer Cloud Service
 
 Think of yourself as the project manager for the Café Supremo Reward application. And you need to bring your JETUI frontend application into our cloud environment. You can do this by bringing your development under the control of Developer Cloud. With the Developer Cloud, you can implement CI/CD and practice the Agile methodology.
 
 * Log into Developer Cloud
-* On the Welcome page, you may see a list of projects hosted in the DevCS and of the project is the CafeSupremo
+* On the Welcome page, you may see a list of projects hosted in the DevCS and one of the project is the CafeSupremo
 
-![](images/devcshome.png)
+  ![](images/devcshome.png)
 
 * Click on **CafeSupremo** to enter the project
 
+* You now in the **CafeSUpremo** project home
 
+  ![](images/103.png)
+  
+  1. All your recent activities are logged here, things such as code commits, builds and deployments
+  2. If there are any running activities it will be show at the top
+  3. On the right is our Git repositories and you can see we have two separate repositories; **CafeSupremo.git** and **RewardService.git**
+  
+* Click on the **TEAM** icon on the right
 
+  ![](images/104.png)
+
+* Expand the nagvigation pane on the left and describe the available tools in DevCS
+
+  ![](images/105.png)
 
 
 
