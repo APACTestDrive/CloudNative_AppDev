@@ -292,7 +292,7 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
 
   ![](images/99.png)
 
-- Click on the Build Job tab and you should see your changes has automatically trigger a build
+- Click on the Build Job tab and you should see your changes has automatically triggered a build
 
 - Follow the build as it moves from the build queue to running the build
 
@@ -303,7 +303,7 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
   ![](images/124.png)
   
 1. Wait until the build completes
-2. You can also follow the build progress by examining the console output
+2. You can also follow the build progress by examining the console output by clicking on the **Console** icon on the right side of the build under the Action column
 
   ![](images/125.png)
   
@@ -339,95 +339,40 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
   
 
 
-[Return to Cafe Supremo Home](README.md)
+## Step 8: Explore Releases, Agile and Wiki
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  
-  
+In a real world scenario where you need to continuously integrate and deploy your application to a test environment, you also need to promote it to the UAT and production environments. You can do this in DevCS by creating multiple deployment configuration for different environments.
 
-
-
-# Step 35
-
-* You can examine a running build by opening the build console
-* So you will know exactly what the build is doing and how far it has gone
-
-![](images/buildconsole.png)
-
-* Click on the Console icon next to the running build
-* Click on Deploy tab
-
-# Release, Promotion and Scaling
-
-In a real world scenario where you need to continuously integrate and deploy your application to a test environment, you also need to promote it to the UAT and production environments. You can do this in DevCS by creating multiple deployment configuration for different environments. Release can also be managed and recorded in DevCS. With multiple releases, we also need a better way to manage our code. Branching is common practice in development for releasing multiple versions of an application
+Release can also be managed and recorded in DevCS. With multiple releases, we also need a better way to manage our code. Branching is common practice in development for releasing multiple versions of an application
 We can scale up or scale out of our JET UI application in JCS as well as the Rewards Microservice in ACCS.
 
-# Step 36
+
+* Explore the Releases feature, click on **Releases** option on the navigation panel on the left
+
+  ![](images/126.png)
 
 * A release in DevCS is a collection of specific tags or branches of Git repositories, Maven repositories and binaries
 * This allow you to create a release
-* You can download the archive to be deployed manually on premise
-
-![](images/releases.png)
-
-* Click Releases
-
-# Step 37
-
-* There are 3 ways of scaling
-   * Scale Up/Down – changing the Compute shape size
-   * Scale Out – adding more nodes
-   * Auto-Scaling – adding rule to increase or decrease WebLogic managed instances
-   
-![](images/scalingJCS.png)
-
-* Go to the Dashboard
-* Open the JCS Console
-
-# Step 38
-
-* Scaling up and down is even simpler with ACCS
-* Let’s take a look at how we can do this for our Reward microservice
-* Show how to scale up and scale out by increasing the memory and number of instances
-
-![](images/scalingACCS.png)
-
-* Go to the Dashboard
-* Open the ACCS Console
-
-# Step 39
-
-* Check the build and deployment has completed
-* It should say deployed just now
-
-![](images/deploylist.png)
-
-* Switch back to DevCS
-* Go to Café Supremo URL - http://129.156.113.127/cafesupremo
-
-# Step 40
-
-* The Rewards option should now be visible
-* Walkthrough the Rewards option by adding points and redeeming coffees
-
-![](images/redeemoption.png)
-
-* Switch back to your mobile phone
-* Click Rewards option
+* You can also download the archive to be deployed manually on premise
 
 
 
-[Back to Cafe Supremo Home](README.md)
+* Explore the Agile feature, click on **Agile** option on the navigation panel on the left
+
+* Walkthrough the **Backlog**
+
+  ![](images/127.png)
+
+* Click on **Active Sprints** and walkthrough the active sprints. Demonstrate by dragging an issue from *To Do* to the *In Progress* column.
+
+  ![](images/128.png)
+
+* Click on **Reports** and walkthrough the *Burndown Chart*, *Sprint Report*, etc
+
+  ![](images/129.png)
+
+
+Congratulation!! You have complete the demo.
+
+
+[Return to Cafe Supremo Home](README.md)
