@@ -379,7 +379,7 @@ From the Agile page, you can create or open a board. Use the filter views availa
   ![](images/129.png)
 
 
-Congratulation!! You have complete the demo.
+Congratulation!! You have completed the demo.
 
 
 [Return to Cafe Supremo Home](README.md)
