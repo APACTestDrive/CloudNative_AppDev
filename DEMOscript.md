@@ -184,9 +184,7 @@ To build the application we have two build jobs, one for the JET UI frontend and
   
   * You can see multiple configuration tabs across the top of the Job Configuration page
 
-
-
-* Under the **Builders** tab we have configured a **Unix Shell Builder** using *npm install*, *grunt* to build and *zip* to package the build into a *war* file
+* Under the **Builders** tab I have configured a **Unix Shell Builder** using *npm install*, *grunt* to build and *zip* to package the build into a *war* file
 
   ![](images/111.png)
   
@@ -246,274 +244,116 @@ The next part of our CI/CD pipeline is the deployment configuration. There are t
 
 
 
+## Step 6: Integrating The Reward Service
 
-## Step 6: Building the JET UI Application
+If you recall, the **Rewards** menu option on the CafeSupremo JET UI frontend was greyed out because the backend Reward Service microservice has not been completed. Assume the Reward Service is now ready to be integrated with JET UI frontend, I can integrate this by simply enabling the **Rewards** option. Let me show you how I can easily enable this by making a code change that would trigger an automated build in my CI/CD pipeline.
 
-Now that we have imported the source code for our JET UI frontend, we can start creating our CICD pipeline. So the first task in our CICD pipeline is to build the application. We can create a build job for this. And we want the build to be triggered automatically whenever there is a code change. The default CI engine that comes out of the box in DevCS is Hudson. The build process can be automated and deployed automatically to a designated JCS environment.
+Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a simple editor like Brackets with a Git plug-in. So that I can work with a clone Git repository locally on my laptop and sychronise my changes with the master Git repository in DevCS. I have set a flag in our JETUI code to disable the Reward Service initially. Let me show you where to make the code change.
 
-# Step 12
 
-* Switch to Build tab and create a new job. There should be no build job initially
+* Open Brackets and go to the `CafeSupremo` folder
 
-![](images/buildhome.png)
+  ![](images/119.png)
 
-* Click on New Job
+1. Locate `src -> js -> appControll.js`
+2. Find line 46 and replace `true` with `false` for the Rewards option. This basically ungrey the option
 
-# Step 13
+* Select **Save** to save the code change
 
-* Enter the build job name
+  ![](images/120.png)
+  
+* Check the box next to Commit to select all modified files - this means the checkbox below (reward.js) will automatically be checked
 
-![](images/newjob.png)
+  ![](images/121.png)
 
-* Enter “JETUI_Build” as the job name
+* Click Commit to commit changes to the local cloned Git repository
 
-# Step 14
+* In the Git commit pop up enter the comment: `Enabled Reward Service` and then click **OK**. This will commit the changes to your local git repository. Ignore any code inspection problems above.
 
-* Configure the build job by specifying the Git repo to build from
+  ![](images/122.png)
 
-![](images/jobconfigscm.png)
+* Click **Git Push** icon on the right side of the Git panel
 
-* Click on Source Control tab
-* Click on “Git” radio box
-* Select “CafeSupremo.git” from the dropdown repositories
-* Click on Add button to add branches
-* Select “master” from the dropdown Branch Specifier
-* Click on Trigger tab
+  ![](images/122.png)
+  
+* In the *Push to remote* pop up window, leave fields to their defaults and click **OK**. This will begin the Git push to the Developer Cloud *CafeSupremo.git* master repository.  
 
-# Step 15
+  ![](images/97.png)
+  
+* Once Git Push completes, click **OK**
+  
+  ![](images/98.png)  
+  
+ 
+ 
+ ## Step 7: Observe Your CI/CD Pipeline
+ 
+ - Switch back to your Developer Cloud Project home page and you should see your changes has been pushed to the DevCS master repository
 
-* Enable automated build by setting the trigger to be based on code commit in the Git repo
+  ![](images/99.png)
 
-![](images/jobconfigtrigger.png)
+- Click on the Build Job tab and you should see your changes has automatically trigger a build
 
-* Check the “Based on SCM polling schedule” radio box
-* Click on Environment tab
+- Follow the build as it moves from the build queue to running the build
 
-# Step 16
+  ![](images/100.png)
+  
+- Wait until the build completes
 
-* Select the Node.js version use for npm install
+  ![](images/101.png)
+  
+- Click on the Deploy Configuration tab and wait till you see the *Last deployment succeeded* message in the **cafesupremo** configuration tile. Reload page if you don't see any dates.
 
-![](images/jobconfigenv.png)
+  ![](images/102.png)
 
-* Click on “Use Node.JS version” radio box
-* Select “Node.JS v6.10.0” from the Use Node.JS version dropdown box
-* Click on Build Steps tab
+- Let's verify your changes to see if the JET UI frontend is able to call the APIs in the Reward Service backend. Enter
 
-# Step 17
+  http:`<JCS IP address>`/cafesupremo in your browser replacing the `<JCS IP address>` with the IP address of your newly provisioned JCS instance
+  
+  Don't forget to open this in the Developer Tools mode for a Mobile Device
+  
+  ![](images/77.png)
+  
+- Click on the hamburger icon on at the top left hand corner to expand the menu
 
-* Define the build steps as a shell script and enter the npm install command and zip to archive the app into a .war file for deployment
+  ![](images/74.png)
+  
+- Click on **Rewards**
 
-![](images/jobconfigbuildsteps.png)
+  ![](images/76.png)
+  
+- Click on **Credit A Star** to see the counter increments
 
-* Click on Add Build Step
-* Select “Execute Shell” from dropdown list
-* Copy and paste the npm install script into the command field
-* Click on Post Build tab
+- Once you have accumulated 3 or more stars, you will be credited with a **Free Coffee** coupon
 
-# Step 18
+- Click on **Free Coffee** to reveal the QR code and a **Redeem** button
 
-* Define the location of the archive .war file for deployment
+- Click **Redeem** to redeem coffee. This will reset the coupon counter
 
-![](images/jobconfigpost.png)
+  ![](images/75.png)
+  
 
-* Click on “Archive the artifacts” radio box
-* Enter “target/cafesupremo.war” in the Files To Archive field
-* Click on Save
 
-# Step 19
+[Return to Cafe Supremo Home](README.md)
 
-* Let’s test the build job configuration by running a build now.
-* Whilst we are waiting for the build to complete, which normally takes about 2 to 3 minutes, we can start configuring the deployment
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
 
-![](images/runjetbuild.png)
 
-* Click on Build Now
-* Click on Issues tab
-
-# Walkthrough DevCS Features
-
-Whilst waiting for the build to complete, we can take a look round other DevCS features like Issue Tracking, Git, Branching, and Agile.
-
-# Step 20
-
-* Create a new issue
-
-![](images/issuetrack.png)
-
-* Click on New Issues
-* Click on Deploy tab
-
-# Step 21
-
-* The build should have started
-* Check the progress of the build by going into the console
-* Explain the log
-
-![](images/buildprogress.png)
-
-* Click on JETUI_Build job
-* Click on Console icon
-* Click on Code tab
-
-# Step 22
-
-* Walkthrough the branching for bug fixes, new features and runtime builds
-* Describe the need for branching
-
-![](images/graph.png)
-
-* Click on Logs tab
-* Click on Graph View icon
-* Click on Merge Requests tab
-
-# Step 23
-
-* Talk about merging branches and review by peers
-
-![](images/mergerequest.png)
-
-* Click on New Merge Request
-
-# Deploying the JET UI Application
-
-# Step 24
-
-* Create a new deployment for the JET UI to our previously provisioned JCS environment
-
-![](images/deployhome.png)
-
-* Click on New Configuration
-
-# Step 25
-
-* Define the deployment by specifying the name of the configuration, the application name, and target environment
-
-![](images/deployJCS.png)
-
-* Enter “cafesupremo” in the Configuration Name field
-* Enter “cafesupremo” in the Application Name field
-* Click New Deployment Target
-* Enter “129.156.113.127” in the Host field
-* Click SSH Tunnel
-* Enter “weblogic” and “welcome1” as the Username and Password
-* Click Find Targets
-
-# Step 26
-
-* Select the cluster to deploy the JETUI app to
-
-![](images/deploycluster.png)
-
-* Click on “demo_cluster” radio box
-* Click OK
-
-# Step 27
-
-* Select the deployment build and automatic deployment
-
-![](images/deploycafe.png)
-
-* Click on “Automatic” radio box
-* Select the default from the dropdown options for Job, Build and Artifact
-* Click Save and Deploy
-
-# Step 28
-
-* The deployment will take place immediately and should take only 20 seconds
-* Highlight that we can create multiple deployments with different target environments
-* The targets can for dev, test, UAT, pre-prod, and prod, etc.
-
-![](images/deploylist.png)
-
-* Go to Café Supremo URL - http://129.156.113.127/cafesupremo
-
-# Step 29
-
-* Verify the application was deployed successfully
-* Point out IP address is the one we deployed to in our deployment script
-
-![](images/cafehome.png)
-
-* Switch back to the mobile phone
-* Click through the screens
-
-# Cloning the Git Repository to Brackets
-
-To enable a developer to develop code and commit it to the Git repository in Developer Cloud, you can use your favourite IDE or a simple text editor with Git command line interface. However, we are going to strike a balance and use something that is pretty lightweight but has built in integration with Git. Brackets is an open source editor written in HTML, CSS, and JavaScript with a primary focus on web development. You can install a Git plug-in to integrate the commit and push process to Developer Cloud.
-
-# Step 30
-
-* Start by cloning the CafeSupremo.git repo from our project
-
-![](images/brackets.png)
-
-* Open Brackets
-* Select “Open Folder …”
-* Change directory
-* Click New Folder
-* Enter “CafeSupremo”
-* Click Open
-
-# Step 31
-
-* Start cloning the CafeSupremo.git from DevCS by providing the Git URL, and DevCS user credentials
-* The cloning will take around 2 to 3 minutes depending on the speed of the network
-* For the sake of time, I will let this continue whilst I go back to my project in Developer Cloud
-* We will come back to this later to show how we commit and push code changes to the DevCS and start the CICD pipeline automatically
-
-![](images/clonerepo.png)
-
-* Click Clone
-* Switch back to DevCS
-* Copy CafeSupremo.git URL
-* Switch back to Brackets
-* Paste URL into Git URL field https://cloud.admin@developer.us2.oraclecloud.com/developer78581-gse00014337/s/developer78581-gse00014337_cafesupremo_24888/scm/CafeSupremo.git
-* Enter DevCS username and password
-* Switch back to DevCS
-
-# Integrating the Reward Service
-
-As you saw with our JET UI, we had greyed the Reward option as the backend Reward microservice has not been completed. Just to show you how easy it is to develop and rollout new features in a cloud native application, a developer have been developing the Reward Service in Node.js in parallel to the JET UI. This Reward Service could be imported into another Developer Cloud Project and developed in isolation.
-
-Once the service is ready, we can just bring it online. Unlike the traditional waterfall programming model where the whole application would have to be built and deployed as one monolithic application. We can build, deploy, test small pieces of code or microservices and release them independently.
-
-Let’s see how we can automate the CICD process by making a code change in the local Git repository and pushing the change back to the Git repo in Developer Cloud. We know the Reward Service is being developed in parallel and they’re ready for integration. We have set a flag in our JETUI code to disable the Reward Service initially. Let me show you how I can enable this in the code and trigger the build and deployment automatically.
-
-# Step 32
-
-* The Git cloning should have completed by now
-* And you should be in the cafesupremo folder
-* Let’s enable the Reward Service by changing a flag in the JETUI
-* Commit change to local clone repo
-
-![](images/appcontroller.png)
-
-* Switch to Brackets
-* Open src->js->appController.js
-* Locate line 46
-* Replace "true" with "false" on Rewards
-* Save file
-* Click Commit
-* Enter commit message
-* Click Git Push to push change back to DevCS
-
-# Step 33
-
-* Enter DevCS password to push changes to DevCS Git repo
-
-![](images/pushtoremote.png)
-
-* Click OK
-* Switch back to DevCS project home
-
-# Step 34
-
-* Changes will be recorded in the project home
-* Should see the build process started
-
-![](images/runningbuild.png)
-
-* Click on the JETUI_Build job
 
 # Step 35
 
