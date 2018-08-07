@@ -256,13 +256,13 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
   ![](images/119.png)
 
 1. Locate `src -> js -> appControll.js`
-2. Find line 46 and replace `true` with `false` for the Rewards option. This basically ungrey the option
+2. Find line 46 and replace `true` with `false` for the Rewards option. This basically ungrey the option.
 
 * Select **Save** to save the code change
 
   ![](images/120.png)
   
-* Check the box next to Commit to select all modified files - this means the checkbox below (reward.js) will automatically be checked
+* Check the box next to Commit to select all modified files - this means the checkbox below (appController.js) will automatically be checked
 
   ![](images/121.png)
 
@@ -274,7 +274,7 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
 
 * Click **Git Push** icon on the right side of the Git panel
 
-  ![](images/122.png)
+  ![](images/123.png)
   
 * In the *Push to remote* pop up window, leave fields to their defaults and click **OK**. This will begin the Git push to the Developer Cloud *CafeSupremo.git* master repository.  
 
