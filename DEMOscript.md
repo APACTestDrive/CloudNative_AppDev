@@ -144,7 +144,9 @@ Think of yourself as the project manager for the Café Supremo Reward applicatio
 
   ![](images/105.png)
 
-* Select **Code** from the navigation pane and highlight that you can switch between repositories by selecting the repo from the dropdown menu
+* Select **Code** from the navigation pane
+
+* Highlight that you can switch between repositories by selecting the repo from the dropdown menu
 
   ![](images/106.png)
 
@@ -158,75 +160,55 @@ Think of yourself as the project manager for the Café Supremo Reward applicatio
 
 
 
-# Step 6
+## Step 4: Explore The Build Jobs
 
-* We will create a project for the Café Supremo and bring all the components into this project so that we can automate the build and deploy process
+To build the application we have two build jobs, one for the JET UI frontend and one for the Reward Service. Each build job is configured to pull soruce from different Git repositories and built for a different runtime platform.
 
-![](images/newproject.png)
+* Switch to Build tab from the navigation panel
 
-* Enter the project name “Cafe Supremo”
-* Enter a description
-* Click Next
+* There are two build jobs **JETUI_JCS_Build** and **RewardService_Build**
 
-# Step 7
+  ![](images/108.png)
 
-* Select an Empty Project for now
-* We will clone an external Git repository where the JET UI is currently stored.
-* Project creation will start upon selecting Finish.
+* Click on **JETUI_JCS_Build** to examine the job details
 
-![](images/template.png)
+  ![](images/109.png)
 
-* Select “Empty Project”
-* Click Next
-* Click Finish
+* You can see the build history, whether they've been successful or not and the duration of each build
 
-# Step 8
+* Click **Configure**
 
-* Developer Cloud Service will provision all the tools required for supporting CICD
-* These are open source tools, but out of the box
-* For example, for managing code, we use Git, for build and deploy we use Hudson
-* We also support Maven and Docker
-* For team collaboration we have Wiki, and issue tracking we have Bugzilla
+  ![](images/110.png)
+  
+  * You can see multiple configuration tabs across the top of the Job Configuration page
 
-![](images/projectprovision.png)
+* Under the **Source Control** tab we have specified `CafeSupremo.git` as the repository to use for the build
 
-* Wait for the project provisioning completes
+* Under the **Builders** tab we have configured a **Unix Shell Builder** using *npm install*, *grunt* to build and *zip* to package the build into a *war* file
 
-# Cloning the JET UI Git Repository
+  ![](images/111.png)
+  
+  * You can specify other Builders by selecting a build from the **Add Builder** option list such as *Maven* or *Node.js*
 
-Since the development of the JET UI has started already and the source code is being version controlled in an external Git repository, we can bring this code under the control within Developer Cloud by cloning the external Git repository.
+  ![](images/112.png)
+  
+* Under the **Post Build** tab, I have specified the location of the build output war file to be used for deployment
 
-# Step 9
+  ![](images/113.png)
+  
+* Now click on the **Gears** icon on the left hand side and go to the **Triggers** tab
 
-* We now have an empty project
-* There is no initial repository so we need to either create an initial repository or clone from an existing one
-* We will clone from an existing Git repo with the source code for JET UI
+  ![](images/114.png)
+  
+  * This is where I have set the trigger to base on *Source Code Management Polling*
+  * The trigger is set to monitor code commits every minute and if there are any code changes that has been committed to the Git repository, then this build job will automatically start
+  * Hence we have automated the build part of our CI/CD pipeline
 
-![](images/projecthome.png)
 
-* Click on “+ New Repository”
+  
+  
+  
 
-# Step 10
-
-* Let’s clone an existing CafeSupremo repo, which is currently hosted in a different project
-* This repo can be external and accessible by the public in GitHub
-
-![](images/newrepo.png)
-
-* Enter “CafeSupremo” as the Git repo name
-* Check on “Import existing repository” radio box
-* Enter the external CafeSupremo Git repo URL
-* Enter the credential for external repo
-
-# Step 11
-
-* Once completed, you will see the new CafeSupremo.git repository
-* A new event will also be logged in the recent activities column
-* Now let’s switch to the Build tab to create our first build job
-
-![](images/projecthomeready.png)
-
-* Click on Build tab
 
 # Building the JET UI Application
 
