@@ -78,18 +78,26 @@ You are an application developer who will be developing a brand new cloud native
 With reference to the architecture diagram above, describe the application. The application basically consists of two parts:
 
 1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
-2. The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance
+2. The Reward Service is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance with a ACCS Cache to cache customer data
 
-The application flow 
-* Customer data is stored in Database Cloud Service and is also cached in Application Container Cloud Cache instance.
-* Customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account.
-* This makes a REST API call to the Node.js Rewards Service on ACCS instance
+The application flows like this:
 
-The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams.
+1. A customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account
+2. This makes a REST API call to the Node.js Rewards Service on the ACCS instance
+3. The Reward Service looks up the customer database for the customer details and cache it in the ACCS Cache
+4. Returns the rewards detail back to JET UI frontend
+
+The JET UI and the Reward Service are being developed in parallel independent of each other, by two different teams:
+
+1. The JET UI frontend is developed in JET, basically Java Script
+2. The Reward Service microservice is developed in Node.js
+3. The source code are stored in separate Git repositories to provide isolation and built differently
+
+* Show the Cafe Supremo JET UI frontend to the audience
 
 ![](images/cafehome.png)
 
-* Mirror your mobile phone by opening your browser in the Developer Tools mode for a Mobile Device
+* Either mirror your mobile phone on screen or open your browser in the Developer Tools mode to simulate a Mobile Device
 * Enter Café Supremo URL - `http://<JCS IP address>/cafesupremo` in your browser
 * Click on the hamburger icon at the top left hand corner of the Cafe Supremo home page
 
@@ -97,10 +105,8 @@ The JET UI and the Reward Service are being developed in parallel independent of
 
 * Show how the JET UI frontend looks like by going into the **Discover** and **Stores** options to discover the coffees on sale at store and locations of the stores
 * Highlight the  **Rewards** option has not been completed and hence it is greyed out. This is the option to credit and redeem your coffee rewards.
-* When the **Rewards** option is availble and clicked, it makes a REST API call to the Rewards Service
-* The Reward Service is being implemented as a Microservice in Node.js and deployed to an ACCS instance
-* The two services JET UI frontend and Reward Service are implemented independently by two teams using different languages and tools
-* Code are stored in separate Git repositories and they are built differently and separately
+* When the **Rewards** option is availble and selected, it makes a REST API call to the Rewards Service
+* Since the Rewards Serivce is developed by a different team, this microservice will be integrated once ready
 * We will show how you can improve your team’s productivity and quickly rollout new services by adopting CI/CD in Oracle AppDev Platform
 
 ![](images/cafemenu_no_rewards.png)
@@ -108,29 +114,22 @@ The JET UI and the Reward Service are being developed in parallel independent of
 
 
 
-## Step 3: 
+## Step 3: Introduc Developer Cloud Service
+
+Think of yourself as the project manager for the Café Supremo Reward application. And you need to bring your JETUI frontend application into our cloud environment. You can do this by bringing your development under the control of Developer Cloud. With the Developer Cloud, you can implement CI/CD and practice the Agile methodology.
+
+* Log into Developer Cloud
+* On the Welcome page, you may see a list of projects hosted in the DevCS and of the project is the CafeSupremo
+
+![](images/devcshome.png)
+
+* Click on **CafeSupremo** to enter the project
 
 
 
 
-* At a high level describe the different services; DevCS for Agile and CI/CD, JCS for Java and JET UI, ACCS for polyglot Microservices
-* Mention that DBCS, JCS and ACCS have already been provisioned
-* Customer data has been uploaded to DBCS
 
-![](images/clouddashboard.png)
 
-# Working with Projects
-
-Think of yourself as the project manager for the Café Supremo Reward application. And you need to bring your JETUI frontend application into our cloud environment. You can do this by bringing your development under the control of Developer Cloud. With the Developer Cloud, you can implement CI/CD and adopt the Agile methodology into your development.
-
-# Step 5
-
-* On the Welcome page, you will see a list of projects hosted in the DevCS
-* Here you can create a new project by clicking New Project.
-
-![](images/projects.png)
-
-* Click “+ New Project”
 
 # Step 6
 
