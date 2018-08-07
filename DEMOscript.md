@@ -178,11 +178,13 @@ To build the application we have two build jobs, one for the JET UI frontend and
 
 * Click **Configure** to see the *Job Configuration*
 
+* Under the **Source Control** tab we have specified `CafeSupremo.git` as the repository to use for the build
+
   ![](images/110.png)
   
   * You can see multiple configuration tabs across the top of the Job Configuration page
 
-* Under the **Source Control** tab we have specified `CafeSupremo.git` as the repository to use for the build
+
 
 * Under the **Builders** tab we have configured a **Unix Shell Builder** using *npm install*, *grunt* to build and *zip* to package the build into a *war* file
 
