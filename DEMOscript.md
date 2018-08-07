@@ -243,6 +243,7 @@ The next part of our CI/CD pipeline is the deployment configuration. There are t
   - The configuration is similar to **cafesupremo** but uses a ACCS runtime instead of JCS
 
 
+# Iteration 2:   Introducing Continuous Integration and Continuous Delivery
 
 ## Step 6: Integrating The Reward Service
 
