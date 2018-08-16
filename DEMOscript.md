@@ -116,7 +116,7 @@ You are an application developer who will be developing a brand new cloud native
 
 ## Step 3: Introduce Developer Cloud Service
 
-Think of yourself as the project manager for the Café Supremo Reward application. And you need to bring your JETUI frontend application into our cloud environment. You can do this by bringing your development under the control of Developer Cloud. With the Developer Cloud, you can implement CI/CD and practice the Agile methodology.
+Think of yourself as the project manager for the Café Supremo Reward application. And you need to bring your JET UI frontend application into our cloud environment. You can do this by bringing your development under the control of Developer Cloud. With the Developer Cloud, you can implement CI/CD and practice the Agile methodology.
 
 * Log into Developer Cloud
 * On the Welcome page, you may see a list of projects hosted in the DevCS and one of the project is the CafeSupremo
@@ -155,7 +155,7 @@ Think of yourself as the project manager for the Café Supremo Reward applicatio
   ![](images/107.png)
   
 1. Click on **Logs** option
-2. Click on **History in Graph view**
+2. Click on **History** in Graph view
 3. Scroll down the graph to show branches and merge requests
 
 
@@ -164,7 +164,7 @@ Think of yourself as the project manager for the Café Supremo Reward applicatio
 
 To build the application we have two build jobs, one for the JET UI frontend and one for the Reward Service. Each build job is configured to pull soruce from different Git repositories and built for a different runtime platform.
 
-* Switch to *Build* tab from the navigation panel
+* Switch to **Build** tab from the navigation panel
 
 * There are two build jobs **JETUI_JCS_Build** and **RewardService_Build**
 
@@ -206,9 +206,9 @@ To build the application we have two build jobs, one for the JET UI frontend and
 
 * Click **Cancel** to exit the *Job Configuration* page
   
-* Go back to the **Build** page and click on **RewardService_Build* job
+* Go back to the **Build** page and click on **RewardService_Build** job
 
-* Quickly go through the job configuration which is very similar to the **JETUI_JCS_Build**. So there is no need to spend too long on this
+* Quickly go through the job configuration which is very similar to the **JETUI_JCS_Build**. So there is no need to spend too long on this.
 
 
 
@@ -220,8 +220,8 @@ The next part of our CI/CD pipeline is the deployment configuration. There are t
 
   ![](images/115.png)
 
-1. The deployment configurations will be listed on the left side of the page. Note the runtime information about deployment such as the cluster name, IP address of the JCS instance and the build job it is deploying from
-2. The deployment history for each deployment configuration will appear on the right hand side. This shows whether it is success of not and you can access the logs for more information
+1. The deployment configurations will be listed on the left side of the page. Note the runtime information about deployment such as the cluster name, IP address of the JCS instance and the build job it is deploying to.
+2. The deployment history for each deployment configuration will appear on the right hand side. This shows whether it is successful or not and you can access the logs for more information.
 
 * Explore the **cafesupremo** deployment configuration by selecting **Edit Configuration** from the **Gear Wheel** icon
 
@@ -249,7 +249,7 @@ The next part of our CI/CD pipeline is the deployment configuration. There are t
 
 If you recall, the **Rewards** menu option on the CafeSupremo JET UI frontend was greyed out because the backend Reward Service microservice has not been completed. Assume the Reward Service is now ready to be integrated with JET UI frontend, I can integrate this by simply enabling the **Rewards** option. Let me show you how I can easily enable this by making a code change that would trigger an automated build in my CI/CD pipeline.
 
-Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a simple editor like Brackets with a Git plug-in. So that I can work with a clone Git repository locally on my laptop and sychronise my changes with the master Git repository in DevCS. I have set a flag in our JETUI code to disable the Reward Service initially. Let me show you where to make the code change.
+Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a simple editor like Brackets with a Git plug-in. So that I can work with a clone Git repository locally on my laptop and sychronise my changes with the master Git repository in DevCS. I have set a flag in our JET UI code to disable the Reward Service initially. Let me show you where to make the code change.
 
 
 * Open Brackets and go to the `CafeSupremo` folder
@@ -257,7 +257,7 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
   ![](images/119.png)
 
 1. Locate `src -> js -> appControll.js`
-2. Find line 46 and replace `true` with `false` for the Rewards option. This basically ungrey the option.
+2. Find line 46 and replace `true` with `false` for the Rewards option. This basically ungrey the Reward option.
 
 * Select **Save** to save the code change
 
@@ -269,7 +269,7 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
 
 * Click Commit to commit changes to the local cloned Git repository
 
-* In the Git commit pop up enter the comment: `Enabled Reward Service` and then click **OK**. This will commit the changes to your local git repository. Ignore any code inspection problems above.
+* In the Git commit pop up enter the comment: `Enabled Rewards Service` and then click **OK**. This will commit the changes to your local git repository. Ignore any code inspection problems above.
 
   ![](images/122.png)
 
@@ -308,7 +308,7 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
 
   ![](images/125.png)
   
-- Once the build completes successfully, click on the **Deploy Configuration** tab and wait till you see the *Last deployment succeeded* message in the **cafesupremo** configuration tile. Reload page if you don't see any dates.
+- Once the build completes successfully, click on the **Deploy Configuration** tab and wait till you see the *Last deployment succeeded* message in the **cafesupremo** configuration tile. Reload page if you don't see any updates.
 
   ![](images/102.png)
 
@@ -334,7 +334,7 @@ Let's put ourselves in the shoes of a developer. I can use my favourite IDE or a
 
 - Click on **Free Coffee** to reveal the QR code and a **Redeem** button
 
-- Click **Redeem** to redeem coffee. This will reset the coupon counter
+- Click **Redeem** to redeem coffee. This will reset the coupon counter.
 
   ![](images/75.png)
   
@@ -352,8 +352,8 @@ Developer Cloud Service supports release management throught the Release tool. W
   ![](images/126.png)
 
 * A release in DevCS is a collection of specific tags or branches of Git repositories, Maven repositories and binaries
-* This allow you to create a release
-* You can also download the archive to be deployed manually on premise
+* You can create a new release
+* You can also download a release archive to be deployed manually on premise
 
 
 ## Step 9: Explore Agile Development
@@ -374,7 +374,7 @@ From the Agile page, you can create or open a board. Use the filter views availa
 
   ![](images/128.png)
 
-* Click on **Reports** and walkthrough the *Burndown Chart*, *Sprint Report*, etc
+* Click on **Reports** and walkthrough the *Burndown Chart*, *Sprint Report*, etc.
 
   ![](images/129.png)
 
