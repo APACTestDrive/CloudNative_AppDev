@@ -23,7 +23,7 @@ The [Demo Script](DEMOscript.md) showcases the following:
 *	Pushing the changes from a remote repository
 *	Scaling up and scaling out of ACCS and JCS
 
-This requires a working demo that was previously configured. Please follow the [Demo Setup](CICDlab.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
+This requires a working demo that was previously configured. Please follow the [Demo Setup](DEMOsetup.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
 
 ## CI/CD Hands On Lab
 
