@@ -8,10 +8,10 @@ In this exercise, we will:
 
 - Create and configure a Developer Cloud Service (DevCS) Project
 - Configure storage for uploading project archives
-- Importing project data
+- Import project data
 - Create and configure build jobs and deploy configurations
-- Deployment of JET UI frontend to JCS
-- Deployment of Node.js Reward Service to ACCS
+- Deploy the JET UI frontend to JCS
+- Deploy the Node.js Reward Service to ACCS
 - Explore Issue Tracking, Agile development, Release Management and Source Code Management
 
 
@@ -23,6 +23,8 @@ In this exercise, we will:
 - Go back to the Developer Cloud Service Console
 
 - Create a new project by clicking **New Project**
+
+- Enter `CafeSupremo` in the **Name** field
 
 - Click **Next**
 
@@ -84,7 +86,7 @@ Before you can upload the project archive, you must first configure a storage to
   ![](images/29.png)
   
 
-- Click **Close** on the top right hand corner of the Organization Administration page
+- Click on the left angle arrow **<** on the top left hand corner of the Organization Administration page to return to the project home page
 
 
 
@@ -278,7 +280,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
   ![](images/54.png)
   
-Congratulate! You have now completed your first build.
+Congratulation! You have now completed your first build.
   
   
   
