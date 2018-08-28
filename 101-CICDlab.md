@@ -22,7 +22,7 @@ In this exercise, we will:
 
 
 
-## Provision a DBCS Instance
+## Provision a Database Cloud Service (DBCS) Instance
 
 
 ### **STEP 1**: Sign Into The Oracle Cloud Service Account
@@ -66,9 +66,9 @@ The last input page is the Service Details page.
   
 The following parameters have to be provided:
 
-  - **Administration Password**: DB's password. Don't forget to note the provided password
-  - **Compute Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This is the smallest  (default)
-  - **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key.
+  - **Administration Password**: DB's password. Please take note of the password.
+  - **Compute Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` This is the smallest (default).
+  - **SSH Public Key**: Provide a public key which will be uploaded to the VM during the creation. It allows you to connect to the VM through ssh connection using the private key.
     - If you don't have or want to  to create different keypair select **Create a New Key** option and download the newly generated keypair for later usage
   - **Storage Username**: Your Oracle Cloud username e.g. `cloud.admin`
   - **Storage Password**: Cloud Account password
@@ -80,13 +80,14 @@ The following parameters have to be provided:
 - Confirms the details on the next page and then click **Create**
 
 
-**NOTE**:  Your DBCS instance will take about 30 minutes to complete. Please wait until the DBCS instance has been completed before creating a JCS instance. Whilst we are for the DBCS instance to be provisioned, we can work on other infrastructure components such as ACCS.
+**NOTE**:  Your DBCS instance will take about 30 minutes to complete. Please wait until the DBCS instance has been completed before creating a JCS instance. Whilst we are waitinf for the DBCS instance to be provisioned, we can work on other infrastructure components such as ACCS.
 
-*You have now completed the provisioning of a DBCS instance for use with JCS.*
+*Please move on to the next section whilst you're waiting for the DBCS instance to be provisioned.*
 
 
 
-## Provision ACCS Caching
+
+## Provision Application Container Cloud Service (ACCS) Cache
 
 
 ### **STEP 3**: Create a ACCS Cache Instance
@@ -182,7 +183,7 @@ Once ready, you will find your rewardservice available in the Application Contai
 
 
 
-## Provision a JCS Instance
+## Provision a Java Cloud Service (JCS) Instance
 
 For this part of the lab, you would need a DBCS instance to complete the JCS configuration.
 
@@ -221,9 +222,7 @@ For this part of the lab, you would need a DBCS instance to complete the JCS con
 
 ### **STEP 5.2**: Detailed Instance Configuration
 
-On the Service Details page.
-
-- Click **Advanced** to show additional configuration options
+- On the Service Details page, click **Advanced** to show additional configuration options
 
   ![](images/06.png)
 
@@ -263,7 +262,7 @@ When the request has been accepted, the Java Cloud Service Console page appears 
 
 
 
-## Provision a Developer Cloud Service
+## Provision a Developer Cloud Service (DevCS)
 
 You have two choices for Developer Cloud Service:
 
