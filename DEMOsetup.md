@@ -15,6 +15,8 @@ The current release of the application no longer requires a database for storing
 
 Oracle Database Cloud Service is still required by Java Cloud Service to host only the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
+The Demo Setup is the same as the Hands On Lab. Please follow the Hands On Lab for the setup.
+
 [Follow CI/CD Hands On Lab for Demo Setup](CICDlab.md)
 
 or
