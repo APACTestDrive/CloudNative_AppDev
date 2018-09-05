@@ -235,7 +235,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
   ![](images/44.png)
 
-- Select `CafeSupremo.git` from the dropdown box for **Repository**
+- Select `CafeSupremo.git` from the dropdown box for **Repository** and check the **Automatically perform build on SCM commit** to enable automated build upon a code commit.
 
   ![](images/51.png)
   
@@ -263,14 +263,6 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 - Enter `target/cafesupremo.war` in the **Files to archive** field to define the location of the build output which it will be used for deployment
 
   ![](images/48.png)
-  
-- To enable automated build we need to set the trigger to be based on code commit in the Git repo. Select **SCM Polliing Trigger** from the **Add Trigger** context dropdown list
-
-  ![](images/49.png)
-  
-- Change the SCM Polling Trigger from the default 30 minutes to 1 minutes in the **Cron Pattern in UTC** field
-
-  ![](images/53.png)
 
 - Click **Save** to save the configuration
 
