@@ -279,7 +279,7 @@ Oracle Developer Cloud Build VMs runs on Oracle Linux 6 or Oracle Linux 7, and s
 
 - Ensure you are opening the Autonomous DevCS and NOT the Traditional DevCS
 
-- On the dashboard click the hamburger icon on the **Developer** tile. Select **Open Service Console**
+- On the dashboard click the hamburger icon on the **Autonomous Developer** tile. Select **Open Service Console**
 
   ![](images/14.png)
 
