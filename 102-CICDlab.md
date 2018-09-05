@@ -235,7 +235,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
   ![](images/44.png)
 
-- Select `CafeSupremo.git` from the dropdown box for **Repository** and check the **Automatically perform build on SCM commit** to enable automated build upon a code commit.
+- Select `CafeSupremo.git` from the dropdown box for **Repository** and check the **Automatically perform build on SCM commit** option to enable automated build upon a code commit.
 
   ![](images/51.png)
   
@@ -243,7 +243,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
   ![](images/45.png)
   
-- Copy and paste the npm install script into the command field
+- Copy and paste the npm install script into the command field. Basically the script is building a web module from the JET UI code and then create a WAR file for deployment.
 
   ```
   npm install
@@ -293,7 +293,7 @@ Congratulation! You have now completed your first build.
 
 - Configure the build job by specifying the Git repo to build from. On the **Source Control** tab click on **Add Source Control**
 
-- Select `RewardService.git` from the dropdown box for **Repository**
+- Select `RewardService.git` from the dropdown box for **Repository** and check the **Automatically perform build on SCM commit** option to enable automated build upon a code commit.
 
   ![](images/55.png)
   
@@ -313,12 +313,6 @@ Congratulation! You have now completed your first build.
 - Enter `*` in the **Files to archive** field to define the location of the build output which it will be used for deployment.
 
   ![](images/57.png)
-  
-- To enable automated build we need to set the trigger to be based on code commit in the Git repo. Select **SCM Polliing Trigger** from the **Add Trigger** context dropdown list
-  
-- Change the SCM Polling Trigger from the default 30 minutes to 1 minutes in the **Cron Pattern in UTC** field
-
-  ![](images/53.png)
 
 - Click **Save** to save the configuration
 
