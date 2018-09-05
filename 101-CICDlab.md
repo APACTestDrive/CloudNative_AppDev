@@ -269,9 +269,9 @@ You have two choices for Developer Cloud Service:
   - Traditional Developer Cloud Service
   - Autonomous Developer Cloud Service
   
-It is recommeneded to use the Autonomous Developer Cloud Service as it offers a dedicated Buid VM for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. The use of the Autonomous Developer Cloud Service is particularly important as one would see the full potential of our service and would bring out the key benefits in Continuous Integration and Continuous Delivery.
+It is recommeneded to use the Autonomous Developer Cloud Service as it offers a dedicated Build VM for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. The use of the Autonomous Developer Cloud Service is particularly important as one would see the full potential of our service and would bring out the key benefits in Continuous Integration and Continuous Delivery.
 
-Oracle Developer Cloud Build VMs run on Oracle Linux 6 and Oracle Linux 7, and support a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software in Build VMs are defined by Build VM templates.
+Oracle Developer Cloud Build VMs runs on Oracle Linux 6 or Oracle Linux 7, and supports a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software in Build VMs are defined by Build VM templates.
 
 
 
