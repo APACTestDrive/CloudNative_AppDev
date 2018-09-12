@@ -16,17 +16,17 @@ You will take on 2 personas during the workshop. The **Lead Developer Persona**
 
 There are three parts to the lab with each focusing on different aspect of Cloud Native Application development, from provisioning of a cloud environment to importing your code and creating you CI/CD pipeline. Please begin your exercise in the following order:
 
-## 101: Prepare Your Oracle Cloud Environments
+## 100: Prepare Your Oracle Cloud Environments
 
-[Click Here to Lab 101: Prepare Your Oracle Cloud Environments](101-CICDlab.md)
+[Click Here to Lab 101: Prepare Your Oracle Cloud Environments](100-PREPARElab.md)
 
 ## 102: Create Continuous Integration and Continuous Devlivery Pipeline in Oracle Developer Cloud Service
 
-[Click Here to Lab 102: Create CI/CD Pipeline in DevCS](102-CICDlab.md)
+[Click Here to Lab 200: Create CI/CD Pipeline in DevCS](200-DEVCSlab.md)
 
-## 103: Putting It All Together - Continuous Integration and Delivery 
+## 103: Putting It All Together - Continuous Integration and Delivery
 
-[Click Here to Lab 103: Putting It All Together - CICD](103-CICDlab.md)
+[Click Here to Lab 300: Putting It All Together - CICD](300-CICDlab.md)
 
 
 [Return to Cafe Supremo Home](README.md)

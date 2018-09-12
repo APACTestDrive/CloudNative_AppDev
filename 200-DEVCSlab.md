@@ -482,7 +482,7 @@ You have now completed the deployment configuration for the RewardService. Let's
 
 You have finished this lab section.
 
-[Proceed to Lab 103: Putting It All Together - CICD](103-CICDlab.md)
+[Proceed to Lab 300: Putting It All Together - CICD](300-CICDlab.md)
 
 or
 
