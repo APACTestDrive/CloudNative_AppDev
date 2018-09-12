@@ -1,6 +1,8 @@
-# Lab 101: Prepare Your Cloud Environments
+# Lab 100: Prepare Your Cloud Environments
 
 ## Preparing Database Cloud Service, Java Cloud Service, Application Container Cloud Service and Developer Cloud Service
+
+![](images/header05.png)
 
 During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and Application Container Cloud Service instance. You must have access to a:
 
@@ -47,7 +49,7 @@ In this exercise, we will:
   ![](images/02.png)
 
 - Enter the following parameters:
-  
+
   - **Instance Name**: `demoDB`
   - **Software Release**: `12c Release 1 Software`
   - **Software Edition**: `Enterprise Edition software edition`
@@ -62,8 +64,8 @@ In this exercise, we will:
 The last input page is the Service Details page.
 
   ![](images/03.png)
-  
-  
+
+
 The following parameters have to be provided:
 
   - **Administration Password**: DB's password. Please take note of the password.
@@ -95,7 +97,7 @@ The following parameters have to be provided:
 - On the dashboard click the hamburger icon on the **Application Container** tile. Select **Open Service Console**.
 
   ![](images/07.png)
-  
+
 
 - Once in the Application Container Cloud Service Console page, click the hamburger icon by the **Welcome!** text at the top right corner and then select **Application Cache** by scrolling down the the list as shown below.
 
@@ -116,11 +118,11 @@ The following parameters have to be provided:
 - Enter the following parameters:
 
   - **Instance Name** `rewardservice`
-  
+
   - Leave evertyhing else to their defaults
-  
+
 - Click **Next**
-  
+
 - Click **Create** on the Confirm Page
 
 
@@ -146,10 +148,10 @@ Once completed, you will find the **rewardservice** cache instance available to 
 - Click on the **Node** icon to select your application platform in the **Create Application** popup box
 
   ![](images/11.png)
-  
-  
+
+
 - You are now presented with the **Application** configuration popup box
-  
+
   ![](images/78.png)
 
 - Enter the following parameters:
@@ -198,7 +200,7 @@ For this part of the lab, you would need a DBCS instance to complete the JCS con
 - On the dashboard click the hamburger icon on the **Java** tile. Select **Open Service Console**.
 
   ![](images/04.png)
-  
+
 
 - Once in the Java Cloud Service Console page, create a new instance by clicking **Create Service** button.
 
@@ -208,7 +210,7 @@ For this part of the lab, you would need a DBCS instance to complete the JCS con
 - Complete the new Create New Instance Page as illustrated below:
 
   ![](images/05.png)
-  
+
 - Enter the following parameters:
 
   - **Instance Name**: `demoJCS`
@@ -227,7 +229,7 @@ For this part of the lab, you would need a DBCS instance to complete the JCS con
   ![](images/06.png)
 
 The following parameters have to be provided:
-	
+
   - **Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` this is the smallest one (default)
   - **Server Count**: `1` which means one managed server
   - **Domain Partitions**: `zero` for no partitions (default)
@@ -268,7 +270,7 @@ You have two choices for Developer Cloud Service:
 
   - Traditional Developer Cloud Service
   - Autonomous Developer Cloud Service
-  
+
 It is recommeneded to use the Autonomous Developer Cloud Service as it offers a dedicated Build VM for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. The use of the Autonomous Developer Cloud Service is particularly important as one would see the full potential of our service and would bring out the key benefits in Continuous Integration and Continuous Delivery.
 
 Oracle Developer Cloud Build VMs runs on Oracle Linux 6 or Oracle Linux 7, and supports a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software in Build VMs are defined by Build VM templates.
@@ -296,7 +298,7 @@ In this section, you learn how to create a basic Build VM template that includes
 - Click **VM TEMPLATES** on the Organization Administration page
 
   ![](images/16.png)
-  
+
 - Click **New Template** in the Build VM Templates page
 
 ![](images/79.png)
@@ -320,21 +322,21 @@ A Build VM template named **CafeSupremo** is created. It includes just the requi
 The CafeSupremo template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend and Node.js RewardService microservice.
 
   - In the **Build VM Templates** tab, select the template named **CafeSupremo**
-  
+
   - On the right side of the page, click **Configue Software**
 
   ![](images/17.png)
-  
+
   - Select **Gradle 4** and **Node.js 6** from the list of software by clicking the **Add** `+` icon on that tile.
-  
+
   ![](images/18.png)
-  
+
   - Click on **Done** to save the selections
-  
+
     ![](images/19.png)
-  
-  
-  
+
+
+
 ### **STEP 6.3**: Create a Virtual Machine for Build and Develop
 
 Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute Classic virtual machines (VMs) to run builds. To use the VM we need to connect the VM with Oracle Developer Cloud Service and we need to capture some service detail about the VM for configuration.
@@ -354,7 +356,7 @@ Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute 
 - Select **VIRTUAL MACHINES**
 
   ![](images/21.png)
-  
+
 - On the Virtual Machine page, click **Configure Compute Account**
 
   ![](images/22.png)
@@ -367,7 +369,7 @@ Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute 
   - **REST Endpoint**: *REST API endpoint URL for the Oracle Cloud Infrastructure Compute Classic instance* (The value must match the REST Endpoint field that appears on the Oracle Cloud Infrastructure Compute Classic Service Details page.)
 
   ![](images/23.png)
-  
+
 - Click on **Save**
 
 You have now created a Build VM for for your build jobs. The initial status will be in the STOPPED state.
@@ -382,5 +384,3 @@ You have finished this lab section.
 or
 
 [Return to Cafe Supremo Home](README.md)
-
-  
