@@ -18,7 +18,7 @@ There are three parts to the lab with each focusing on different aspect of Cloud
 
 ## 100: Prepare Your Oracle Cloud Environments
 
-[Click Here to Lab 101: Prepare Your Oracle Cloud Environments](100-PREPARElab.md)
+[Click Here to Lab 100: Prepare Your Oracle Cloud Environments](100-PREPARElab.md)
 
 ## 102: Create Continuous Integration and Continuous Devlivery Pipeline in Oracle Developer Cloud Service
 
