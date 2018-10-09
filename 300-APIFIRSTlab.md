@@ -4,14 +4,14 @@
 
 ![](images/header08.png)
 
-API Blueprint is built to encourage dialogue and collaboration between project stakeholders, developers and customers at any point in the API lifecycle. At the same time, the API Blueprint tools provide the support to achieve the goals be it API development, governance or delivery.
+API Blueprint is used to encourage dialogue and collaboration between project stakeholders, developers and customers at any point in the API lifecycle. At the same time, the API Blueprint tools provide the support to achieve the goals be it API development, governance or delivery.
 
 
 ### About This Exercise
 
 In this exercise, we will:
-- Use Apiary to write our API
-- Use the out of the box Apiary features to provide API mock for client application developer to start a spin
+- Use Apiary to write our Reward Service API called **loyalty**.
+- Use the out of the box Apiary features to provide an API Mock for client application developer to test their client against an API Mock server.
 
 For more detail information of apiary, please visit https://apiary.io
 
@@ -43,18 +43,34 @@ For more detail information of apiary, please visit https://apiary.io
 
 ![](images/apiary-03.png)
 
-- **IF THIS IS YOUR FIRST API, YOU WILL SEE A SCREEN LIKE THIS**. Provide a name for your API, e.g. **loyalty**, **code108**, etc. Select *Start your API in* **API Blueprint** (default setting) and click [**SAVE AND START USING APIARY**]
+- **IF THIS IS YOUR FIRST API, YOU WILL SEE A SCREEN LIKE THIS**. Provide a name for your API, e.g. **apifirstlab**.
+
 ![](images/apiary-04.png)
 
+
+- Leave the default setting for format to *Start your API in* **API Blueprint**
+
+- Click [**SAVE AND START USING APIARY**]
+
 - You will be taken to the API Editor as follow
+
 ![](images/apiary-07.png)
+
+- Your screen will be split in two halves. The left hand side is the API Editor and the right hand side is the preview of your API.
+
+- A sample API is populated in the API Editor with the preview shown on the right hand side.
 
 
 ## Using Apiary Editor
 
 ### Step 4: Edit our API Blueprint
 
-- In the API editor, replace **EVERYTHING** with the following contents - be careful, spaces/tabs and line breaks are important - please refer to the API Blueprint documentation and [tutorial](https://help.apiary.io/api_101/api_blueprint_tutorial/) for more details about how to write API Blueprint.
+- We will now create the API Blueprint **loyalty** for our backend Reward Service. If you recall the Reward Service allows the client to query and update the reward points and coupons. These will be called through the **loyalty** API.
+
+- In the API Editor, replace **EVERYTHING** (sample) with the following API documentation for **loyalty**.
+
+- Take care when copying and pasting the text as the API Blueprint syntax is sensitive to spaces/tabs and line breaks. Please refer to the API Blueprint documentation and [tutorial](https://help.apiary.io/api_101/api_blueprint_tutorial/) for more details about how to write API Blueprint.
+
 
 ```
 FORMAT: 1A
@@ -145,29 +161,39 @@ For every 3 points, member will get 1 coupon and point will be reset to zero. Re
 
 ```
 
-- the final blueprint will looks like this
+- The final blueprint for **loyalty** will look similar to the following.
+
 ![](images/apiary-08.png)
 
+- Click **Save** to to save your API Blueprint.
 
-## Using Apiary Example and Console
+
+## Using Apiary and Console
+
+Once the API Blueprint is ready, we can use the Mock Server to test our API. We can also use the Mock Server for client application development & testing. The following steps shows how a Client Application Developer use Apiary to develop their client.
+
 
 ### Step 5: Exploring API Documentation
 
-- Once the API Blueprint is ready, we can use the Mock Server to test our API. We can also use the Mock Server for client application development & testing.
+- Click the [**Documentation**] tab to navigate to the API documentation. This is the view which *Client Application Developers* will work in when they need to learn / check / test your APIs.
 
-- click the [**Documentation**] tab to navigate to the API documentation. This will also be the view which *Client Application Developers* will see when they want to learn / check / test your APIs.
 ![](images/apiary-09.png)
 
-- Imagine you are the client application developer, when you navigate this page, you will know this Loyalty API contains
+
+- Imagine you are the client application developer, when you navigate to this page, you can see this **loyalty** API contains:
+
   - Points
     - Get current points of member
     - Credit member 1 point
   - Coupon
     - Get current number of coupons of member
-    - consume 1 coupon
+    - Consume 1 coupon
+
 
 - Click [**Get the current points of member**] and check the right pane. It tells you example of using this API and the endpoint (URL) of the Mock Server.
-![](images/apiary-10.png)    
+
+![](images/apiary-10.png)
+
 
 ### Step 6: Testing with Mock Server
 
