@@ -10,18 +10,17 @@ API Blueprint is built to encourage dialogue and collaboration between project s
 ### About This Exercise
 
 In this exercise, we will:
-- Use apiary to write our API
-- Use the Out Of The Box apiary features to provide API mock for client application developer to start a spin
+- Use Apiary to write our API
+- Use the out of the box Apiary features to provide API mock for client application developer to start a spin
 
 For more detail information of apiary, please visit https://apiary.io
 
 ## Login to apiary.io
 
-
-
 ### Step 1: Navigate to apiary.io
 
 - Open a browser window and navigate to https://apiary.io
+
 ![](images/apiary-01.png)
 
 ### Step 2: Sign up a free account
@@ -38,9 +37,10 @@ For more detail information of apiary, please visit https://apiary.io
 
 ### Step 3: Login to Apiary and create our first API
 
-- If you haven't create your Apiary account, follow Step 2. Once you created your own account and got activated, you can login to Apiary.
+- If you don't have an Apiary account, follow Step 2 to create one now. You can login to Apiary once you have created your own account and activated it.
 
-- Login to Apiary if you haven't.
+- Login to Apiary if you haven't already.
+
 ![](images/apiary-03.png)
 
 - **IF THIS IS YOUR FIRST API, YOU WILL SEE A SCREEN LIKE THIS**. Provide a name for your API, e.g. **loyalty**, **code108**, etc. Select *Start your API in* **API Blueprint** (default setting) and click [**SAVE AND START USING APIARY**]
