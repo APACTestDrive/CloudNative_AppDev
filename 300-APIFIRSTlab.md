@@ -21,7 +21,7 @@ For more detail information of apiary, please visit https://apiary.io
 
 - Open a browser window and navigate to https://apiary.io
 
-![](images/apiary-01.png)
+  ![](images/apiary-01.png)
 
 ### Step 2: Sign up a free account
 
@@ -31,7 +31,7 @@ For more detail information of apiary, please visit https://apiary.io
 
 - Fill in your name, your email address and desired password and click [ ** Sign up for Apiary** ] - *please remember to review Apiary's Terms of Service and Privacy Policy*.
 
-![](images/apiary-02.png)
+  ![](images/apiary-02.png)
 
 - You will receive email verification for your Apiary account. Just follow the instructions in that email to activate your free account.
 
@@ -41,11 +41,11 @@ For more detail information of apiary, please visit https://apiary.io
 
 - Login to Apiary if you haven't already.
 
-![](images/apiary-03.png)
+  ![](images/apiary-03.png)
 
 - **IF THIS IS YOUR FIRST API, YOU WILL SEE A SCREEN LIKE THIS**. Provide a name for your API, e.g. **apifirstlab**.
 
-![](images/apiary-04.png)
+  ![](images/apiary-04.png)
 
 
 - Leave the default setting for format to *Start your API in* **API Blueprint**
@@ -54,7 +54,7 @@ For more detail information of apiary, please visit https://apiary.io
 
 - You will be taken to the API Editor as follow
 
-![](images/apiary-07.png)
+  ![](images/apiary-07.png)
 
 - Your screen will be split in two halves. The left hand side is the API Editor and the right hand side is the preview of your API.
 
@@ -163,7 +163,7 @@ For every 3 points, member will get 1 coupon and point will be reset to zero. Re
 
 - The final blueprint for **loyalty** will look similar to the following.
 
-![](images/apiary-08.png)
+  ![](images/apiary-08.png)
 
 - Click **Save** to to save your API Blueprint.
 
@@ -177,7 +177,7 @@ Once the API Blueprint is ready, we can use the Mock Server to test our API. We 
 
 - Click the [**Documentation**] tab to navigate to the API documentation. This is the view which *Client Application Developers* will work in when they need to learn / check / test your APIs.
 
-![](images/apiary-09.png)
+  ![](images/apiary-09.png)
 
 
 - Imagine you are the client application developer, when you navigate to this page, you can see this **loyalty** API contains:
@@ -190,42 +190,79 @@ Once the API Blueprint is ready, we can use the Mock Server to test our API. We 
     - Consume 1 coupon
 
 
-- Click [**Get the current points of member**] and check the right pane. It tells you example of using this API and the endpoint (URL) of the Mock Server.
+- Click [**Get the current points of member**] and check the right pane. It shows you an example of using this API and the endpoint (URL) of the Mock Server.
 
-![](images/apiary-10.png)
+  ![](images/apiary-10.png)
 
 
 ### Step 6: Testing with Mock Server
 
-- Let's test the API with the Mock Server. In the [**Request**] section, select [**Mock Server**] and click [**Try**] button
-![](images/apiary-11.png)
+The Mock Server is automatically created each time you publish your API Description. This means the only thing you have to do to get started is to write your API Description, include specific requests and responses for your resources, and click publish.
 
-- In this test console, you can set the desired URI parametes, headers, as well as entering your payload in the request body. Just keep the default values (*we are going to get the current point of member id 10001*), check we are using the [**Mock Server**] and click [**Call Resource**] button.  
-![](images/apiary-12.png)
+There are several ways in which you may interact with the Mock Server, both using your own tools and environments and using Apiary’s console.
+
+- Let's test the API with the Mock Server using the Apiary's console. On the right hand pane under the [**Request**] section, select [**Mock Server**] from the dropdown option list.
+
+  ![](images/apiary-11.png)
+
+- After switching to the Mock Server, you will receive your own private URL for the Mock Server. This is to ensure that other users do not see the traffic you’re sending to the server. Take note of the URL.
+
+- This URL may be used to interact directly with the server. You can make requests with applications like **curl** or **Paw** to that URL and will get responses defined in the API Description.
+
+  ![](images/apiary-12.png)
+
+- Click [**Try**] button to switch to the console.
+
+- The console is where you can send requests to the Mock Server directly from the documentation. Think of this as the test console.
+
+- In this test console, you can set the desired URI parameters, headers, as well as entering your payload in the request body. Just keep the default values (*we are going to get the current point of member id 10001*).
+
+  ![](images/apiary-13.png)
+
+- Check that we are using the [**Mock Server**]
+
+- Click [**Call Resource**] button.
 
 - Scroll down and you will see the API response *(from Mock Server)*. Feel free to explore the test console.
-![](images/apiary-13.png)
 
-- Go back to the example console by clicking the [**Switch to Example**] *(you might need to scroll up first)*.
-![](images/apiary-14.png)
+  ![](images/apiary-14.png)
 
 
-## Example Code for Client Application(s)
+## Code Example for Client Application(s)
+
+Apiary encourage a contract-first approach to designing your API. Write your API Description first before writing any server or client code.
+
+To make this process possible, Apiary provides tools that allow you to try out your API as you design it as shown in Step 6.
+
+Apiary provides code examples that you may use to interact with the Mock Server. Code examples are one tool provided that can be dropped into your existing code or used for prototyping. Apiary generates code samples in a variety of languages.
+
 
 ### Step 7: Get example code for different programming language(s)
 
-- In the right hand pane, Request section, select your desired programming language, e.g [**JavaScript**]
-![](images/apiary-15.png)
+- Go back to the example console by clicking the [**Switch to Example**] *(you might have to scroll to the top of the console pane)*.
 
-- After you change the language, the sample code will be display. As you can see, if you want to develop a HTML5 application, you can just copy and paste this sample code segment to your JavaScripts source code and change to something you need. Feel free to try different language. You can also choose *OTHER API* from *left hand pane*.
-![](images/apiary-16.png)
+  ![](images/apiary-15.png)
 
-- For example if you need to develop a NodeJS client, you can use the *request* npm module and have source code similar to the following segment to interact with the API service. Of course, these are just example code. You can always use other framework (e.g. jquery, request-promise, etc) to integrate with the API service.
-![](images/apiary-17.png)
+- In the right hand pane, under the [Request] section, select your desired programming language from the dropdown option list. Select [**JavaScript**]
+
+  ![](images/apiary-16.png)
+
+- After you selected a language, the sample code for that language will be displayed below. As you can see, if you want to develop a HTML5 application, you can just copy and paste this sample code segment to your JavaScripts source code and extend it. Feel free to try different languages.
+
+  ![](images/apiary-17.png)
+
+- For example if you need to develop a NodeJS client, you can use the *request* npm module and have source code similar to the following segment to interact with the API service. Of course, these are just code examples. You can always use other framework (e.g. jquery, request-promise, etc) to integrate with the API service.
+
+  ![](images/apiary-18.png)
+
+- You can also switch to other APIs by selecting an API choose from the *left hand pane*.
+
 
 ### Step 8: Apiary Mock Server
 
-- Write down the URL of the Apiary Mock Server, we will need to use this URL in next lab.
+- Write down the URL of your Apiary Mock Server, we will need to use this URL in the next lab.
+
+  ![](images/apiary-12.png)
 
 ## You've complete the Using Apiary & API Blueprint Lab.
 
