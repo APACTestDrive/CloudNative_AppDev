@@ -9,15 +9,13 @@ We will create a project for the Café Supremo in Developer Cloud Service and br
 In this exercise, we will:
 
 - Create and configure a Developer Cloud Service (DevCS) Project
-- Configure storage for uploading project archives
-- Import project data
+- Import code from existing Git repository
 - Create and configure build jobs and deploy configurations
 - Deploy the JET UI frontend to JCS
 - Deploy the Node.js Reward Service to ACCS
-- Explore Issue Tracking, Agile development, Release Management and Source Code Management
 
 
-## Create a Developer Cloud Project and Configure CI/CD Pipeline
+## Create a Developer Cloud Project and Import The Code Repositories
 
 
 ### **STEP 1**: Create a DevCS Project
@@ -40,179 +38,60 @@ In this exercise, we will:
 
   Project creation will start upon selecting Finish.
 
-**NOTE**: The project creation will take approximately 2 minutes to complete.
+**NOTE**: The project creation will take approximately 2 minutes to complete and it will automatically take you to the new project home page.
 
 
-### **STEP 2**: Setup The Storage For Importing a Project Archive
 
-You should have an empty project after the project creation completes. We now need to populate the project with data such as source code and build configurations. A previously configured CafeSupremo project was exported as an archive. This contains the Git repositories for the source code, mock issues and agile boards to illustrate a working project. We will now import this archive and configure the build pipelines.
+### **STEP 2**: Import Code Repositories
 
-Before you can upload the project archive, you must first configure a storage to upload the project archive to. This is a storage that can be accessed by the Developer Cloud Service.
+You should have an empty project after the project creation completes. We now need to populate the project with source code and build configurations. The code for the JET UI frontend and the Node.js RewardService backend has already been created so you don't need to create the application from scratch. The code is stored in two separate Git repositories to simulate two separate development teams working independently on the frontend and backend.
 
-**NOTE :** You can download the project archive from here.
+- On the project home page, you will see the activities displayed on the left hand pane and the on the right is your available repositories. There should be a **Maven** repository by default.
 
+  ![](images/130.png)
 
-- In another browser tab or window, open Oracle Cloud Dashboard
+- Click on **New Repository** button to import the JET UI frontend repository named **CafeSupremo**
 
-- On the dashboard click the hamburger icon on the **Storage Classic** tile, and select **View Details**
+- Complete the New Repository dialog as illustrated below:
+  - **Name**: CafeSupremo
+  - **Intial content**: Import existing repository
+  - **Import existing repository**: `https://demodevcs-gse00014208.developer.ocp.oraclecloud.com/demodevcs-gse00014208/s/demodevcs-gse00014208_cafesupremo_2682/scm/CafeSupremo.git`
+  - **Username**: cloud.admin
+  - **Password**: This will be provided by the instructor
 
-  ![](images/82.png)
-
-- On the Service Details page, in the Additional Information section of the Overview tab, note the value of **REST Endpoint** and **Auth V1 Endpoint**. These will be required in the following steps.
-
-  ![](images/83.png)
-
-- Go back to the Developer Cloud Service Organization Administration Page
-
-- Select **STORAGE**
-
-  ![](images/27.png)
+    ![](images/131.png)
 
 - Click **Create**
 
-- Enter the following on the Edit Storage Configuration popup:
+- Repeat the above to import the RewardService backend repository named **RewardService** with the following data:
+- **Name**: RewardService
+- **Intial content**: Import existing repository
+- **Import existing repository**: `hhttps://cloud.admin@demodevcs-gse00014208.developer.ocp.oraclecloud.com/demodevcs-gse00014208/s/demodevcs-gse00014208_cafesupremo_2682/scm/RewardService.git`
+- **Username**: cloud.admin
+- **Password**: This will be provided by the instructor
 
-  - **Service ID**: This is made up of `Storage-<domain ID>`. Just type *Storage-* and append your *domain ID* to the end.
-  - **Username**: Your Cloud username
-  - **Password**: Your Cloud user password
-  - **Authorization URL**: You found this in the previous step on the Storage Classic View Details page
+  ![](images/132.png)
 
+- Click **Create**
 
-  ![](images/28.png)
+- Go back to the project home page and you should see the two new repositories you just imported.
 
+  ![](images/133.png)
 
-- Click on **Update** to save the configuration
-
-- Click on **Test Connection** to validate connectivity to your storage and you should get a **Connection successful** in response
-
-  ![](images/29.png)
-
-
-- Click on the left angle arrow **<** on the top left hand corner of the Organization Administration page to return to the project home page
-
-
-
-### **STEP 3**: Uploading The Project Archive To The Storage
-
-You can import project data from the Oracle Cloud Infrastructure Object Storage Classic container into the Oracle Developer Cloud Service project. Hence we need to upload our project archive to an Object Storage Classic container. To do we must first create a container in Object Storage and upload the project archive there.
-
-- On the dashboard click the hamburger icon on the **Storage Classic** tile. Select **Open Service Console**.
-
-  ![](images/30.png)
-
-- Click **Create Container** to create a storage area for uploading your project archive to
-
-  ![](images/31.png)
-
-- Enter `tmp` as the **name** for your container and click **Create**
-
-  ![](images/32.png)
-
-- Your newly created container **tmp** should appear in the *Container List*
-
-- Click on **tmp**
-
-- Click **Upload Objects**
-
-  ![](images/33.png)
-
-- Select your archive file and upload
-
-  If you have not downloaded the project archived, you can download it from [here].
-
-The project archive is now ready to be imported into the CafeSupremo project.
-
-
-
-### **STEP 4**: Importing a Project Archive
-
-When you import data from Oracle Cloud Infrastructure Object Storage Classic, it overwrites all the data in the project. All issues, Git repositories, and wiki pages of the project are replaced with the components of the imported project.
-
-To import project data from Oracle Cloud Infrastructure Object Storage Classic into Oracle Developer Cloud Service:
-
-- Move over to the navigation bar on the left and click the **Administration** icon
-
-- Select **Data Export/Import** from the popup context option list or from the Administration page
-
-  ![](images/34.png)
-
-- Complete the Data Export/Import Page as illustrated below using the REST Endpoint URL you obtained in Step 2
-
-
-  ![](images/35.png)
-
-   You would need to extrapolate from the REST Endpoint URL and break it down into separate elements uses the following syntax: <storage_service_url>/v1/<storage_service_name>-<identity_domain>
-
-  For example, if the REST Endpoint URL of your service is https://gse00002222.storage.oraclecloud.com/v1/Storage-gse00002222, then enter the following value:
-
-  - **Storage Service URL**: `https://gse00002222.storage.oraclecloud.com`
-  - **Storage Service Name**: `Storage`
-  - **Identity Domain**: `gse00002222`
-  - **Storage Account Username**: Your Cloud username
-  - **Storage Account Password**: Your Cloud user password
-
-- Click on **Connect**
-
-- Once connected, the page will expand with the **Create Job** configuration. Complete the elements with the following:
-
-  ![](images/36.png)
-
-  - **Type**: `Import`
-  - **Storage Container**: `tmp`
-  - **Storage Object**: Select the archive file your uploaded to the Object Storage Container
-
-- Click **Import**
-
-- Check the *Import project data into 'CafeSupremo'* and Click **Yes**
-
-  ![](images/37.png)
-
-
-**NOTE:** The project archive import will begin and will take about 10 minutes to complete
-
-- Once completed, you will be presented with two Git repositories:
-
-  - **CafeSupremo.git** that holds the JET UI frontend code
-  - **RewardService.git** that holds the Node.js microservice code
-
-  ![](images/38.png)
-
-- Verify the rest of the project has been imported properly by navigating into different tools on the navigation bar.
-
-  There should be issues, agile boards, and code. However, there are no project members, build jobs or deployment configuration as these cannot be exported with the original project. Therefore we would need to rebuild these configurations in the following steps.
-
-
-### **STEP 5**: Add New Members To The Project
-
-Project members are not exported with the orignal project. These members are referenced in the issues tracking and agile tool. Hence we will need to add these users back into the project.
-
-- Go to the project home page
-
-- Click on the **Team** icon to see the project members
-
-  There should only one member in the team and that is the owner of the project **cloud.admin**
-
-  ![](images/39.png)
-
-- Click on **New Member**
-
-- Select all the users from the available user list and click **Add**
-
-  ![](images/40.png)
-
-- Your now have all the users required for the demo
-
-  ![](images/41.png)
-
+**You have successfully imported the code repositories.**
 
 
 ## Create The Build Pipelines
 
-Now that we have imported the project archive for our demo, we can start creating our CI/CD pipelines for the JETUI frontend and the RewardSerivce microservice. This includes creating the build job configurations and the deployment configurations.
+Now that we have imported the code for our application, we can start creating our CI/CD pipelines for the JETUI frontend and the RewardSerivce microservice. This includes creating the build job and the deployment configurations.
+
+At this point we could start writing our API. However, we would need to test out API with our frontend client and this client has already been built and imported in the previous step. So we want to leverage the existing client by deploying the client to a JCS runtime. To do this we could manually deploy the client to a WebLogic or JCS environment or we can complete the deployment as part of a CI/CD pipeline.
+
+Hence, we will create the build job and deployment configuration as part of the CI/CD pipeline.
 
 
 
-### **STEP 6**: Create The JETUI Frontend Build Job
+### **STEP 3**: Create The JET UI Frontend Build Job
 
 The first task in our CI/CD pipeline is to build the JETUI frontend application. We need to create a build job for this. And we want the build to be triggered automatically whenever there is a code commit. The build process can be automated and deployed automatically to a designated JCS environment.
 
@@ -279,7 +158,7 @@ Congratulation! You have now completed your first build.
 
 
 
-### **STEP 7**: Create The Reward Service Node.js Build Job
+### **STEP 4**: Create The Reward Service Node.js Build Job
 
 
 - Switch back to the Build tab and create a new job. There should be only be one job and that is the *JETUI_JCS_Build* you just created.
@@ -328,7 +207,7 @@ Congratulation! You have now completed your first build.
 
 
 
-### **STEP 8**: Create The JET UI Frontend Deployment Configuration
+### **STEP 5**: Create The JET UI Frontend Deployment Configuration
 
 The next part of the CI/CD pipeline is the deployment of the builds. Let's create a deployment configuration for the JET UI frontend. The deployment runtime is the JCS environment which you provisioned earlier.
 
@@ -397,16 +276,18 @@ The next part of the CI/CD pipeline is the deployment of the builds. Let's creat
 
 - Verify your deployment by going to the JET UI frontend URL
 
-  Enter `http:<JCS IP address>/cafesupremo` in your browser, replacing the `<JCS IP address>` with the external IP address of your JCS instnace.
+  Enter `http:<JCS IP address>/cafesupremo` in your browser, replacing the `<JCS IP address>` with the external IP address of your JCS instance.
 
   ![](images/77.png)
 
-Congratulation if you can load the Cafe Supremo home page.
+*Congratulation you have successfully deployed the Cafe Supremo JET UI frontend.*
 
-- Explore the JET UI by selecting the menu options from the hamburger icon at the top left hand corner of the Cafe Supremo home page
+- Explore the JET UI by selecting the menu options from the hamburger icon at the top left hand corner of the Cafe Supremo home page.
+
+**NOTE**: You should note that the Rewards menu option need to make an API call to the RewardService backend which is has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will be using this client to test our API in the next lab.
 
 
-### **STEP 9**: Create The Reward Service Deployment Configuration
+### **STEP 6**: Create The Reward Service Deployment Configuration
 
 Now we create a deployment configuration for the Node.js Reward Service backend. The deployment runtime is the ACCS environment which you provisioned earlier.
 
@@ -422,18 +303,20 @@ Now we create a deployment configuration for the Node.js Reward Service backend.
   - **Job**: `RewardService_Build`
   - **Artifact**: `rewardservice.zip`
 
+
 - Click **New**
 
 - Select the **Application Container Cloud...** from the context option list
 
   ![](images/67.png)
 
-- Complete the **Deploy to Application Container Cloud** popup configuration as illustrated below:
+- Complete the **Deploy to Application Container Cloud** dialog with the following:
 
   - **Data Center**: `US Commercial2 - us2`
   - **Identity Domain**: Your domain ID
   - **Username**: Your Cloud username
   - **Password**: Your Cloud user password
+
 
 - Click **Test Connection**
 
@@ -465,6 +348,8 @@ You have now completed the deployment configuration for the RewardService. Let's
 
 - Click **Deploy**
 
+- The deployment will take a few minutes and you may see errors due to timeouts. Just refresh the page to see if the status has been updated.
+
 - The deployment should complete successfully with a *Last deployment succeeded* message as below
 
   ![](images/73.png)
@@ -480,10 +365,10 @@ You have now completed the deployment configuration for the RewardService. Let's
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
 
-You have finished this lab section.
+You have completed this lab section.
 
-[Proceed to Lab 300: Putting It All Together - CICD](300-CICDlab.md)
+[Proceed to Lab 300: API First Development](300-APIFIRSTlab.md)
 
 or
 
-[Back to Cafe Supremo Home](README.md)
+[Back to API First Home](README.md)

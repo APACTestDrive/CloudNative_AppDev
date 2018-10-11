@@ -86,6 +86,3 @@ There are four parts to the lab with each focusing on different aspect of Cloud 
 ## 400: Putting It All Together - Continuous Integration and Delivery
 
 [Click Here to Lab 400: Putting It All Together - CICD](400-CICDlab.md)
-
-
-[Return to API First Home](README.md)

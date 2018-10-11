@@ -13,7 +13,7 @@ During this part of the lab, you will take on the **DevOps Engineer Persona**. Y
 
 The current release of the application no longer requires a database for storing customer data. Customer data is now stored in a ACCS cache and is automatically populated upon the start up of the RewardService ACCS instance. This is to keep the lab duration short and to avoid the laborious effort in uploading the data to a database. However, a database would be required as a persistent storage in real case scenario.
 
-An Oracle Database Cloud Service is still required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
+However, an Oracle Database Cloud Service is still required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
 
 ## About This Exercise
@@ -91,10 +91,10 @@ The following parameters have to be provided:
 
 
 
-## Provision Application Container Cloud Service (ACCS) Cache
+## Provision an Application Container Cloud Service (ACCS) Cache
 
 
-### **STEP 3**: Create a ACCS Cache Instance
+### **STEP 3**: Create an ACCS Cache Instance
 
 - On the dashboard click the hamburger icon on the **Application Container** tile. Select **Open Service Console**.
 
@@ -138,10 +138,10 @@ Once completed, you will find the **rewardservice** cache instance available to 
 *You have now completed the provisioning of an ACCS Cache instance for use with an ACCS application instance.*
 
 
-## Provision a ACCS Application Instance
+## Provision an ACCS Application Instance
 
 
-### **STEP 4**: Create a ACCS Application Instance
+### **STEP 4**: Create an ACCS Application Instance
 
 - Go back to the Application Container Service Console
 
@@ -303,7 +303,7 @@ In this section, you learn how to create a basic Build VM template that includes
 
 - Click **New Template** in the Build VM Templates page
 
-![](images/79.png)
+  ![](images/79.png)
 
 - In the New VM Template dialog box, enter the following details:
 
@@ -311,7 +311,7 @@ In this section, you learn how to create a basic Build VM template that includes
   - **Description**: `A Build VM template with minimum required software`
   - **Platform**: `Oracle Linux 7`
 
-![](images/20.png)
+  ![](images/20.png)
 
 - Click **Create**
 
@@ -341,7 +341,7 @@ The CafeSupremo template contains the minimum software required to run basic bui
 
 ### **STEP 6.3**: Create a Virtual Machine for Build and Develop
 
-Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute Classic virtual machines (VMs) to run builds. To use the VM we need to connect the VM with Oracle Developer Cloud Service and we need to capture some service detail about the VM for configuration.
+Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute Classic virtual machines (VMs) to run builds. In order to create this build VM for Developer Cloud Service, we need to capture some service detail from the Oracle Cloud Infrastructure Compute Classic for configuration.
 
 - In another browser tab or window, open Oracle Cloud Dashboard
 
