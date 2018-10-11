@@ -1,35 +1,29 @@
 
-# Cloud Native Development with Oracle AppDev Platform - Café Supremo Demo and Workshop
+# API First Development with Oracle AppDev Platform - API First Development Hands On Lab
 
 ![](images/header01.png)
 
 ## Introduction
 
-This Oracle Cloud project contains the demo script and lab material to demonstrate a typical DevOps workflow of a cloud native application using Oracle AppDev Platform. Participants will be able appreciate and experience how to use Oracle Cloud Services to implement cloud native applications using a real use case scenario based on a loyalty rewards system for a coffe shop. This includes services such as Oracle Developer Cloud Service, Java Cloud Service, Application Container Cloud Service and Database Cloud Service.
+APIs make up the new language for businesses to communicate with each other. As they increase in importance, more responsibility lies on those who build and manage the APIs. Apiary solves the fundamental task of improving API development, but for many companies, meeting those increasing expectations means not only working harder but also streamlining the business process of how work gets done.
 
-The demo and lab will also show how to work with Open Source tools in Oracle Developer Cloud Service for managing your software lifecycle as well as how to build, deploy and promote to different environments. With Continuous Integration and Delivery as core principles, it will illustrate how issues are tracked, managed and released.
+This Oracle Cloud workshop contains the hands on lab material to demonstrate an API First development workflow of a cloud native application using Oracle AppDev Platform. Participants will be able appreciate and experience how to use Oracle Cloud Services to implement cloud native applications using a real use case scenario based on a loyalty rewards system for a coffee shop. This includes services such as Oracle Apiary, Developer Cloud Service, Java Cloud Service, Application Container Cloud Service and Database Cloud Service.
 
-There are two parts to this project, a quick demo and a hands on lab. And you can select the path based on your target audience.
+The lab will also show how to work with Open Source tools in Oracle Developer Cloud Service for managing your software lifecycle as well as how to build, deploy and promote to different environments. With Continuous Integration and Delivery as core principles, it will illustrate how issues are tracked, managed and released.
 
-## Demo
 
-The Demo is good for discovery workshops and meetings with C-level executives, architects and project leads. It takes about 30 minutes to complete. The demo comes in two parts, a guided script that walks through the demo steps and the setup procedure.
+## API First Development Hands On Lab
 
-The [Demo Script](DEMOscript.md) showcases the following:
+The API First Development lab is a good deep dive workshops for architects, project leads and developers. This requires about 3 hours to complete.
 
-*	Continuous Integration and Continuous Delivery through automation in Oracle Developer Cloud Service
-*	Task creation using Oracle Developer Cloud Service Issue tracking system
-*	Working with Open Source tools
-*	Pushing the changes from a remote repository
-*	Scaling up and scaling out of ACCS and JCS
+The [API First Hands On Lab](CICDlab.md) provide a hands on experience in setting up the complete end-to-end CI/CD pipeline on Oracle Cloud Platform.
 
-This requires a working demo that was previously configured. Please follow the [Demo Setup](DEMOsetup.md) instruction prior to running the demo. This will be the same instruction as the CICD Lab.
+On the development side, this will show you how to develop with API First without writing any code:
+* Create an API Blueprint to describe our APIs
+* Test your API against the Apiary Mock Server
+* Generate code examples from Apiary for different languages
 
-## CI/CD Hands On Lab
-
-The CI/CD lab is good for deep dive workshops with architects, project leads and developers. This requires more time to and it takes about 3 hours to complete.
-
-The [CI/CD Hands On Lab]CICDlab.md) provide a hands on experience in setting up the complete end-to-end CI/CD pipeline on Oracle Cloud Platform. This shows you how prepare a Developer Cloud Service for:
+On the CI/CD side, this will show you how to automate your workflow with Developer Cloud Service:
 
 *	Project creation, configuration, and user management
 *	Agile development
@@ -43,18 +37,20 @@ The [CI/CD Hands On Lab]CICDlab.md) provide a hands on experience in setting up 
 
 ## Scenario
 
-You are an application developer who will be developing a brand new cloud native loyalty application for Café Supremo, which will be deployed to the Oracle Cloud. The reason why you want to adopt a cloud native approach has partially been driven by the need to go to market quicker, by delivering new features more frequently, but also more reliably. And you are able to do this by developing Microservices that has less dependencies on other services, as well as the footprint being smaller and easier to deploy. What’s also attractive with Microservices is that you can use the best programming language for the job. So, you could end up with a polyglot application. To be able to deliver this new style of cloud native application approach, you will need to adopt the Agile development practice to continuously integrate and deliver these services and features. The application basically consists of two parts:
+You are an application developer who will be developing a brand new cloud native loyalty application for Café Supremo, which will be deployed to the Oracle Cloud. The reason why you want to adopt a cloud native approach has partially been driven by the need to go to market quicker, by delivering new features more frequently, but also more reliably. And you are able to do this by developing Microservices that has less dependency on other services, as well as the footprint being smaller and easier to deploy. What’s also attractive with Microservices is that you can use the best programming language for the job. So, you could end up with a polyglot application. To be able to deliver this new style of cloud native application approach, you will need to adopt the Agile development practice to continuously integrate and deliver these services and features. The application basically consists of two parts:
 
 1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance.
-2. The Reward Collection backend service, which is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance.
+2. The Reward Service backend service, which is a Microservice written in Node.js, packaged as a ZIP file and deployed to an Application Container Cloud Service instance.
 3. The customer data is stored in the Database Cloud Service and the data is cached in Application Container Cache.
 
 
 ![](images/architecture.png)
 
+You will use Apiary to write your API for the Reward Service backend and generate the API Blueprint. This API will be called by the client JET UI frontend. Once the API Blueprint is ready, you will use the Mock Server to test your API. We can also use the Mock Server for client application development & testing.
+
 You will use DevCS as the core CI/CD software lifecycle management tool for your Agile development and DevOps pipeline. A developer could use their favourite IDE or editor to write their code. In this scenario a developer will be using an open source editor called Brackets which can synchronise the code changes with the Git repository in Developer Cloud Service.
 
-Different developers or teams can work independently on the JET UI frontend and the Node.js Rewards Service backend. The two parts can be integrated and delivered continuously through Oracle Developer Cloud Service.
+Different developers or teams can work independently on the JET UI frontend and the Node.js Rewards Service backend from the API Blueprint. The two parts can be integrated and delivered continuously through Oracle Developer Cloud Service.
 
 A project manager will be logging into Developer Cloud Service and manage the Café Supremo project from issue tracking to tracking the build, deploy and release progress.
 
@@ -67,10 +63,5 @@ A project manager will be logging into Developer Cloud Service and manage the Ca
 - *[Click HERE for Brackets installation detail](BRACKETSinstall.md)*
 - *[Click HERE for Git installation details](GITCLIENTinstall.md)*
 
-
-
-[Go to Demo Setup](DEMOsetup.md)
-
-or
 
 [Go to CI/CD Hands On Lab](CICDlab.md)

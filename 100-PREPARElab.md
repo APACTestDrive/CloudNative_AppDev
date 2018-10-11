@@ -4,6 +4,8 @@
 
 ![](images/header05.png)
 
+Before we start designing our Reward Service API we need to prepare our cloud environments. This is necessary because we would need the environments to run our application as well as to build our CI/CD pipeline.
+
 During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and Application Container Cloud Service instance. You must have access to a:
 
 - GitHub account
@@ -14,7 +16,7 @@ The current release of the application no longer requires a database for storing
 An Oracle Database Cloud Service is still required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
 
-### About This Exercise
+## About This Exercise
 
 In this exercise, we will:
 - Create and configure a Database Cloud Service (DBCS) instance to hold the JCS (WebLogic) configuration
@@ -377,10 +379,10 @@ You have now created a Build VM for for your build jobs. The initial status will
   ![](images/24.png)
 
 
-You have finished this lab section.
+### You have finished this lab section.
 
 [Proceed to Lab 200: Create CI/CD Pipeline in DevCS](200-DEVCSlab.md)
 
 or
 
-[Return to Cafe Supremo Home](README.md)
+[Return to API First Home](README.md)

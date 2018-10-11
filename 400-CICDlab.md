@@ -1,6 +1,6 @@
 
 
-# Lab 300: Putting It All Together - Continuous Integration and Delivery
+# Lab 400: Putting It All Together - Continuous Integration and Delivery
 
 ![](images/header07.png)
 
