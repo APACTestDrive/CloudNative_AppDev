@@ -14,11 +14,10 @@ The lab will also show how to work with Open Source tools in Oracle Developer Cl
 
 ## API First Development Hands On Lab
 
-The API First Development lab is a good deep dive workshops for architects, project leads and developers. This requires about 3 hours to complete.
-
-The [API First Hands On Lab](CICDlab.md) provide a hands on experience in setting up the complete end-to-end CI/CD pipeline on Oracle Cloud Platform.
+The API First Development lab is a good deep dive workshops for architects, project leads and developers. This requires about 3 hours to complete. This lab provide a hands on experience in setting up the complete end-to-end CI/CD pipeline on Oracle Cloud Platform and developing with API First.
 
 On the development side, this will show you how to develop with API First without writing any code:
+
 * Create an API Blueprint to describe our APIs
 * Test your API against the Apiary Mock Server
 * Generate code examples from Apiary for different languages
@@ -60,8 +59,33 @@ A project manager will be logging into Developer Cloud Service and manage the Ca
 - The demo and lab requires an Oracle Public Cloud account
 - You will also need to install a lightweight IDE - [Brackets](http://brackets.io/). Brackets installer will be provided by instructor or you can download it from [GitHub HERE](https://github.com/adobe/brackets/releases).  
 - You need to have a Git Client. If you are already using Github Desktop, Eclipse or other IDE, you probably have Git already. Git installer will be provided by the instructor or you can download it from [here](https://git-scm.com/downloads).
+
 - *[Click HERE for Brackets installation detail](BRACKETSinstall.md)*
 - *[Click HERE for Git installation details](GITCLIENTinstall.md)*
 
 
-[Go to CI/CD Hands On Lab](CICDlab.md)
+# Lab Exercises
+
+There are four parts to the lab with each focusing on different aspect of Cloud Native Application development, from provisioning of a cloud environment to importing your code and creating you CI/CD pipeline. Please begin your exercise in the following order:
+
+## 100: Prepare Your Oracle Cloud Environments
+
+[Click Here to Lab 100: Prepare Your Oracle Cloud Environments](100-PREPARElab.md)
+
+
+## 200: Create Continuous Integration and Continuous Devlivery Pipeline in Oracle Developer Cloud Service
+
+[Click Here to Lab 200: Create CI/CD Pipeline in DevCS](200-DEVCSlab.md)
+
+
+## 300: Using Apiary and Create API Blueprint
+
+[Click Here to Lab 300: Using Apiary and Create API Blueprint](300-APIFIRSTlab.md)
+
+
+## 400: Putting It All Together - Continuous Integration and Delivery
+
+[Click Here to Lab 400: Putting It All Together - CICD](400-CICDlab.md)
+
+
+[Return to API First Home](README.md)
