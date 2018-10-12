@@ -286,17 +286,17 @@ The next part of the CI/CD pipeline is the deployment of the builds. Let's creat
 
     ![](images/apiary-34.png)
 
-- Explore the menu options, Discover, Stores and Rewards. Please note Rewards make REST API call to the Reward Service backend to retrieve reward points and coupons.
+- Explore the menu options, Discover, Stores and Rewards. Please note **Rewards** makes a REST API call to the Reward Service backend to retrieve reward points and coupons.
 
     ![](images/apiary-35.png)
 
 
 
+**NOTE**: You should note that the Rewards menu option need to make an API call to the RewardService backend which has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will be using this client to test our API in the next lab.
+
+
 **Congratulation you have successfully deployed the Cafe Supremo JET UI frontend.**
 
-- Explore the JET UI by selecting the menu options from the hamburger icon at the top left hand corner of the Cafe Supremo home page.
-
-**NOTE**: You should note that the Rewards menu option need to make an API call to the RewardService backend which has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will be using this client to test our API in the next lab.
 
 
 ### **STEP 6**: Create The Reward Service Deployment Configuration
