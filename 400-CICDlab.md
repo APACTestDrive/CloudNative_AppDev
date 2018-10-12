@@ -4,7 +4,7 @@
 
 ![](images/header07.png)
 
-On the completion of the previous lab - Lab 102, you should be able to build and deploy the Cafe Supremo JET UI frontend and the Node.js Reward Service backend as well as loading the Cafe Supremo app on your browser. However, you may noticed that the **Rewards** menu option on the JET UI frontend did not work. That's because the REST API in the JET UI frontend is using an obsolete Reward Service.
+On the completion of the previous lab - Lab 300, you should be able to build and deploy the Cafe Supremo JET UI frontend and the Node.js Reward Service backend as well as loading the Cafe Supremo app on your browser. However, you may noticed that the **Rewards** menu option on the JET UI frontend did not work. That's because the REST API in the JET UI frontend is using an obsolete Reward Service.
 
 In this lab we will demonstrate the complete end-to-end of our CI/CD lifecycle by updating the REST API call in the JET UI frontend code to point to our newly provisioned Reward Service. By doing so, it will trigger an automtated build and deployment of the JET UI frontend.
 

@@ -153,7 +153,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
 
   ![](images/54.png)
 
-Congratulation! You have now completed your first build.
+**Congratulation! You have now completed your first build.**
 
 
 
@@ -203,7 +203,7 @@ Congratulation! You have now completed your first build.
 
   ![](images/58.png)
 
-  You have now completed the **RewardService_Build** build job
+  **You have now completed the RewardService_Build build job**
 
 
 
@@ -274,17 +274,29 @@ The next part of the CI/CD pipeline is the deployment of the builds. Let's creat
 
   ![](images/66.png)
 
-- Verify your deployment by going to the JET UI frontend URL
+  - Verify your deployment by loading the JET UI frontend URL. Open a new browser page (preferably **Chrome**), and enter the following URL:
 
-  Enter `http:<JCS IP address>/cafesupremo` in your browser, replacing the `<JCS IP address>` with the external IP address of your JCS instance.
+    `http:<JCS IP address>/cafesupremo` , replacing the `<JCS IP address>` with the external IP address of your JCS instance.
 
-  ![](images/77.png)
+   - Once the CafeSupremo home page is loaded, you will need to enable the Developer Tool and change to a mobile device format so that the menu options will be presented correctly as the UI is designed for a mobile format.
 
-*Congratulation you have successfully deployed the Cafe Supremo JET UI frontend.*
+     ![](images/apiary-26.png)
+
+  - Click on the **Hamburger** icon at the top left hand corner to reveal the menu options
+
+    ![](images/apiary-34.png)
+
+- Explore the menu options, Discover, Stores and Rewards. Please note Rewards make REST API call to the Reward Service backend to retrieve reward points and coupons.
+
+    ![](images/apiary-35.png)
+
+
+
+**Congratulation you have successfully deployed the Cafe Supremo JET UI frontend.**
 
 - Explore the JET UI by selecting the menu options from the hamburger icon at the top left hand corner of the Cafe Supremo home page.
 
-**NOTE**: You should note that the Rewards menu option need to make an API call to the RewardService backend which is has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will be using this client to test our API in the next lab.
+**NOTE**: You should note that the Rewards menu option need to make an API call to the RewardService backend which has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will be using this client to test our API in the next lab.
 
 
 ### **STEP 6**: Create The Reward Service Deployment Configuration
@@ -354,7 +366,7 @@ You have now completed the deployment configuration for the RewardService. Let's
 
   ![](images/73.png)
 
-- Verify your deployment to see if you can retreive the current status for reward points and coupons
+- Verify your deployment to see if you can retrieve the current status for reward points and coupons. We do this by calling the API on the RewardService.
 
   - Enter `https://<rewardservice hostname>/loyalty/v2/points/10001` in your browser substituting the hostname of the URL with the **rewardservice** instance URL's hostname you obtained in Step 4 from the previous Lab 101
 
@@ -364,8 +376,9 @@ You have now completed the deployment configuration for the RewardService. Let's
 
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
+**NOTE**: You would normally write your API Blueprint first before coding your JET UI frontend and RewardService backend. However, as part of the demonstration for this lab exercise, the frontend and backend applications are already written for you. This is to demonstrate the end-to-end of a CI/CD pipeline. You will work with the API design in the next lab exercise which should have been the first step of your design.
 
-You have completed this lab section.
+**You have completed this lab section.**
 
 [Proceed to Lab 300: API First Development](300-APIFIRSTlab.md)
 
