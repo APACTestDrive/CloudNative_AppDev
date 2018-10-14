@@ -75,32 +75,16 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
 ### STEP 2: Commit and Push Code Changes
 
-Let's try out the CI/CD pipeline by making code changes and pushing the committed changes to the DevCS master Git repository. We will work with the cloned Git repository, locate the REST API calls and replace the hostname with the hostname of the newly provisioned Reward Service instance.
+Let's try out the CI/CD pipeline by making code changes and pushing the committed changes to the DevCS master Git repository. We will work with the cloned Git repository, replace the REST API calls to our Apiary Mock Server with the actual Reward Service that we deployed earlier.
 
-- Expand the left nagivation tree and open *reward.js* file (*Under src->js->viewModels*)
+- Expand the left navigation tree and open *config.json* file (*Under src->js->config*)
 
   ![](images/92.png)
 
-- On the main window, locate line 27, 47, 72 and 99 in *rewards.js* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this Reward Service is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
+- On the main window, locate the **baseURL** entry in *config.json* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this Reward Service is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
 
   ```
-  // Get the current points of memeber
-  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/points/10001
-  ```
-
-  ```
-  // Get the current coupon of memeber
-  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/coupon/10001
-  ```
-
-  ```
-  // Credit memeber with one point
-  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/points/10001
-  ```
-
-  ```
-  // Consume one coupon
-  https://rewardservice-xxxxxx.xxxxx.oraclecloud.com/loyalty/v2/coupon/10001
+  "baseURL": "https://rewardservice-xxxxxx.xxxxx.oraclecloud.com",
   ```
 
 - Select **Save** to save the code changes
@@ -187,4 +171,4 @@ Congratulation!! You have completed the lab and have a working CI/CD pipeline fo
 You have completed all the labs.
 
 
-[Return to Cafe Supremo Home](README.md)
+[Return to API First Home](README.md)
