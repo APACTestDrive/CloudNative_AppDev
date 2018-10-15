@@ -81,7 +81,7 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
   ![](images/92.png)
 
-- On the main window, locate the **baseURL** entry in *config.json* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this Reward Service is hard coded, hence we need to update the hostname to point to your instance.  You could in fact point to other instances.
+- On the main window, locate the **baseURL** entry in *config.json* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this Reward Service is hard coded, hence we need to update the hostname to point to your instance.
 
   ```
   "baseURL": "https://rewardservice-xxxxxx.xxxxx.oraclecloud.com",
@@ -142,7 +142,7 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
   Don't forget to open this in the Developer Tools mode for a Mobile Device
 
-  ![](images/77.png)
+  ![](images/apiary-34.png)
 
 - Click on the hamburger icon on at the top left hand corner to expand the menu
 
@@ -165,10 +165,9 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
 
 
-Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.
+**Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.**
 
-
-You have completed all the labs.
+**You have completed all the labs.**
 
 
 [Return to API First Home](README.md)
