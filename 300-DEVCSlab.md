@@ -1,6 +1,6 @@
-# Lab 200: Create Continuous Integration and Continuous Delivery Pipeline in Developer Cloud Service
+# Lab 300: Create Continuous Integration and Continuous Delivery Pipeline in Developer Cloud Service
 
-![](images/header06.png)
+![](images/header07.png)
 
 We will create a project for the Café Supremo in Developer Cloud Service and bring all the components into this project so that we can automate the build and deploy process. We will also examine other chain tools that comes with DevCS such as branch merge request, issue tracking, Agile development, release management and team collaboration.
 

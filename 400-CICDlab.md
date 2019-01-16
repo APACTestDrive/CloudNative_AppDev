@@ -2,7 +2,7 @@
 
 # Lab 400: Putting It All Together - Continuous Integration and Delivery
 
-![](images/header07.png)
+![](images/header08.png)
 
 On the completion of the previous lab - Lab 300, you should be able to build and deploy the Cafe Supremo JET UI frontend and the Node.js Reward Service backend as well as loading the Cafe Supremo app on your browser. However, you may noticed that the **Rewards** menu option on the JET UI frontend did not work. That's because the REST API in the JET UI frontend is using an obsolete Reward Service.
 
