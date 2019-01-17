@@ -339,7 +339,7 @@ If you have multiple jobs across projects using a common Build VM template, you 
     ![](images/136.png)
 
 
-*You have now created a Build VM for for your build jobs. The initial status will be in the STOPPED state.*
+*You have now created a Build VM for for your build jobs.*
 
 
 
