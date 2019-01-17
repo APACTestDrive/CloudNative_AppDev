@@ -267,7 +267,7 @@ The VM template contains the minimum software required to run basic builds. We n
     ![](images/19.png)
 
 
-**NOTE**: You have just created your template. However, we won't be using this as the instructor has already created one earlier name **CafeSupremo** and assigned it to a number of Build VMs. You may explore the CafeSupremo Build VM Template and the configured software packages should be the same as the template you just created.
+**NOTE**: You have just created your template. However, we won't be using this as the instructor has already created one earlier named **CafeSupremo** and assigned it to a number of Build VMs. You may explore the CafeSupremo Build VM Template and the configured software packages should be the same as the template you just created.
 
 
 #### **STEP 4.3**: Configure a Compute Account for Build VMs
@@ -333,6 +333,10 @@ If you have multiple jobs across projects using a common Build VM template, you 
 - In the Add Build VM dialog box, in Quantity, specify the number of VMs you want to allocate. In VM Template, select the Build VM template.
 
   ![](images/135.png)
+
+- The newly created Build VM should be in the stopped state.
+
+    ![](images/136.png)
 
 
 *You have now created a Build VM for for your build jobs. The initial status will be in the STOPPED state.*
