@@ -12,37 +12,40 @@ The lab will also show how to work with Open Source tools in Oracle Developer Cl
 
 ## Continuous Integration and Continuous Delivery Hands On Lab
 
-The CI/CD lab is a good deep dive workshops for architects, project leads and developers. This requires about 3 hours to complete. This lab provide a hands on experience in setting up the complete end-to-end CI/CD pipeline on Oracle Cloud Platform and demonstrating how your modernise existing application by bringing your code into Oracle's Cloud Platform.
+The CI/CD lab is a good deep dive workshops for architects, project leads and developers. This requires about 3 hours to complete. This lab provide a hands on experience in setting up the complete end-to-end CI/CD pipeline on Oracle Cloud Platform and demonstrates how you can modernise existing application by bringing your code into Oracle's Cloud Platform.
 
 This lab will show you how to automate your workflow with Developer Cloud Service:
 
-*	Project creation, configuration, and user management
+*	Provisioning of your environment
+* Project creation, configuration, and user management
 * Importing your code
 *	Agile development
 *	Integrated issue tracking for tasks, bugs, and enhancements
-*	Source code repository through Git to store your application source
+*	Source code management through Git to store your application code
 *	Code Review enabled with Team Collaboration
 *	Continuous software build integration
-*	Deployment to an Oracle Java Cloud Service and Application Container Cloud Service
+*	Deployment to an Oracle Java Cloud Service
 
 
 
 ## Scenario
 
-You are an application developer who will be developing a brand new cloud native loyalty application for Café Supremo, which will be deployed to the Oracle Cloud. The reason why you want to adopt a cloud native approach has partially been driven by the need to go to market quicker, by delivering new features more frequently, but also more reliably. You may be developing a new application you simply want to modernise an existing application by taking advangate of a cloud platfomr and a modern development approach. You can for example do this by developing Microservices that has less dependency on other services, as well as the footprint being smaller and easier to deploy. What’s also attractive with Microservices is that you can use the best programming language for the job. So, you could end up with a polyglot application. To be able to deliver this new style of cloud native application approach, you will need to adopt the Agile development practice to continuously integrate and deliver these services and features. The application basically consists of two parts:
+You are an application developer who will be developing a cloud native loyalty application for Café Supremo, which will be deployed to the Oracle Cloud. The reason why you want to adopt a cloud native approach has partially been driven by the need to go to market quicker, by delivering new features more frequently, but also more reliably. You may be developing a brand new application or you simply want to modernise an existing application by taking advangate of a cloud platform and a modern development approach.
 
-1. The user interface that is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance.
-2. The Reward Service backend service, which is a Microservice written in Node.js running in a Docker container and hosted in a Kubernetes cluster.
-3. The customer data is stored in the Database Cloud Service.
+You can for example do this by developing Microservices that has less dependency on other services, as well as the footprint being smaller and easier to deploy. What’s also attractive with Microservices is that you can use the best programming language for the job. So, you could end up with a polyglot application. To be able to deliver this new style of cloud native application approach, you will need to adopt the Agile development practice to continuously integrate and deliver these services and features. The application basically consists of two parts:
+
+1. The user interface is built using Oracle JET framework, packaged as a WAR file and deployed to a Java Cloud Service instance
+2. The Reward Service backend service, which is a Microservice written in Node.js running in a Docker container and hosted in a Kubernetes cluster
+3. The customer data is stored in the Database Cloud Service or Autonomous Transaction Processing database
 
 
 ![](images/architecture.png)
 
-You will use DevCS as the core CI/CD software lifecycle management tool for your Agile development and DevOps pipeline. A developer could use their favourite IDE or editor to write their code. In this scenario a developer will be using an open source editor called Brackets which can synchronise the code changes with the Git repository in Developer Cloud Service.
+You will use Developer Cloud Service (DevCS) as the core CI/CD software lifecycle management tool for your Agile development and DevOps pipeline. A developer could use their favourite IDE or editor to write their code. In this scenario a developer will be using an open source editor called Brackets which can synchronise the code changes with the Git repository in Developer Cloud Service.
 
 Different developers or teams can work independently on the JET UI frontend and the Node.js Rewards Service backend. The two parts can be integrated and delivered continuously through Oracle Developer Cloud Service.
 
-A project manager will be logging into Developer Cloud Service and manage the Café Supremo project from issue tracking to tracking the build, deploy and release progress.
+A project manager can log into Developer Cloud Service and manage the Café Supremo project from issue tracking to tracking the build, deploy and release progress.
 
 
 ## Prerequisites ##
@@ -69,7 +72,7 @@ There are four parts to the lab with each focusing on different aspect of Cloud 
 [Click Here to Lab 200: Import Your Code](200-IMPORTlab.md)
 
 
-## 300: Create Continuous Integration and Continuous Devlivery Pipeline in Oracle Developer Cloud Service
+## 300: Create Continuous Integration and Continuous Delivery Pipeline in Oracle Developer Cloud Service
 
 [Click Here to Lab 300: Create CI/CD Pipeline in DevCS](300-DEVCSlab.md)
 

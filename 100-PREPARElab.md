@@ -6,26 +6,35 @@
 
 During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and work with Oracle Cloud Platform tools. You must have access to a:
 
-- GitHub account
-- Oracle Public Cloud Service account including Java, Developer, Database and Storage Classic Cloud Service
+- Oracle Public Cloud Service Account
+- Java Cloud Service (JCS)
+- Database Cloud Service (DBCS) or Autonomous Transaction Processing (ATP)
+- Developer Cloud Service (DevcS)
+- Compute Classic Cloud Service
+- Storage Classic Cloud Service
 
-The current release of the application no longer requires a database for storing customer data. Customer data is now stored in a ACCS cache and is automatically populated upon the start up of the RewardService ACCS instance. This is to keep the lab duration short and to avoid the laborious effort in uploading the data to a database. However, a database would be required as a persistent storage in real case scenario.
 
-However, an Oracle Database Cloud Service is still required by Java Cloud Service to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
+An Oracle Database Cloud Service or ATP is required by Java Cloud Service for storing its configurations and to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
+
+Customer data can be stored in the same DBCS or ATP instance. However, for this lab, the customer data is already populated in a separate ATP instance. This is to keep the lab duration short and to avoid the laborious effort in uploading the data to a database. This customer database will be shared by all attendees.
 
 
 ## About This Exercise
 
 In this exercise, we will:
-- Create and configure a Database Cloud Service (DBCS) instance to hold the JCS (WebLogic) configuration (Optional)
-- Create and configure a Java Cloud Service (JCS) (WebLogic) instance to host the JET UI frontend
-- Create and configure a Developer Cloud Service (DevCS) Build VM to build our application
+- Create and configure a DBCS or ATP instance to hold the JCS (WebLogic) configuration (Optional)
+- Create and configure a JCS (WebLogic) instance to host the JET UI frontend
+- Create and configure a Developer Cloud Service (DevCS) Build VM to build yo application
 
 
 
-## Provision a Database Cloud Service (DBCS) Instance
+## Provision a Database Cloud Service (DBCS) or Autonomous Transaction Processing Instance (ATP)
 
-This step is optional. Due to the time it takes to provision an instance, the instructor may have already created one for you. It also make sense that a single DBCS instance is shared by all lab participants, hence there is no need to create separate instances. The following steps are for your reference and you may dive into an existing instance to explore its configuration and administration tools.
+**This step is Optional**
+
+**You will be advised by you instructor**
+
+Due to the time it takes to provision an instance, the instructor may have already created one for you. It also make sense that a single DBCS/ATP instance should be shared by all lab participants, hence there is no need to create separate instances. The following steps are for your reference and you may dive into an existing instance to explore its configuration and administration tools.
 
 
 ### **STEP 1**: Sign Into The Oracle Cloud Service Account
@@ -91,7 +100,7 @@ The following parameters have to be provided:
 
 **NOTE**:  Your DBCS instance will take about 30 minutes to complete. Please wait until the DBCS instance has been completed before creating a JCS instance. Whilst we are waiting for the DBCS instance to be provisioned, we can work on other infrastructure components such as Developer Cloud Service.
 
-- Once your DBCS is ready your instance should appear similar to below:
+- Once your DBCS is ready, your instance should appear similar to below:
 
    ![](images/3.2.png)
 
@@ -102,11 +111,13 @@ The following parameters have to be provided:
 
 ## Provision a Java Cloud Service (JCS) Instance
 
-For this part of the lab, you would need a DBCS instance to complete the JCS configuration.
+For this part of the lab, you would need a DBCS/ATP instance to complete the JCS configuration.
 
 - Please verify the provisioning of a DBCS instance in **Step 2** has completed and is up and running
 
 - If this is running, then proceed to the following steps, otherwise, please wait until it is ready.
+
+**NOTE**: If a DBCS/ATP instance is provisioned by your instructor, he will provide you with the access detail.
 
 
 
@@ -129,9 +140,13 @@ For this part of the lab, you would need a DBCS instance to complete the JCS con
 - Enter the following parameters:
 
   - **Instance Name**: `demoJCS`
-  - **Service Level**: `Java Cloud Service`
+  - **Region**: `us-ashburn-1` or `us-phoenix-1` for your tenancy
+  - **Availability Domain**: `AD1` default
+  - **Subnet**: `ManagedCompartmentForPaaS` select from the dropdown list
+  - **License Type**: `Subscribe to a new Oracle Java Cloud Service software license`
+  - **Service Level**: `Oracle Java Cloud Service`
   - **Software Release**: `12c Software Release (12.2.1.2)`
-  - **Software Edition**: `Enterprise Edition software edition`
+  - **Software Edition**: `Enterprise Edition`
   - Leave the rest to default
 
 - Click **Next**
@@ -145,15 +160,14 @@ For this part of the lab, you would need a DBCS instance to complete the JCS con
 
 The following parameters have to be provided:
 
-  - **Shape**: `OC3 - 1.0 OCPU, 7.5 GB RAM` this is the smallest one (default)
+  - **Shape**: `VM.Standard2.1 - 1.0 OCPU, 15.0GB RAM` this is the smallest one (default)
   - **Server Count**: `1` which means one managed server
   - **Domain Partitions**: `zero` for no partitions (default)
   - **Enable access to Administration Console**: `Checked` to get access to the Admin console
   - **Deploy Sample Application**: `Unchecked`
-  - **Enable authentication with Oracle Identity Cloud Service**: `Unchecked`
-  - **SSH Public Key**: public key which will be uploaded to the VM during the creation
-    - It allows to connect to the VM through ssh connection using the private key.
-    - Click on **Edit** button and select the same publicKey what was generated for Database Cloud Service instance    
+  - **SSH Public Key**: Provide a public key which will be uploaded to the VM during the creation. It allows you to connect to the VM through ssh connection using the private key.
+    - Click on **Edit** button
+    - If you don't have or want to create a new key pair then select **Create a New Key** option and select **Enter** to download the newly generated keypair for later usage
   - **Username**: `weblogic` username of WebLogic administrator
   - **Password**: WebLogic administrator's password. Don't forget to note the provided password.
   - **Database Instance Name**: `demoDB` Database Cloud Service name to store WebLogic repository data. Your provisioned DBCS instance will appear in the dropdown list.
@@ -175,7 +189,7 @@ When the request has been accepted, the Java Cloud Service Console page appears 
 
 **NOTE**: Your JCS instance will be ready in about 30 minutes. Whilst we are waiting for the JCS instance to be provisioned, we can work on other components such as Developer Cloud Service.
 
-*You have now completed the provisioning of the JET UI frontend JCS instance.*
+*You have now completed the provisioning of a JCS instance for hosting the JET UI frontend.*
 
 
 
@@ -190,13 +204,15 @@ It is recommended to use the Autonomous Developer Cloud Service as it offers a d
 
 Oracle Developer Cloud Build VMs runs on Oracle Linux 6 or Oracle Linux 7, and supports a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software in Build VMs are defined by Build VM templates.
 
+Since the Build VM is Compute instance, this can be shared among developers. This mean we not required one dedicated Build VM for each developer or attendee. Only need a few Build VM to be shared across the project team or participants. Hence, we have already provisioned the Build VMs for you.
 
 
-### **STEP 4**: Open the Automonous Developer Cloud Console
+
+### **STEP 4**: Open the Autonomous Developer Cloud Console
 
 - Ensure you are opening the Autonomous DevCS and NOT the Traditional DevCS
 
-- On the dashboard click the hamburger icon on the **Autonomous Developer** tile. Select **Open Service Console**
+- On the dashboard click the hamburger icon on the **Autonomous Developer** tile. Select **Open Service Console** OR select from the expanded Dashboard menu on the left hand side.
 
   ![](images/14.png)
 
@@ -220,29 +236,29 @@ In this section, you learn how to create a basic Build VM template that includes
 
 - In the New VM Template dialog box, enter the following details:
 
-  - **Name**: `CafeSupremo`
+  - **Name**: `Your Name` enter your name
   - **Description**: `A Build VM template with minimum required software`
   - **Platform**: `Oracle Linux 7`
 
-  ![](images/20.png)
+    ![](images/20.png)
 
 - Click **Create**
 
-A Build VM template named **CafeSupremo** is created. It includes just the required Build VM components. The right side of the page displays the details for this Build VM.
+A Build VM template with your name **Your Name** is created. It includes just the required Build VM components. The right side of the page displays the details for this Build VM.
 
 
 
 #### **STEP 4.2**: Configure the Software of a Build VM Template
 
-The CafeSupremo template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend and Node.js RewardService microservice.
+The VM template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend.
 
-  - In the **Build VM Templates** tab, select the template named **CafeSupremo**
+  - In the **Build VM Templates** tab, select the template you just created.
 
   - On the right side of the page, click **Configue Software**
 
   ![](images/17.png)
 
-  - Select **Gradle 4** and **Node.js 6** from the list of software by clicking the **Add** `+` icon on that tile.
+  - Select **Gradle 4** from the list of software by clicking the **Add** `+` icon on that tile.
 
   ![](images/18.png)
 
@@ -251,10 +267,20 @@ The CafeSupremo template contains the minimum software required to run basic bui
     ![](images/19.png)
 
 
+**NOTE**: You have just created your template. However, we won't be using this as the instructor has already created one earlier name **CafeSupremo** and assigned it to a number of Build VMs. You may explore the CafeSupremo Build VM Template and the configured software packages should be the same as the template you just created.
 
-#### **STEP 4.3**: Create a Virtual Machine for Build and Develop
 
-Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute Classic virtual machines (VMs) to run builds. In order to create this build VM for Developer Cloud Service, we need to capture some service detail from the Oracle Cloud Infrastructure Compute Classic for configuration.
+#### **STEP 4.3**: Configure a Compute Account for Build VMs
+
+**This step is Optional**
+
+**You will be advised by you instructor**
+
+DevCS project builds run on OCI Compute Classic virtual machines (VMs). Before you can use DevCS on Oracle Cloud Infrastructure or Oracle Cloud Infrastructure Classic, you must configure a connection to OCI Compute Classic.
+
+To create the connection, you need the service ID and the REST Endpoint URL for OCI Compute Classic, plus the credentials of a user.
+
+**NOTE**: This may have already been configured for you.
 
 - In another browser tab or window, open Oracle Cloud Dashboard
 
@@ -287,9 +313,31 @@ Oracle Developer Cloud Service projects use Oracle Cloud Infrastructure Compute 
 
 - Click on **Save**
 
-You have now created a Build VM for for your build jobs. The initial status will be in the STOPPED state.
+*You have now set a Compute Account to use the Oracle Cloud Infrastructure Compute Classic*
+
+
+#### **STEP 4.4**: Create a Virtual Machine for Build and Develop
+
+**This step is Optional**
+
+**You will be advised by you instructor**
+
+When you add a Build VM, you allocate a VM on the linked Oracle Cloud Infrastructure Compute Classic service to be used to run builds of jobs. Each build runs in one build executor, or one VM. You can build up to 99 builds in parallel using the same Build VM template.
+
+If you have multiple jobs across projects using a common Build VM template, you assign multiple Build VMs of that template. When builds of those jobs run, DevCS picks a VM that’s available without waiting for a busy VM to get free.
+
+- Click **New VM**
 
   ![](images/24.png)
+
+- In the Add Build VM dialog box, in Quantity, specify the number of VMs you want to allocate. In VM Template, select the Build VM template.
+
+  ![](images/135.png)
+
+
+*You have now created a Build VM for for your build jobs. The initial status will be in the STOPPED state.*
+
+
 
 
 ### You have finished this lab section.
