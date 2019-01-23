@@ -82,9 +82,9 @@ Before creating an instance, we need to create a dedicated Compartment for the i
   - **PARENT COMPARTMENT**: `(root)`
   - Leave the rest to default
 
-- Click **Create Compartment**
-
 ![](images/6.png)
+
+- Click **Create Compartment**
 
 - Click on the **Menu** button at the top left corner of your console and select **Autonomous Transaction Processing**
 
@@ -114,7 +114,7 @@ Once finished, it will be in the **Available** state as shown below:
   ![](images/9.1.png)
 
 
-*Congratulation! You have provisioned an ATP database.*
+*Congratulation! You have provisioned an ATP database. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instruction for connection details.*
 
 
 
