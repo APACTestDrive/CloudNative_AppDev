@@ -114,7 +114,7 @@ Once finished, it will be in the **Available** state as shown below:
   ![](images/9.1.png)
 
 
-*Congratulation! You have provisioned an ATP database. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instruction for connection details.*
+*Congratulation! You have provisioned an ATP database. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instructor for connection details.*
 
 
 
