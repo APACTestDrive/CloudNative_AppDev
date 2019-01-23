@@ -28,84 +28,93 @@ In this exercise, we will:
 
 
 
-## Provision a Database Cloud Service (DBCS) or Autonomous Transaction Processing Instance (ATP)
+## Provision an Autonomous Transaction Processing Instance (ATP)
 
 **This step is Optional**
 
 **You will be advised by you instructor**
 
-Due to the time it takes to provision an instance, the instructor may have already created one for you. It also make sense that a single DBCS/ATP instance should be shared by all lab participants, hence there is no need to create separate instances. The following steps are for your reference and you may dive into an existing instance to explore its configuration and administration tools.
+Due to the resource constrain, the instructor may have already created one for you. It also make sense that a single ATP instance should be shared by all lab participants, hence there is no need to create separate instances. The following steps are for your reference and you may dive into an existing instance to explore its configuration and administration tools.
 
 
-### **STEP 1**: Sign Into The Oracle Cloud Service Account
+### **STEP 1**: Sign Into Your OCI Console
 
-- Sign into your Oracle Cloud Service account
+- Please refer to the Cloud Account that has been provided by your administrator.
+
+- Open your browser (Safari, Firefox or Chrome) and go to your Oracle Cloud Infrastructure Console URL. The OCI Console URL is:
+
+  https://console.us-ashburn-1.oraclecloud.com/#/a/
+
+This URL may be different to the one you are provided with. Use the provided URL if it is different to the above.
+
+You can also access the OCI Console URL from your Cloud Dashboard.
+
+- Click on **Change tenant** button if you are not presented with the Cloud Tenant input form.
+
+![](images/1.png)
+
+- Enter your Cloud Tenant Name in the input field and click the Continue button. This will return you to the Cloud Dashboard.
+
+![](images/2.png)
+
+- Enter your OCI user name and password
+
+![](images/3.png)
+
+- Make sure you're in your region, otherwise select your region from the dropdown menu.
+
+![](images/4.png)
 
 
 
-### **STEP 2**: Create a DBCS Instance
+### **STEP 2**: Create an ATP Instance
 
-- On the dashboard click the hamburger icon on the **Database Classic** tile and select **Open Service Console**
+Before creating an instance, we need to create a dedicated Compartment for the instance to be hosted in.
 
-  ![](images/01.png)
+- Click on the **Menu** button at the top left corner of your console and select **Identity -> Compartments**
 
-- Once in the Database Cloud Service Console page, create a new instance by clicking **Create Service** button
+![](images/5.png)
 
-  ![](images/1.1.png)
+- Click on the **Create Compartment** button and enter the following parameters:
 
-
-#### **STEP 2.1**: Basic Instance Configuration
-
-- Complete the Create Instance Page as illustrated below:
-
-  ![](images/02.png)
-
-- Enter the following parameters:
-
-  - **Instance Name**: `demoDB`
-  - **Region**: `us-ashburn-1` or `us-phoenix-1` for your tenancy
-  - **Software Release**: `12c Release 1 Software`
-  - **Software Edition**: `Enterprise Edition software edition`
-  - **Database Type**: `Single Instance`
-  - **License Type**: `Subscribe to a new Oracle Database software license`
+  - **NAME**: `ATP_Demo`
+  - **DESCRIPTION**: `Compartment for ATP CTD`
+  - **PARENT COMPARTMENT**: `(root)`
   - Leave the rest to default
 
-- Click **Next**
+- Click **Create Compartment**
+
+![](images/6.png)
+
+- Click on the **Menu** button at the top left corner of your console and select **Autonomous Transaction Processing**
+
+![](images/7.png)
+
+- Once in the ATP Console page, select the **CTD** compartment your just created from the dropdown menu. And click **Create Autonomous Transaction Processing Database**
+
+  ![](images/8.png)
+
+- Click on **Create Autonomous Transaction Processing Database** and enter the following parameters:
+
+  - **COMPARTMENT**: `ATP_Demo`
+  - **DISPLAY NAME**: `ATP Demo DB`
+  - **DATABASE NAME**: `ATPDemoDB`
+  - **CPU CORE COUNT**: `1`
+  - **STORAGE(TB)**: `1`
+  - **PASSWORD**: DB's administration password. Please take note of the password.
+  - Leave the rest to default
+
+  ![](images/9.png)
+
+- Click on **Create Autonomous Transaction Processing Database**
+
+**NOTE**:  Your ATP instance will take about 4 minutes to complete.
+Once finished, it will be in the **Available** state as shown below:
+
+  ![](images/9.1.png)
 
 
-#### **STEP 2.2**: Detailed Instance Configuration
-
-The last input page is the Service Details page.
-
-   ![](images/03.png)
-
-
-The following parameters have to be provided:
-
-  - **Administration Password**: DB's password. Please take note of the password.
-  - **Compute Shape**: `VM.Standard1.1 - 1.0 OCPU, 7GB RAM` or `VM.Standard2.1 - 1.0 OCPU, 15GB RAM`
-  - **SSH Public Key**: Provide a public key which will be uploaded to the VM during the creation. It allows you to connect to the VM through ssh connection using the private key.
-    - If you don't have or want to create a new key pair then select **Create a New Key** option and download the newly generated keypair for later usage
-  - **Storage Username**: Your Oracle Cloud username e.g. `cloud.admin`
-  - **Storage Password**: Cloud Account password
-  - **Backup Destination**: Change to `None` In production you will want to enable backup and specify the storage location
-  - **Create Instance from Existing Backup**: Leave to default of `No`
-
-- Click **Next**
-
-- Confirms the details on the next page and then click **Create**
-
-   ![](images/3.1.png)
-
-
-**NOTE**:  Your DBCS instance will take about 30 minutes to complete. Please wait until the DBCS instance has been completed before creating a JCS instance. Whilst we are waiting for the DBCS instance to be provisioned, we can work on other infrastructure components such as Developer Cloud Service.
-
-- Once your DBCS is ready, your instance should appear similar to below:
-
-   ![](images/3.2.png)
-
-
-*Please move on to the next section whilst you're waiting for the DBCS instance to be provisioned.*
+*Congratulation! You have provisioned an ATP database.*
 
 
 
