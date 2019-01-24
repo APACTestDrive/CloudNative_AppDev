@@ -1,6 +1,6 @@
 # Lab 100: Prepare Your Cloud Environments
 
-## Preparing Database Cloud Service, Java Cloud Service and Developer Cloud Service
+## Preparing Autonomous Transaction Processing Database, Java Cloud Service and Developer Cloud Service
 
 ![](images/header05.png)
 
@@ -28,7 +28,7 @@ In this exercise, we will:
 
 
 
-## Provision an Autonomous Transaction Processing Instance (ATP)
+## Provision an Autonomous Transaction Processing Database (ATP)
 
 **This step is Optional**
 
