@@ -10,8 +10,8 @@ During this part of the lab, you will take on the **DevOps Engineer Persona**. Y
 - Java Cloud Service (JCS)
 - Database Cloud Service (DBCS) or Autonomous Transaction Processing (ATP)
 - Developer Cloud Service (DevcS)
-- Compute Classic Cloud Service
-- Storage Classic Cloud Service
+- Compute Cloud Service
+- Storage Cloud Service
 
 
 An Oracle Database Cloud Service or ATP is required by Java Cloud Service for storing its configurations and to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
@@ -114,19 +114,19 @@ Once finished, it will be in the **Available** state as shown below:
   ![](images/9.1.png)
 
 
-*Congratulation! You have provisioned an ATP database. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instructor for connection details.*
+*Congratulation!You have provisioned an ATP database. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instructor for connection details.*
 
 
 
 ## Provision a Java Cloud Service (JCS) Instance
 
-For this part of the lab, you would need a DBCS/ATP instance to complete the JCS configuration.
+For this part of the lab, you would need an ATP instance to complete the JCS configuration.
 
-- Please verify the provisioning of a DBCS instance in **Step 2** has completed and is up and running
+- Please verify the provisioning of a DBCS instance in **Step 2** has completed and is up and running.
 
 - If this is running, then proceed to the following steps, otherwise, please wait until it is ready.
 
-**NOTE**: If a DBCS/ATP instance is provisioned by your instructor, he will provide you with the access detail.
+**NOTE**: If an ATP instance is provisioned by your instructor, he will provide you with the access detail.
 
 
 
@@ -198,11 +198,17 @@ When the request has been accepted, the Java Cloud Service Console page appears 
 
 **NOTE**: Your JCS instance will be ready in about 30 minutes. Whilst we are waiting for the JCS instance to be provisioned, we can work on other components such as Developer Cloud Service.
 
-*You have now completed the provisioning of a JCS instance for hosting the JET UI frontend.*
+*Congratulation! You have now completed the provisioning of a JCS instance for hosting the JET UI frontend.*
 
 
 
 ## Provision a Developer Cloud Service (DevCS)
+
+
+**This step is Optional**
+
+**You will be advised by you instructor**
+
 
 Like other Oracle Cloud services, you must create an instance of Developer Cloud Service (DevCS) before you can start using it. You can create only one instance in an identity domain.
 
@@ -215,7 +221,7 @@ For new Oracle Cloud accounts, user will be of type OCI and should use the Auton
 
 The Autonomous Developer Cloud Service offers a dedicated Build VM running on OCI for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. Oracle Developer Cloud Build VMs runs on Oracle Linux 6 or Oracle Linux 7, and supports a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software stack in Build VMs are defined by the Build VM templates.
 
-Since the Build VM is Compute instance, this can be shared among developers. This mean we do not require a dedicated Build VM for each developer or attendee as it can be shared among the team. For this workshop we would only require a few Build VMs to be shared across the participants. The Build VMs has been created for you and the instruction that follows is for your reference, unless told otherwise by your instructor.
+Since the Build VM is a Compute instance, this can be shared among developers. This mean we do not require a dedicated Build VM for each developer or attendee as it can be shared across the team. For this workshop we would only require a few Build VMs to be shared across the participants. The Build VMs has been created for you and the instruction that follows is for your reference, unless told otherwise by your instructor.
 
 
 
@@ -223,7 +229,7 @@ Since the Build VM is Compute instance, this can be shared among developers. Thi
 
 - Go back to your Dashboard page.
 
-- If the Developer tile isn’t available on the Dashboard, expand the Dashboard menu on the left and select **Developer**
+- If the Developer tile isn’t available on the Dashboard, expand the Dashboard menu on the left and select **Developer**. This is the Autonomous Developer Cloud Service.
 
   ![](images/14.png)
 
@@ -235,13 +241,11 @@ Since the Build VM is Compute instance, this can be shared among developers. Thi
 
   - **Instance Name**: `A unique name` to identify the service instance in the tenant domain.
   - **Description**: `Enter a description`
-  - **Region**: `Select your region` from the dropdown list. Choose from us-ashburn-1, us-phoenix-1, us-frankfurt-1.
+  - **Region**: `Select your region` from the dropdown list. Choose from `us-ashburn-1`, `us-phoenix-1`, `us-frankfurt-1`.
 
   ![](images/14.2.png)
 
 - Click **Next**
-
-- On the Service Details page, click **Next**
 
   ![](images/14.3.png)
 
@@ -250,7 +254,7 @@ Since the Build VM is Compute instance, this can be shared among developers. Thi
 - The DevCS **Organization** page opens showing your DevCS instance
 
 
-**NOTE**: You have just created a DevCS instance.
+*Congratulation! You have just created a DevCS instance.*
 
 
 
@@ -315,7 +319,7 @@ In this section, you learn how to create a basic Build VM template that includes
 
 - Click **Create**
 
-**NOTE**: You have created a Build VM Template with the minimal build components.
+*Congratulation! You have created a Build VM Template with the minimal build components.*
 
 
 
@@ -338,7 +342,7 @@ The VM template contains the minimum software required to run basic builds. We n
     ![](images/19.png)
 
 
-**NOTE**: You have just created a Build VM Template.
+*Congratulation! You have just created a Build VM Template.*
 
 
 
@@ -379,12 +383,12 @@ If you have multiple jobs across projects using a common Build VM template, you 
 
   ![](images/23.png)
 
-- Increase the **Sleep Timeout** value to `1500` minutes
+- Increase the **Sleep Timeout** value to `1500` minutes to prevent it the Build VM from shutting down.
 
 - Click **Save**
 
 
-**NOTE**: You have now created a Build VM for for your build jobs.
+*Congratulation! You have now created a Build VM for for your build jobs.*
 
 
 
