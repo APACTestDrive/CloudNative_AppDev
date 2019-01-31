@@ -204,70 +204,132 @@ When the request has been accepted, the Java Cloud Service Console page appears 
 
 ## Provision a Developer Cloud Service (DevCS)
 
-You have two choices for Developer Cloud Service:
+Like other Oracle Cloud services, you must create an instance of Developer Cloud Service (DevCS) before you can start using it. You can create only one instance in an identity domain.
 
-  - Traditional Developer Cloud Service
-  - Autonomous Developer Cloud Service
+There are two types of Developer Cloud Services on offer depending whether you are an Oracle Cloud Infrastructure (OCI) user or an Oracle Cloud Infrastructure Classic (OCI Classic) user. The two types of Developer Cloud Services are:
 
-It is recommended to use the Autonomous Developer Cloud Service as it offers a dedicated Build VM for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. The use of the Autonomous Developer Cloud Service is particularly important as one would see the full potential of our service and would bring out the key benefits in Continuous Integration and Continuous Delivery.
+  - Traditional Developer Cloud Service (OCI Classic)
+  - Autonomous Developer Cloud Service (OCI)
 
-Oracle Developer Cloud Build VMs runs on Oracle Linux 6 or Oracle Linux 7, and supports a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software in Build VMs are defined by Build VM templates.
+For new Oracle Cloud accounts, user will be of type OCI and should use the Autonomous Developer Cloud Service. For this lab we will assume the participants is an OCI user and the instruction that follows is for the Autonomous Developer Cloud Service.
 
-Since the Build VM is Compute instance, this can be shared among developers. This mean we not required one dedicated Build VM for each developer or attendee. Only need a few Build VM to be shared across the project team or participants. Hence, we have already provisioned the Build VMs for you.
+The Autonomous Developer Cloud Service offers a dedicated Build VM running on OCI for your build jobs. This has significant performance improvement over the Traditional Developer Cloud Service and would result in much faster build time. Oracle Developer Cloud Build VMs runs on Oracle Linux 6 or Oracle Linux 7, and supports a variety of software such as Node.js, Docker, and Oracle SOA Suite. The platform and the software stack in Build VMs are defined by the Build VM templates.
+
+Since the Build VM is Compute instance, this can be shared among developers. This mean we do not require a dedicated Build VM for each developer or attendee as it can be shared among the team. For this workshop we would only require a few Build VMs to be shared across the participants. The Build VMs has been created for you and the instruction that follows is for your reference, unless told otherwise by your instructor.
 
 
 
-### **STEP 4**: Open the Autonomous Developer Cloud Console
+### **STEP 4**: Create a   Developer Cloud Instance
 
-- Ensure you are opening the Autonomous DevCS and NOT the Traditional DevCS
+- Go back to your Dashboard page.
 
-- On the dashboard click the hamburger icon on the **Autonomous Developer** tile. Select **Open Service Console** OR select from the expanded Dashboard menu on the left hand side.
+- If the Developer tile isn’t available on the Dashboard, expand the Dashboard menu on the left and select **Developer**
 
   ![](images/14.png)
 
+- In the Instances tab, click **Create Instance**.
+
+  ![](images/14.1.png)
+
+- On the **Create New Instance** page, enter the following details:
+
+  - **Instance Name**: `A unique name` to identify the service instance in the tenant domain.
+  - **Description**: `Enter a description`
+  - **Region**: `Select your region` from the dropdown list. Choose from us-ashburn-1, us-phoenix-1, us-frankfurt-1.
+
+  ![](images/14.2.png)
+
+- Click **Next**
+
+- On the Service Details page, click **Next**
+
+  ![](images/14.3.png)
+
+- On the Confirmation page, click **Create**
+
+- The DevCS **Organization** page opens showing your DevCS instance
 
 
-#### **STEP 4.1**: Create a VM Template
+**NOTE**: You have just created a DevCS instance.
+
+
+
+
+#### **STEP 4.1**: Setup The OCI Connection
+
+You need to connect to the Oracle Cloud Infrastructure Compute (OCI Compute) because they provide the virtual machines (VMs) on which DevCS runs its builds. You need to connect to Oracle Cloud Infrastructure Object Storage (OCI Object Storage) because they are used to store build and Maven artifacts for DevCS projects. It is assumed you are an OCI user and have the access rights to set up connections to OCI Compute and OCI Object Storage.
+
+- Once the service instance is created, you can open the service console by clicking the **Action menu icon**, and then selecting **Access Service Instance**.
+
+  ![](images/14.4.png)
+
+- The DevCS **Organization** page opens. Click the **OCI Credentials** to configure OCI connections before you create a project. You must be the Organization Administrator to create the connection.
+
+  ![](images/14.5.png)
+
+- Get the OCI input values from the your OCI Console and enter them in the following fields:
+
+  - **Tennacy OCID**: enter the tenancy's OCID copied from the Tenancy Details page
+  - **User OCID**: enter the user's OCID who can access the DevCS compartment
+  - **Home Region**: select the home region of the OCI account
+  - **Private Key**: enter the private key of the user who can access the DevCS compartment
+  - **Passphrase**: enter the passphrase used to encrypt the private key. If no passphrase was used, leave the field empty.
+  - **Fingerprint**: enter the fingerprint value of the private-public key pair
+  - **Compartment OCID**: enter the compartment's OCID copied from the Compartments page
+  - **Storage Namespace**: enter the storage namespace copied from the Tenancy Details page
+  - **Developer Cloud Service ...**: select the checkbox to agree to terms and conditions
+
+  ![](images/14.6.png)
+
+- Click **Validate**
+
+- After validating the connection details, click **Save**
+
+
+
+#### **STEP 4.2**: Create a VM Template
+
+A Build Virtual Machine (VM) is an OCI Compute VM that runs builds of jobs defined in the DevCS projects. A Build VM Template defines the operating system and the software installed on Build VMs.
+
+When you configure a job to use a software, such as Node.js or Docker, you must create a Build VM template with the software and associate the job with that template. When a job’s build runs, it doesn’t run in DevCS, but on a VM of OCI Compute, as configured in the previous step.
+
+To get started, you first create Build VM templates with different software that your team members regularly use. After creating the templates, you allocate some Build VMs to each Build VM template. When your team members create jobs, they associate the job with a Build VM template.
+
+When a job’s build runs, a Build VM allocated for the job’s Build VM template starts. It first installs the software defined in the Build VM template. After installing the software, it clones the job’s Git repository (if configured) to the VM, and creates artifacts (again, if configured). After the build is complete, the artifacts are copied to the OCI Object Storage. The Build VM waits for some time for any queued builds. If no builds run in the wait time period, the Build VM stops. Each time the Build VM starts, the software are installed again and the first build of the VM would take more time to run.
 
 In this section, you learn how to create a basic Build VM template that includes the minimum required software.
 
-- Select **Organization** from the user name dropdown options
+- Select the **Virtual Machines Templates** tab from the **Organization** page
 
   ![](images/15.png)
 
-- Click **VM TEMPLATES** on the Organization Administration page
+- Click **Create**
 
-  ![](images/16.png)
+- On the pop up **New VM Template** dialog box enter the following:
 
-- Click **New Template** in the Build VM Templates page
-
-  ![](images/79.png)
-
-- In the New VM Template dialog box, enter the following details:
-
-  - **Name**: `Your Name` enter your name
+  - **Name**: `CafeSupremo`
   - **Description**: `A Build VM template with minimum required software`
   - **Platform**: `Oracle Linux 7`
 
-    ![](images/20.png)
+  ![](images/16.png)
 
 - Click **Create**
 
-A Build VM template with your name **Your Name** is created. It includes just the required Build VM components. The right side of the page displays the details for this Build VM.
+**NOTE**: You have created a Build VM Template with the minimal build components.
 
 
 
-#### **STEP 4.2**: Configure the Software of a Build VM Template
+#### **STEP 4.3**: Configure the Software of a Build VM Template
 
-The VM template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend.
+The VM template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend. The additional components are Grandle and Node.js.
 
-  - In the **Build VM Templates** tab, select the template you just created.
+  - Select the `CafeSupremo` template you just created under the **Virtual Machines Templates** tab
 
-  - On the right side of the page, click **Configue Software**
+  - Click **Configue Software**
 
   ![](images/17.png)
 
-  - Select **Gradle 4** from the list of software by clicking the **Add** `+` icon on that tile.
+  - Select **Gradle 4** and **Node.js 6** from the list of software by clicking the **Add +** icon on that tile.
 
   ![](images/18.png)
 
@@ -276,53 +338,8 @@ The VM template contains the minimum software required to run basic builds. We n
     ![](images/19.png)
 
 
-**NOTE**: You have just created your template. However, we won't be using this as the instructor has already created one earlier named **CafeSupremo** and assigned it to a number of Build VMs. You may explore the CafeSupremo Build VM Template and the configured software packages should be the same as the template you just created.
+**NOTE**: You have just created a Build VM Template.
 
-
-#### **STEP 4.3**: Configure a Compute Account for Build VMs
-
-**This step is Optional**
-
-**You will be advised by you instructor**
-
-DevCS project builds run on OCI Compute Classic virtual machines (VMs). Before you can use DevCS on Oracle Cloud Infrastructure or Oracle Cloud Infrastructure Classic, you must configure a connection to OCI Compute Classic.
-
-To create the connection, you need the service ID and the REST Endpoint URL for OCI Compute Classic, plus the credentials of a user.
-
-**NOTE**: This may have already been configured for you.
-
-- In another browser tab or window, open Oracle Cloud Dashboard
-
-- In the **Compute Classic** tile, click the hamburger icon, and select **View Details**
-
-  ![](images/80.png)
-
-- On the Service Details page, in the Additional Information section of the Overview tab, note the values of **Service Instance ID** and **REST Endpoint**
-
-  ![](images/81.png)
-
-- Go back to the Developer Cloud Service Organization Administration Page
-
-- Select **VIRTUAL MACHINES**
-
-  ![](images/21.png)
-
-- On the Virtual Machine page, click **Configure Compute Account**
-
-  ![](images/22.png)
-
-- In the Configure Compute Account dialog box, enter the following values:
-
-  - **Username**: Your Cloud Username
-  - **Password**: Your Cloud User Password
-  - **Service Instance ID**: *ID assigned to the Oracle Cloud Infrastructure Compute Classic instance* (The value must match the Service Instance ID field that appears on the Oracle Cloud Infrastructure Compute Classic Service Details page.)
-  - **REST Endpoint**: *REST API endpoint URL for the Oracle Cloud Infrastructure Compute Classic instance* (The value must match the REST Endpoint field that appears on the Oracle Cloud Infrastructure Compute Classic Service Details page.)
-
-  ![](images/23.png)
-
-- Click on **Save**
-
-*You have now set a Compute Account to use the Oracle Cloud Infrastructure Compute Classic*
 
 
 #### **STEP 4.4**: Create a Virtual Machine for Build and Develop
@@ -331,25 +348,43 @@ To create the connection, you need the service ID and the REST Endpoint URL for 
 
 **You will be advised by you instructor**
 
-When you add a Build VM, you allocate a VM on the linked Oracle Cloud Infrastructure Compute Classic service to be used to run builds of jobs. Each build runs in one build executor, or one VM. You can build up to 99 builds in parallel using the same Build VM template.
+When you add a Build VM, you allocate a VM on the linked Oracle Cloud Infrastructure Compute service to be used to run builds of jobs. Each build runs in one build VM. You can build up to 99 builds in parallel using the same Build VM template.
 
-If you have multiple jobs across projects using a common Build VM template, you assign multiple Build VMs of that template. When builds of those jobs run, DevCS picks a VM that’s available without waiting for a busy VM to get free.
+If you have multiple jobs across projects using a common Build VM template, you can assign multiple Build VMs of that template. When builds of those jobs run, DevCS picks a VM that’s available without waiting for a busy VM to get free.
 
-- Click **New VM**
+- Select the **Build Virtual Machines** tab
 
-  ![](images/24.png)
+  ![](images/20.png)
 
-- In the Add Build VM dialog box, in Quantity, specify the number of VMs you want to allocate. In VM Template, select the Build VM template.
+- Click **Create**
 
-  ![](images/135.png)
+- On the pop up **Add Build VM** dialog box enter the following:
+
+  - **Quantity**: `1`
+  - **VM Template**: select `CafeSupremo` from dropdown list
+
+  ![](images/21.png)
+
+- Click **Add**
 
 - The newly created Build VM should be in the stopped state.
 
-    ![](images/136.png)
+  ![](images/22.png)
+
+  To minimise build execution delays, set the number of VMs of a specific Build VM template to the number of jobs that you expect to run in parallel using that template. If the VM quota is available, that number of Build VMs will be added to the Build Virtual Machines tab.
+
+  You can always return to the Build Virtual Machines tab to add or remove VMs, based on your actual usage. Note that the more VMs you have running at a specific time, the higher the cost. To minimise the higher cost, use the **Sleep Timeout** setting on the **Build Virtual Machines** page to automatically shut down inactive VMs.
+
+- Click **Sleep Timeout**
+
+  ![](images/23.png)
+
+- Increase the **Sleep Timeout** value to `1500` minutes
+
+- Click **Save**
 
 
-*You have now created a Build VM for for your build jobs.*
-
+**NOTE**: You have now created a Build VM for for your build jobs.
 
 
 
