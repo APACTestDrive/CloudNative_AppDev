@@ -4,6 +4,9 @@
 
 ![](images/header06.png)
 
+
+From the Organization page, you can create an empty project, a project with a Git repository, import a project from an OCI Object Storage, or create a project from a template.
+
 We will create a project for the Café Supremo in Developer Cloud Service and bring the application code into this project to be managed by Developer Cloud. We will also examine the chain tools that comes with DevCS such as Git repository, branch merge request, issue tracking and team collaboration.
 
 Developer Cloud Service uses Git as the Source Code Management system and is compatible with other Git systems. The Git repository created in Developer Cloud Service is a private repository and requires authentication to access it.
@@ -23,13 +26,13 @@ In this exercise, we will:
 
 ### **STEP 1**: Create a DevCS Project
 
-- Go back to the Developer Cloud Service Console
+- Click the **Projects** tab in the Oragnization Page of the Developer Cloud Service Console.
 
-  ![](images/137.png)
+  ![](images/24.png)
 
-- Create a new project by clicking **New Project**
+- Create a new project by clicking **Create**
 
-- Enter `CafeSupremo_YourName` in the **Name** field, where `YourName` is your user own name. This is because every attendee will be creating a project in this tenancy and we need to create projects with unique names. In fact you can name it whatever you want.
+- Enter `CafeSupremo_<your name>` in the **Name** field, where `<your name>`is your own name. This is because every attendee will be creating a project in this tenancy and we need to create projects with unique names. In fact you can name it whatever you want.
 
 - Click **Next**
 
@@ -39,9 +42,17 @@ In this exercise, we will:
 
   ![](images/26.png)
 
-- Click **Next** and followed by **Finish**
+- Click **Next**
+
+  ![](images/27.png)
+
+- Click **Finish**
 
   Project creation will start upon selecting Finish.
+
+  ![](images/28.png)
+
+
 
 **NOTE**: The project creation will take approximately 2 minutes to complete and it will automatically take you to the new project home page once finished.
 
@@ -51,29 +62,33 @@ In this exercise, we will:
 
 You should have an empty project after the project creation completes. We now need to populate the project with your application source code. The code for the JET UI frontend has already been created so you don't need to create the application from scratch. This is often the case where you want to bring an existing application into the Cloud and modernise it with CI/CD for example.
 
-For some development teams, they may have already started their modernisation by adopting modern Open Source tools like Git for source code management. And they have already pushed their code to Git. For these developers, they can simply import their code directly from their existing Git repository. Otherwise, you will to upload the source code manually through a local Git Client.
+For some development teams, they may have already started their modernisation by adopting modern Open Source tools like Git for source code management. And they have already pushed their code to Git. For these developers, they can simply import their code directly from their existing Git repository. Otherwise, you will need to upload the source code manually via a local Git Client.
 
 For this lab, we will assume your code is already hosted in GitHub and you can import it simply by providing the repository URL.
 
 
-- On the project home page, you will see the activities displayed on the left hand pane and on the right is your available repositories. There should be a **Maven** repository by default.
+- On the project home page, you will see the tools displayed on the left hand pane and on the right is your repositories. There currently no Git repository defined.
 
-  ![](images/130.png)
+  ![](images/29.png)
 
-- Click on **New Repository** button to import the JET UI frontend repository named **CafeSupremo**
+- Click **Create** button to create a new Git repository to host our JET UI frontend code.
 
 - Complete the New Repository dialog as illustrated below:
   - **Name**: CafeSupremo
   - **Intial content**: Import existing repository
   - **Import existing repository**: `https://github.com/kwanwan/CafeSupremo_JETUI`
 
-    ![](images/131.png)
+  ![](images/30.png)
 
 - Click **Create**
 
-- Go back to the project home page and you should see the new repository you just imported.
+- The Git repository for CafeSupremo will be displayed after the import has finished.
 
-  ![](images/133.png)
+  ![](images/31.png)
+
+- Go back to the project home page and you should see the new repository you just created listed in the right hand pane. Also note the event is logged on the left hand pane under **Recent Activities**.
+
+  ![](images/32.png)
 
 *Congratulation! You have successfully imported the source code.*
 
@@ -82,8 +97,8 @@ For this lab, we will assume your code is already hosted in GitHub and you can i
 
 ## You have completed this lab section.##
 
-  [Proceed to Lab 400: Putting It All Together - CICD](400-CICDlab.md)
+  [Proceed to Lab 300: Create CICD Pipeline in DevCS](300-DEVCSlab.md)
 
   or
 
-  [Back to API First Home](README.md)
+  [Return to Cloud Native Development Home](README.md)
