@@ -21,7 +21,7 @@ Now that we have imported the code for our application, we can start creating ou
 
 ### **STEP 1**: Create The JET UI Frontend Build Job
 
-The first task in our CI/CD pipeline is to build the JETUI frontend application. We need to create a build job for this. And we want the build to be triggered automatically whenever there is a code commit. The build process can be automated and deployed automatically to a designated JCS environment.
+The first task in our CI/CD pipeline is to build the JETUI frontend application. We will create a build job that will be triggered automatically whenever there is a code commit. The build process can be automated and deployed automatically to a designated JCS environment.
 
 - Switch to Build tab on the navigation bar. There should be no build job initially.
 
@@ -92,7 +92,7 @@ The first task in our CI/CD pipeline is to build the JETUI frontend application.
   ![](images/38.png)
 
 
-**Congratulation! You have now completed your first build.**
+*Congratulation! You have now completed your first build.*
 
 
 
@@ -182,26 +182,26 @@ The next part of the CI/CD pipeline is the deployment of the build. Let's create
   ![](images/apiary-35.png)
 
 
-**NOTE**: You should note that the **Rewards** menu option need to make an API call to the RewardService backend which has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will be using this client to test our API in the next lab.
+**NOTE**: The **Rewards** menu option need to make an REST API call to the RewardService backend which has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will enable the client to call our REST API in the next lab.
 
 
-**Congratulation you have successfully deployed the Cafe Supremo JET UI frontend.**
+*Congratulation you have successfully deployed the Cafe Supremo JET UI frontend.*
 
 
+### **STEP 3**: Verify the Reward Service Backend
 
+The Reward Service Backend has already been provisioned for you by your instructor. There is only one instance of this Reward Service running in a Kubernetes cluster hosted on OCI.
 
+You need to verify your access to this Rewards Service by making a REST API call to the RewardService.
 
-- Verify your deployment to see if you can retrieve the current status for reward points and coupons. We do this by calling the API on the RewardService.
-
-  - Enter `https://<rewardservice hostname>/loyalty/v2/points/10001` in your browser substituting the hostname of the URL with the **rewardservice** instance URL's hostname you obtained in Step 4 from the previous Lab 101
+  - Enter `https://<rewardservice hostname>/loyalty/v2/points/10001` in your browser, substituting the hostname with one provided by your instructor.
 
     If successful, you should see a return text of `{"points":0}` indicating zero reward points
 
-  - Enter `https://<rewardservice hostname>/loyalty/v2/coupon/10001` in your browser substituting the hostname of the URL with the **rewardservice** instance URL's hostname you obtained in Step 4 from the previous Lab 101
+  - Enter `https://<rewardservice hostname>/loyalty/v2/coupon/10001` in your browser, substituting the hostname with one provided by your instructor.
 
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
-**NOTE**: You would normally write your API Blueprint first before coding your JET UI frontend and RewardService backend. However, as part of the demonstration for this lab exercise, the frontend and backend applications are already written for you. This is to demonstrate the end-to-end of a CI/CD pipeline. You will work with the API design in the next lab exercise which should have been the first step of your design.
 
 **You have completed this lab section.**
 
