@@ -8,21 +8,21 @@ During this part of the lab, you will take on the **DevOps Engineer Persona**. Y
 
 - Oracle Public Cloud Service Account
 - Java Cloud Service (JCS)
-- Database Cloud Service (DBCS) or Autonomous Transaction Processing (ATP)
+- Autonomous Transaction Processing (ATP)
 - Developer Cloud Service (DevcS)
 - Compute Cloud Service
 - Storage Cloud Service
 
 
-An Oracle Database Cloud Service or ATP is required by Java Cloud Service for storing its configurations and to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
+An Oracle Autonomous Transaction Processing database is required by Java Cloud Service for storing its configurations and to host the Oracle Fusion Middleware component schemas used by Oracle Java Required Files (JRF).
 
-Customer data can be stored in the same DBCS or ATP instance. However, for this lab, the customer data is already populated in a separate ATP instance. This is to keep the lab duration short and to avoid the laborious effort in uploading the data to a database. This customer database will be shared by all attendees.
+Customer data can be stored in the same ATP instance. However, for this lab, the customer data is already populated in a separate ATP instance. This is to keep the lab duration short and to avoid the laborious effort in uploading the data to a database. This customer database will be shared by all attendees.
 
 
 ## About This Exercise
 
 In this exercise, we will:
-- Create and configure a DBCS or ATP instance to hold the JCS (WebLogic) configuration (Optional)
+- Create and configure an ATP instance to hold the JCS (WebLogic) configuration (Optional)
 - Create and configure a JCS (WebLogic) instance to host the JET UI frontend
 - Create and configure a Developer Cloud Service (DevCS) Build VM to build yo application
 
@@ -350,7 +350,7 @@ The VM template contains the minimum software required to run basic builds. We n
 
 **This step is Optional**
 
-**You will be advised by you instructor**
+**You will be advised by your instructor**
 
 When you add a Build VM, you allocate a VM on the linked Oracle Cloud Infrastructure Compute service to be used to run builds of jobs. Each build runs in one build VM. You can build up to 99 builds in parallel using the same Build VM template.
 
