@@ -51,19 +51,19 @@ You can also access the OCI Console URL from your Cloud Dashboard.
 
 - Click on **Change tenant** button if you are not presented with the Cloud Tenant input form.
 
-![](images/1.png)
+![](images/100-1.png)
 
 - Enter your Cloud Tenant Name in the input field and click the Continue button. This will return you to the Cloud Dashboard.
 
-![](images/2.png)
+![](images/100-2.png)
 
 - Enter your OCI user name and password
 
-![](images/3.png)
+![](images/100-3.png)
 
 - Make sure you're in your region, otherwise select your region from the dropdown menu.
 
-![](images/4.png)
+![](images/100-4.png)
 
 
 
@@ -73,7 +73,7 @@ Before creating an instance, we need to create a dedicated Compartment for the i
 
 - Click on the **Menu** button at the top left corner of your console and select **Identity -> Compartments**
 
-![](images/5.png)
+![](images/100-5.png)
 
 - Click on the **Create Compartment** button and enter the following parameters:
 
@@ -82,17 +82,17 @@ Before creating an instance, we need to create a dedicated Compartment for the i
   - **PARENT COMPARTMENT**: `(root)`
   - Leave the rest to default
 
-![](images/6.png)
+![](images/100-6.png)
 
 - Click **Create Compartment**
 
 - Click on the **Menu** button at the top left corner of your console and select **Autonomous Transaction Processing**
 
-![](images/7.png)
+  ![](images/100-7.png)
 
 - Once in the ATP Console page, select the **CTD** compartment your just created from the dropdown menu. And click **Create Autonomous Transaction Processing Database**
 
-  ![](images/8.png)
+  ![](images/100-8.png)
 
 - Click on **Create Autonomous Transaction Processing Database** and enter the following parameters:
 
@@ -104,14 +104,14 @@ Before creating an instance, we need to create a dedicated Compartment for the i
   - **PASSWORD**: DB's administration password. Please take note of the password.
   - Leave the rest to default
 
-  ![](images/9.png)
+  ![](images/100-9.png)
 
 - Click on **Create Autonomous Transaction Processing Database**
 
 **NOTE**:  Your ATP instance will take about 4 minutes to complete.
 Once finished, it will be in the **Available** state as shown below:
 
-  ![](images/9.1.png)
+  ![](images/100-10.png)
 
 
 *Congratulation!You have provisioned an ATP database. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instructor for connection details.*
@@ -134,7 +134,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 
 - On the dashboard click the hamburger icon on the **Java** tile. Select **Open Service Console**.
 
-  ![](images/04.png)
+  ![](images/100-11.png)
 
 
 - Once in the Java Cloud Service Console page, create a new instance by clicking **Create Service** button.
@@ -144,7 +144,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 
 - Complete the new Create New Instance Page as illustrated below:
 
-  ![](images/05.png)
+  ![](images/100-12.png)
 
 - Enter the following parameters:
 
@@ -165,7 +165,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 
 - On the Service Details page, click **Advanced** to show additional configuration options
 
-  ![](images/06.png)
+  ![](images/100-13.png)
 
 The following parameters have to be provided:
 
@@ -231,11 +231,11 @@ Since the Build VM is a Compute instance, this can be shared among developers. T
 
 - If the Developer tile isn’t available on the Dashboard, expand the Dashboard menu on the left and select **Developer**. This is the Autonomous Developer Cloud Service.
 
-  ![](images/14.png)
+  ![](images/100-14.png)
 
 - In the Instances tab, click **Create Instance**.
 
-  ![](images/14.1.png)
+  ![](images/100-15.png)
 
 - On the **Create New Instance** page, enter the following details:
 
@@ -243,11 +243,11 @@ Since the Build VM is a Compute instance, this can be shared among developers. T
   - **Description**: `Enter a description`
   - **Region**: `Select your region` from the dropdown list. Choose from `us-ashburn-1`, `us-phoenix-1`, `us-frankfurt-1`.
 
-  ![](images/14.2.png)
+  ![](images/100-16.png)
 
 - Click **Next**
 
-  ![](images/14.3.png)
+  ![](images/100-17.png)
 
 - On the Confirmation page, click **Create**
 
@@ -265,11 +265,11 @@ You need to connect to the Oracle Cloud Infrastructure Compute (OCI Compute) bec
 
 - Once the service instance is created, you can open the service console by clicking the **Action menu icon**, and then selecting **Access Service Instance**.
 
-  ![](images/14.4.png)
+  ![](images/100-18.png)
 
 - The DevCS **Organization** page opens. Click the **OCI Credentials** to configure OCI connections before you create a project. You must be the Organization Administrator to create the connection.
 
-  ![](images/14.5.png)
+  ![](images/100-19.png)
 
 - Get the OCI input values from the your OCI Console and enter them in the following fields:
 
@@ -283,7 +283,7 @@ You need to connect to the Oracle Cloud Infrastructure Compute (OCI Compute) bec
   - **Storage Namespace**: enter the storage namespace copied from the Tenancy Details page
   - **Developer Cloud Service ...**: select the checkbox to agree to terms and conditions
 
-  ![](images/14.6.png)
+  ![](images/100-20.png)
 
 - Click **Validate**
 
@@ -305,7 +305,7 @@ In this section, you learn how to create a basic Build VM template that includes
 
 - Select the **Virtual Machines Templates** tab from the **Organization** page
 
-  ![](images/15.png)
+  ![](images/100-21.png)
 
 - Click **Create**
 
@@ -315,7 +315,7 @@ In this section, you learn how to create a basic Build VM template that includes
   - **Description**: `A Build VM template with minimum required software`
   - **Platform**: `Oracle Linux 7`
 
-  ![](images/16.png)
+  ![](images/100-22.png)
 
 - Click **Create**
 
@@ -331,15 +331,15 @@ The VM template contains the minimum software required to run basic builds. We n
 
   - Click **Configue Software**
 
-  ![](images/17.png)
+  ![](images/100-23.png)
 
   - Select **Gradle 4** and **Node.js 6** from the list of software by clicking the **Add +** icon on that tile.
 
-  ![](images/18.png)
+  ![](images/100-24.png)
 
   - Click on **Done** to save the selections
 
-    ![](images/19.png)
+    ![](images/100-25.png)
 
 
 *Congratulation! You have just created a Build VM Template.*
@@ -358,7 +358,7 @@ If you have multiple jobs across projects using a common Build VM template, you 
 
 - Select the **Build Virtual Machines** tab
 
-  ![](images/20.png)
+  ![](images/100-26.png)
 
 - Click **Create**
 
@@ -367,13 +367,13 @@ If you have multiple jobs across projects using a common Build VM template, you 
   - **Quantity**: `1`
   - **VM Template**: select `CafeSupremo` from dropdown list
 
-  ![](images/21.png)
+  ![](images/100-27.png)
 
 - Click **Add**
 
 - The newly created Build VM should be in the stopped state.
 
-  ![](images/22.png)
+  ![](images/100-28.png)
 
   To minimise build execution delays, set the number of VMs of a specific Build VM template to the number of jobs that you expect to run in parallel using that template. If the VM quota is available, that number of Build VMs will be added to the Build Virtual Machines tab.
 
@@ -381,7 +381,7 @@ If you have multiple jobs across projects using a common Build VM template, you 
 
 - Click **Sleep Timeout**
 
-  ![](images/23.png)
+  ![](images/100-29.png)
 
 - Increase the **Sleep Timeout** value to `1500` minutes to prevent it the Build VM from shutting down.
 

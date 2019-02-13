@@ -77,6 +77,6 @@ There are four parts to the lab with each focusing on different aspect of Cloud 
 [Click Here to Lab 300: Create CI/CD Pipeline in DevCS](300-DEVCSlab.md)
 
 
-## 400: Putting It All Together - Continuous Integration and Delivery
+## 400: Putting It All Together - Continuous Integration and Continuous Delivery
 
 [Click Here to Lab 400: Putting It All Together - CICD](400-CICDlab.md)

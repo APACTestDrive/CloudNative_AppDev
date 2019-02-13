@@ -27,7 +27,7 @@ From the Organization page, you can create an empty project, a project with a Gi
 
 - Click the **Projects** tab in the Oragnization Page of the Developer Cloud Service Console.
 
-  ![](images/24.png)
+  ![](images/200-1.png)
 
 - Create a new project by clicking **Create**
 
@@ -35,21 +35,21 @@ From the Organization page, you can create an empty project, a project with a Gi
 
 - Click **Next**
 
-  ![](images/25.png)
+  ![](images/200-2.png)
 
 - Select an **Empty Project** for now and we will upload the Git repositories later from an existing repository.
 
-  ![](images/26.png)
+  ![](images/200-3.png)
 
 - Click **Next**
 
-  ![](images/27.png)
+  ![](images/200-4.png)
 
 - Click **Finish**
 
   Project creation will start upon selecting Finish.
 
-  ![](images/28.png)
+  ![](images/200-5.png)
 
 
 
@@ -68,7 +68,7 @@ For this lab, we will assume your code is already hosted in GitHub and you can i
 
 - On the project home page, you will see the tools displayed on the left hand pane and on the right is your repositories. There currently no Git repository defined.
 
-  ![](images/29.png)
+  ![](images/200-6.png)
 
 - Click **Create** button to create a new Git repository to host our JET UI frontend code.
 
@@ -77,7 +77,7 @@ For this lab, we will assume your code is already hosted in GitHub and you can i
   - **Intial content**: Import existing repository
   - **Import existing repository**: `https://github.com/kwanwan/CafeSupremo_JETUI`
 
-  ![](images/30.png)
+  ![](images/200-7.png)
 
 - Click **Create**
 
@@ -108,17 +108,17 @@ Let's explore the Git repository.
 
 - Click on the *src* folder and go into the sub directories to open the file *src/js/config/config.json*
 
-  ![](images/31.png)
+  ![](images/200-8.png)
 
 - This is the configuration file for CafeSupremo frontend and defines the endpoints to the Node.js RewardService. Please take note of this file as we will be coming back to this later to change our endpoints.
 
-  ![](images/33.png)
+  ![](images/200-9.png)
 
 - Click on the **Edit** (Pencil icon) to edit the file's content using the online code editor.
 
 - In the edit mode, you can rename the file, move it to another directory, by entering the new file name or path in the text box and then commit it.
 
-  ![](images/36.png)
+  ![](images/200-10.png)
 
 - Click on **Cancel** to exit the edit mode.
 
@@ -137,11 +137,11 @@ You can use the Logs view of the Git page to view the commits, branching, and me
   - Joining lines represent a merge.
   - Latest commits appear at the top of the graph.
 
-  ![](images/34.png)
+  ![](images/200-11.png)
 
 - Click on one of the commit tags to see the changes made in the last commit.
 
-  ![](images/35.png)
+  ![](images/200-12.png)
 
 
 
@@ -155,12 +155,12 @@ You can compare any two revisions of a Git repository. The base revision indicat
 
 - The compared results are shown at the bottom of the page.
 
-  ![](images/37.png)
+  ![](images/200-13.png)
 
 
 - Go back to the project home page and you should see the new repository you just created listed in the right hand pane. Also note the event is logged on the left hand pane under **Recent Activities**.
 
-  ![](images/32.png)
+  ![](images/200-14.png)
 
 
 *Congratulation! You have successfully completed the import lab.*

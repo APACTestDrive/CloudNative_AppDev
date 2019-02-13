@@ -33,7 +33,7 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
 - Start the Brackets Text Editor, in the **File** pull-down menu, choose **Open Folder...**
 
-  ![](images/84.png)
+  ![](images/400-1.png)
 
 - Navigate to the target destination directory to store the source code, for example: `D:\oracle`
 
@@ -43,21 +43,21 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
 - Click **Open** after it has been created
 
-  ![](images/85.png)
+  ![](images/400-2.png)
 
 - Click on GIT icon on the right hand side of the editor to open the Git panel below the editor
 
-  ![](images/86.png)
+  ![](images/400-3.png)
 
 - Click **Clone** in the Git panel
 
-  ![](images/87.png)
+  ![](images/400-4.png)
 
 - Switch back to the Developer Cloud Service dashboard. Click on the **Clone** dropdown list next to the **CafeSupremo.git** repository to open the list of clone options.
 
 - Click the square **Copy** icon by the *HTTPS* URL to copy the link.
 
-  ![](images/88.png)
+  ![](images/400-5.png)
 
 - Switch back to the Brackets editor and paste the copied URL from Developer Cloud Service into the **Enter Git URL of the repository you want to clone:** field. The username should be populated automatically.
 
@@ -67,15 +67,15 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
 - Click **OK**
 
-  ![](images/89.png)
+  ![](images/400-6.png)
 
 - Wait for Brackets to clone your remote project to local folder
 
-  ![](images/90.png)
+  ![](images/400-7.png)
 
 - You now have a local copy of the Git repository
 
-  ![](images/91.png)
+  ![](images/400-8.png)
 
 
 ### STEP 2: Commit and Push Code Changes
@@ -84,7 +84,7 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
 - Expand the left navigation tree and open *config.json* file (*Under src->js->config*)
 
-  ![](images/92.png)
+  ![](images/400-9.png)
 
 - On the main window, locate the **baseURL** entry in *config.json* source code and modify the URL by replacing the host IP with the IP address provided by your instructor.
 
@@ -96,30 +96,30 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
 - Select **Save** to save the code changes
 
-  ![](images/93.png)
+  ![](images/400-10.png)
 
 
 - Check the box next to **Commit** to select all modified files - this means the checkbox below for `config.json` will automatically be checked
 
-  ![](images/94.png)
+  ![](images/400-11.png)
 
 - Click **Commit** to commit changes to the local cloned Git repository
 
 - In the Git commit pop up enter the comment: `Replaced hostname in API calls` and then click **OK**. This will commit the changes to your local git repository. Ignore any code inspection problems above.
 
-  ![](images/95.png)
+  ![](images/400-12.png)
 
 - Click **Git Push** icon on the right side of the Git panel
 
-  ![](images/96.png)
+  ![](images/400-13.png)
 
 - In the *Push to remote* pop up window, leave fields to their defaults and click **OK**. This will begin the Git push to the Developer Cloud *CafeSupremo.git* master repository.
 
-  ![](images/97.png)
+  ![](images/400-14.png)
 
 - Once Git Push completes, click **OK**
 
-  ![](images/98.png)
+  ![](images/400-15.png)
 
 
 
@@ -127,55 +127,55 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
 - Switch back to your Developer Cloud Project home page and you should see your changes has been pushed to the DevCS master repository
 
-  ![](images/99.png)
+  ![](images/400-16.png)
 
 - Click on the Build Job tab and you should see your changes has automatically triggered a build
 
 - Follow the build as it moves from the build queue to running the build
 
-  ![](images/100.png)
+  ![](images/400-17.png)
 
 - Wait until the build completes
 
-  ![](images/101.png)
+  ![](images/400-18.png)
 
 - Click on the Deploy Configuration tab and wait till you see the *Last deployment succeeded* message in the **cafesupremo** configuration tile. Reload page if you don't see any dates.
 
-  ![](images/102.png)
+  ![](images/400-19.png)
 
 - Let's verify your changes to see if the JET UI frontend is able to call the APIs in the Reward Service backend. Enter
 
   `http://<JCS IP address>/cafesupremo` in your browser replacing the `<JCS IP address>` with the IP address of your newly provisioned JCS instance.
 
-  ![](images/108.png)
+  ![](images/400-20.png)
 
 - Click **Sign In**
 
 - Enter the username and password assigned to you by your instructor.
 
-   ![](images/109.png)
+   ![](images/400-21.png)
 
 - Click **Submit**
 
 - After logging in, click on the **Hamburger** icon at the top left hand corner to reveal the menu options
 
-  ![](images/110.png)
+  ![](images/400-22.png)
 
 - Click on **Rewards** and you will be presented with your account balance.
 
-  ![](images/111.png)
+  ![](images/400-23.png)
 
 - Click **Credit A Star** to add points to your account and see the counter increments
 
 - Once you have accumulated 3 or more stars, you will be credited with a **Free Coffee** coupon
 
-  ![](images/112.png)
+  ![](images/400-24.png)
 
 - Click on **Free Coffee** to reveal the QR code and a **Redeem** button
 
 - Click **Redeem** to redeem coffee. This will reset the coupon counter.
 
-  ![](images/113.png)
+  ![](images/400-25.png)
 
 - If you can increment the points, accumulated coupons and redeem coupons, then you have successfully connected to your Autonomous Transaction Database.
 
