@@ -72,7 +72,7 @@ There are four parts to the lab with each focusing on different aspect of Cloud 
 [Click Here to Lab 200: Import Your Code](200-IMPORTlab.md)
 
 
-## 300: Create Continuous Integration and Continuous Delivery Pipeline in Oracle Developer Cloud Service
+## 300: Automating Your Build and Deployment in Developer Cloud Service
 
 [Click Here to Lab 300: Create CI/CD Pipeline in DevCS](300-DEVCSlab.md)
 
