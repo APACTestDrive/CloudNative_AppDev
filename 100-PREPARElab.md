@@ -2,7 +2,7 @@
 
 ## Preparing Autonomous Transaction Processing Database, Java Cloud Service and Developer Cloud Service
 
-![](images/header05.png)
+![](images/header100.png)
 
 During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and work with Oracle Cloud Platform tools. You must have access to a:
 

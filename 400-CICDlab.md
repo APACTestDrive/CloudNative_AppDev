@@ -2,7 +2,7 @@
 
 # Lab 400: Putting It All Together - Continuous Integration and Delivery
 
-![](images/header08.png)
+![](images/header400.png)
 
 On the completion of the previous lab - Lab 300, you should be able to build and deploy the Cafe Supremo JET UI frontend to JCS, as well as loading the Cafe Supremo app on your browser. However, you are not able retrieve your rewards points and coupons with the **Rewards** menu option. That's because the REST API in the JET UI frontend has not been configured to point to the Reward Service endpoint.
 

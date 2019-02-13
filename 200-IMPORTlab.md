@@ -2,7 +2,7 @@
 # Lab 200: Import Your Code To Developer Cloud Service
 
 
-![](images/header06.png)
+![](images/header200.png)
 
 
 We will create a project for the Café Supremo in Developer Cloud Service and bring the application code into this project to be managed by Developer Cloud. We will also examine the chain tools that comes with DevCS such as Git repository, branch merge request, issue tracking and team collaboration.
