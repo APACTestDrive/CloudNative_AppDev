@@ -4,16 +4,16 @@
 
 ![](images/header08.png)
 
-On the completion of the previous lab - Lab 300, you should be able to build and deploy the Cafe Supremo JET UI frontend and the Node.js Reward Service backend as well as loading the Cafe Supremo app on your browser. However, you may noticed that the **Rewards** menu option on the JET UI frontend did not work. That's because the REST API in the JET UI frontend is using an obsolete Reward Service.
+On the completion of the previous lab - Lab 300, you should be able to build and deploy the Cafe Supremo JET UI frontend to JCS, as well as loading the Cafe Supremo app on your browser. However, you are not able retrieve your rewards points and coupons with the **Rewards** menu option. That's because the REST API in the JET UI frontend has not been configured to point to the Reward Service endpoint.
 
-In this lab we will demonstrate the complete end-to-end of our CI/CD lifecycle by updating the REST API call in the JET UI frontend code to point to our newly provisioned Reward Service. By doing so, it will trigger an automtated build and deployment of the JET UI frontend.
+In this lab we will demonstrate the complete end-to-end of our CI/CD lifecycle by updating the REST API call in the JET UI frontend code to point to our newly provisioned Reward Service. By doing so, it will trigger an automated build and deployment of the JET UI frontend.
 
 ### About This Exercise
 
 In this exercise, we will:
 
+- Configure Brackets as your code editor
 - Clone the DevCS Git repository to your local laptop
-- Configure Brakcets as your code editor
 - Make changes to your code and trigger a build
 - Observe the CI/CD process in action
 - Validate your Cafe Supremo application
@@ -21,7 +21,8 @@ In this exercise, we will:
 
 ## Developing with Brackets
 
-To enable a developer to develop code and commit it to the Git repository in Developer Cloud, you can use your favourite IDE or a simple text editor with Git command line interface. However, we are going to strike a balance and use something that is pretty lightweight but has built in integration with Git. Brackets is an open source Â
+To enable a developer to develop code and commit it to the Git repository in Developer Cloud, you can use your favourite IDE or a simple text editor with Git command line interface. However, we are going to strike a balance and use something that is pretty lightweight but has built in integration with Git. Brackets is a modern open source editor that is supported by an active community.
+
 - You must have installed Brackets and Git extension as well as Git Client. If you haven't done this already please follow the guides below.
 
   *[Click HERE for Brackets and Git Extension installation detail](BRACKETSinstall.md)*
@@ -52,13 +53,17 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
   ![](images/87.png)
 
-- Switch back to the Developer Cloud Service dashboard. Click the square **Copy** icon by the *CafeSupremo.git* URL to copy the link
+- Switch back to the Developer Cloud Service dashboard. Click on the **Clone** dropdown list next to the **CafeSupremo.git** repository to open the list of clone options.
+
+- Click the square **Copy** icon by the *HTTPS* URL to copy the link.
 
   ![](images/88.png)
 
-- Switch back to the Brackets editor and paste the copied URL from Developer Cloud Service into the **Enter Git URL of the repository you want to clone:**. Username should be populated automatically.
+- Switch back to the Brackets editor and paste the copied URL from Developer Cloud Service into the **Enter Git URL of the repository you want to clone:** field. The username should be populated automatically.
 
-- Enter the password and select **Save credentials to remote url**
+- Enter your password
+
+- Check the **Save credentials to remote url** checkbox
 
 - Click **OK**
 
@@ -75,24 +80,26 @@ To enable a developer to develop code and commit it to the Git repository in Dev
 
 ### STEP 2: Commit and Push Code Changes
 
-Let's try out the CI/CD pipeline by making code changes and pushing the committed changes to the DevCS master Git repository. We will work with the cloned Git repository, replace the REST API calls to our Apiary Mock Server with the actual Reward Service that we deployed earlier.
+Let's try out the CI/CD pipeline by making code changes and pushing the committed changes to the DevCS master Git repository. We will work with the cloned Git repository, replace the REST API calls to a running Reward Service provided by your instructor.
 
 - Expand the left navigation tree and open *config.json* file (*Under src->js->config*)
 
   ![](images/92.png)
 
-- On the main window, locate the **baseURL** entry in *config.json* source code and modify the following URLs by replacing the hostname with the ACCS instance hostname you provisioned in Step 4 of Lab 101. These are the API calls from the JET UI frontend to the RewardService Node.js backend. Currently, hostname of this Reward Service is hard coded, hence we need to update the hostname to point to your instance.
+- On the main window, locate the **baseURL** entry in *config.json* source code and modify the URL by replacing the host IP with the IP address provided by your instructor.
 
   ```
-  "baseURL": "https://rewardservice-xxxxxx.xxxxx.oraclecloud.com",
+  "baseURL": "https://<RewardService IP address>",
   ```
+
+- Below the `baseURL` are the endpoints for getting the points and coupons.
 
 - Select **Save** to save the code changes
 
   ![](images/93.png)
 
 
-- Check the box next to **Commit** to select all modified files - this means the checkbox below (reward.js) will automatically be checked
+- Check the box next to **Commit** to select all modified files - this means the checkbox below for `config.json` will automatically be checked
 
   ![](images/94.png)
 
@@ -138,31 +145,39 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
 - Let's verify your changes to see if the JET UI frontend is able to call the APIs in the Reward Service backend. Enter
 
-  http:`<JCS IP address>`/cafesupremo in your browser replacing the `<JCS IP address>` with the IP address of your newly provisioned JCS instance
+  `http://<JCS IP address>/cafesupremo` in your browser replacing the `<JCS IP address>` with the IP address of your newly provisioned JCS instance.
 
-  Don't forget to open this in the Developer Tools mode for a Mobile Device
+  ![](images/108.png)
 
-  ![](images/apiary-34.png)
+- Click **Sign In**
 
-- Click on the hamburger icon on at the top left hand corner to expand the menu
+- Enter the username and password assigned to you by your instructor.
 
-  ![](images/74.png)
+   ![](images/109.png)
 
-- Click on **Rewards**
+- Click **Submit**
 
-  ![](images/76.png)
+- After logging in, click on the **Hamburger** icon at the top left hand corner to reveal the menu options
 
-- Click on **Credit A Star** to see the counter increments
+  ![](images/110.png)
+
+- Click on **Rewards** and you will be presented with your account balance.
+
+  ![](images/111.png)
+
+- Click **Credit A Star** to add points to your account and see the counter increments
 
 - Once you have accumulated 3 or more stars, you will be credited with a **Free Coffee** coupon
 
+  ![](images/112.png)
+
 - Click on **Free Coffee** to reveal the QR code and a **Redeem** button
 
-- Click **Redeem** to redeem coffee. This will reset the coupon counter
+- Click **Redeem** to redeem coffee. This will reset the coupon counter.
 
-  ![](images/75.png)
+  ![](images/113.png)
 
-
+- If you can increment the points, accumulated coupons and redeem coupons, then you have successfully connected to your Autonomous Transaction Database.
 
 
 **Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.**

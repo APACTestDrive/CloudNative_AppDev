@@ -169,23 +169,23 @@ The next part of the CI/CD pipeline is the deployment of the build. Let's create
 
     `http:<JCS IP address>/cafesupremo` , replacing the `<JCS IP address>` with the external IP address of your JCS instance.
 
-- Once the CafeSupremo home page is loaded, you will need to enable the Developer Tool and change to a mobile device format so that the menu options will be presented correctly as the UI is designed for a mobile format.
+- Once the CafeSupremo home page is loaded, you will need to enable the Developer Tool and change to a mobile device format so that the menu options will be presented correctly as the UI is designed for a mobile format. Below is how you would do it in **Chrome**.
 
- ![](images/apiary-26.png)
+ ![](images/103.png)
 
 - Click on the **Hamburger** icon at the top left hand corner to reveal the menu options
 
-  ![](images/apiary-34.png)
+  ![](images/106.png)
 
-- Explore the menu options, Discover, Stores and Rewards. Please note **Rewards** makes a REST API call to the Reward Service backend to retrieve reward points and coupons.
+- Explore the menu options, **Discover**, **Stores** and **Rewards**.
 
-  ![](images/apiary-35.png)
+  ![](images/107.png)
 
 
 **NOTE**: The **Rewards** menu option need to make an REST API call to the RewardService backend which has not been established yet. Hence you will not be able to retrieve the rewards points and coupons from the RewardService backend. We will enable the client to call our REST API in the next lab.
 
 
-*Congratulation you have successfully deployed the Cafe Supremo JET UI frontend.*
+*Congratulation! You have successfully deployed the Cafe Supremo JET UI frontend.*
 
 
 ### **STEP 3**: Verify the Reward Service Backend
@@ -203,7 +203,8 @@ You need to verify your access to this Rewards Service by making a REST API call
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
 
-**You have completed this lab section.**
+*Congratulation! You have successfully completed this lab section.*
+
 
 [Proceed to Lab 400: Putting it All Together](400-CICDlab.md)
 
