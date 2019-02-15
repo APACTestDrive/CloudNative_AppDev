@@ -266,7 +266,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 - Once in the Java Cloud Service Console page, create a new instance by clicking **Create Service** button.
 
 
-#### **STEP 5.1**: Basic Instance Configuration
+#### **STEP 7.1**: Basic Instance Configuration
 
 - Complete the new Create New Instance Page as illustrated below:
 
@@ -287,7 +287,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 - Click **Next**
 
 
-#### **STEP 5.2**: Detailed Instance Configuration
+#### **STEP 7.2**: Detailed Instance Configuration
 
 - On the Service Details page, click **Advanced** to show additional configuration options
 
@@ -351,7 +351,7 @@ Since the Build VM is a Compute instance, this can be shared among developers. T
 
 
 
-### **STEP 6**: Create a   Developer Cloud Instance
+### **STEP 8**: Create a   Developer Cloud Instance
 
 - Go back to your Dashboard page.
 
@@ -385,7 +385,7 @@ Since the Build VM is a Compute instance, this can be shared among developers. T
 
 
 
-#### **STEP 6.1**: Setup The OCI Connection
+#### **STEP 8.1**: Setup The OCI Connection
 
 You need to connect to the Oracle Cloud Infrastructure Compute (OCI Compute) because they provide the virtual machines (VMs) on which DevCS runs its builds. You need to connect to Oracle Cloud Infrastructure Object Storage (OCI Object Storage) because they are used to store build and Maven artifacts for DevCS projects. It is assumed you are an OCI user and have the access rights to set up connections to OCI Compute and OCI Object Storage.
 
@@ -417,7 +417,7 @@ You need to connect to the Oracle Cloud Infrastructure Compute (OCI Compute) bec
 
 
 
-#### **STEP 6.2**: Create a VM Template
+#### **STEP 8.2**: Create a VM Template
 
 A Build Virtual Machine (VM) is an OCI Compute VM that runs builds of jobs defined in the DevCS projects. A Build VM Template defines the operating system and the software installed on Build VMs.
 
@@ -449,7 +449,7 @@ In this section, you learn how to create a basic Build VM template that includes
 
 
 
-#### **STEP 6.3**: Configure the Software of a Build VM Template
+#### **STEP 8.3**: Configure the Software of a Build VM Template
 
 The VM template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend. The additional components are Grandle and Node.js.
 
@@ -472,7 +472,7 @@ The VM template contains the minimum software required to run basic builds. We n
 
 
 
-#### **STEP 6.4**: Create a Virtual Machine for Build and Develop
+#### **STEP 8.4**: Create a Virtual Machine for Build and Develop
 
 **This step is Optional**
 
