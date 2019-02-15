@@ -7,8 +7,8 @@
 During this part of the lab, you will take on the **DevOps Engineer Persona**. You will provision the required cloud services for Developer Cloud Service to build and deploy to a WebLogic Server cluster in Java Cloud Service and work with Oracle Cloud Platform tools. You must have access to a:
 
 - Oracle Public Cloud Service Account
-- Java Cloud Service (JCS)
 - Autonomous Transaction Processing (ATP)
+- Java Cloud Service (JCS)
 - Developer Cloud Service (DevcS)
 - Compute Cloud Service
 - Storage Cloud Service
@@ -22,22 +22,25 @@ Customer data can be stored in the same ATP instance. However, for this lab, the
 ## About This Exercise
 
 In this exercise, we will:
-- Create and configure an ATP instance to hold the JCS (WebLogic) configuration (Optional)
-- Create and configure a JCS (WebLogic) instance to host the JET UI frontend
-- Create and configure a Developer Cloud Service (DevCS) Build VM to build yo application
+- Learn how to create and configure an ATP instance to hold the JCS (WebLogic) configuration (Optional)
+- Learn how to configure secure connectivity and data access to ATP
+- Learn how to create and configure a JCS (WebLogic) instance to host the JET UI frontend
+- Learn how to create and configure a Developer Cloud Service (DevCS) Build VM to build your application
 
 
 
-## Provision an Autonomous Transaction Processing Database (ATP)
+## Provision an Autonomous Transaction Processing (ATP) Database
 
-**This step is Optional**
+### This section is optional
 
 **You will be advised by you instructor**
+
+**Go to "Step 4: Configure Secure Connectivity and Data Access to ATP", if ATP is already provisioned for you by your instructor**
 
 Due to the resource constrain, the instructor may have already created one for you. It also make sense that a single ATP instance should be shared by all lab participants, hence there is no need to create separate instances. The following steps are for your reference and you may dive into an existing instance to explore its configuration and administration tools.
 
 
-### **STEP 1**: Sign Into Your OCI Console
+### **STEP 1**: Sign Into Oracle Cloud Infrastructure Console
 
 - Please refer to the Cloud Account that has been provided by your administrator.
 
@@ -51,29 +54,29 @@ You can also access the OCI Console URL from your Cloud Dashboard.
 
 - Click on **Change tenant** button if you are not presented with the Cloud Tenant input form.
 
-![](images/100-1.png)
+  ![](images/100-1.png)
 
 - Enter your Cloud Tenant Name in the input field and click the Continue button. This will return you to the Cloud Dashboard.
 
-![](images/100-2.png)
+  ![](images/100-2.png)
 
 - Enter your OCI user name and password
 
-![](images/100-3.png)
+  ![](images/100-3.png)
 
 - Make sure you're in your region, otherwise select your region from the dropdown menu.
 
-![](images/100-4.png)
+  ![](images/100-4.png)
 
 
 
-### **STEP 2**: Create an ATP Instance
+### **STEP 2**: Create a Compartment
 
 Before creating an instance, we need to create a dedicated Compartment for the instance to be hosted in.
 
 - Click on the **Menu** button at the top left corner of your console and select **Identity -> Compartments**
 
-![](images/100-5.png)
+  ![](images/100-5.png)
 
 - Click on the **Create Compartment** button and enter the following parameters:
 
@@ -82,19 +85,29 @@ Before creating an instance, we need to create a dedicated Compartment for the i
   - **PARENT COMPARTMENT**: `(root)`
   - Leave the rest to default
 
-![](images/100-6.png)
+  ![](images/100-6.png)
 
 - Click **Create Compartment**
+
+
+### **STEP 3**: Create an ATP Instance
 
 - Click on the **Menu** button at the top left corner of your console and select **Autonomous Transaction Processing**
 
   ![](images/100-7.png)
 
-- Once in the ATP Console page, select the **CTD** compartment your just created from the dropdown menu. And click **Create Autonomous Transaction Processing Database**
+- Once in the ATP Console page, select the **ATP_Demo** compartment you just created from the dropdown compartment list.
+
+  ![](images/100-30.png)
+
+**NOTE**: Oracle Cloud Infrastructure allows logical isolation of users within a tenant through Compartments. This allows multiple users and business units to share a tenant account while being isolated from each other. If you have chosen the compartment you do not have privileges on, you will not be able to see or provision instance in it.
+
+
+- Click **Create Autonomous Transaction Processing Database**
 
   ![](images/100-8.png)
 
-- Click on **Create Autonomous Transaction Processing Database** and enter the following parameters:
+- This will bring up the **Create ATP Database** page where you specify the configurations of the instance. Click on **Create Autonomous Transaction Processing Database** and enter the following parameters:
 
   - **COMPARTMENT**: `ATP_Demo`
   - **DISPLAY NAME**: `ATP Demo DB`
@@ -102,19 +115,132 @@ Before creating an instance, we need to create a dedicated Compartment for the i
   - **CPU CORE COUNT**: `1`
   - **STORAGE(TB)**: `1`
   - **PASSWORD**: DB's administration password. Please take note of the password.
+  - **License Type**: `SUBSCRIBE TO NEW DATABASE SOFTWARE LICENSES AND THE DATABASE CLOUD SERVICE`
   - Leave the rest to default
 
   ![](images/100-9.png)
 
-- Click on **Create Autonomous Transaction Processing Database**
+- Click **Create Autonomous Transaction Processing Database** at the bottom of the page.
 
+  ![](images/100-31.png)
 **NOTE**:  Your ATP instance will take about 4 minutes to complete.
 Once finished, it will be in the **Available** state as shown below:
 
+
+- Once it finishes provisioning, you can click on the instance name to see details of it.
+
   ![](images/100-10.png)
 
+*Congratulation! You have provisioned your first ATP instance. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instructor for connection details.*
 
-*Congratulation!You have provisioned an ATP database. You must wait for this to finish before proceeding to the next part of the lab. Alternately, your instructor may have already created an instance for you. Please consult your instructor for connection details.*
+
+## Configure a Secure Connectivity and Data Access to ATP
+
+Autonomous Transaction Processing provides all of the performance of the Oracle Database in an environment that is tuned and optimised for transaction processing workloads. ATP requires very little manual ongoing administration.
+
+In this lab we will configure a secure connection using Oracle SQL Developer. You will connect to an existing ATP instance provided by your instructor or one created in the previous section.
+
+- Please ensure you have installed Oracle SQL Developer 18.4. If you do not have SQL Developer 18.4, you can download from [here](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html).
+
+**NOTE**: You can skip STEP 4 and go to STEP 5 if you have already logged into OCI Console.
+
+
+### **STEP 4**: Sign Into Oracle Cloud Infrastructure Console
+
+- Please refer to the Cloud Account that has been provided by your administrator.
+
+- Open your browser (Safari, Firefox or Chrome) and go to your Oracle Cloud Infrastructure Console URL. The OCI Console URL is:
+
+  https://console.us-ashburn-1.oraclecloud.com/#/a/
+
+This URL may be different to the one you are provided with. Use the provided URL if it is different to the above.
+
+You can also access the OCI Console URL from your Cloud Dashboard.
+
+- Click on **Change tenant** button if you are not presented with the Cloud Tenant input form.
+
+  ![](images/100-1.png)
+
+- Enter your Cloud Tenant Name in the input field and click the Continue button. This will return you to the Cloud Dashboard.
+
+  ![](images/100-2.png)
+
+- Enter your OCI user name and password
+
+  ![](images/100-3.png)
+
+- Make sure you're in your region, otherwise select your region from the dropdown menu.
+
+  ![](images/100-4.png)
+
+- Click on the **Menu** button at the top left corner of your console and select **Autonomous Transaction Processing**
+
+  ![](images/100-7.png)
+
+- Once in the ATP Console page, select the **ATP_Demo** compartment you just created from the dropdown compartment list.
+
+  ![](images/100-30.png)
+
+**NOTE**: Oracle Cloud Infrastructure allows logical isolation of users within a tenant through Compartments. This allows multiple users and business units to share a tenant account while being isolated from each other. If you have chosen the compartment you do not have privileges on, you will not be able to see or provision instance in it.
+
+
+- Click **ATP_Demo_DB** database instance to see details of it.
+
+  ![](images/100-10.png)
+
+### **STEP 5**: Download the secure connection wallet for your provisioned instance
+
+- Inside the Autonomous Transaction Processing Details page is where we can download the database connection credentials call a Wallet.
+
+  ![](images/100-32.png)
+
+- Click on **DB Connection** to open up Database Connection pop-up window.
+
+  ![](images/100-33.png)
+
+- Click on **Download** to supply a password for the wallet and download your client credentials.
+
+  ![](images/100-34.png)
+
+- Enter `WElcome_123#` as password for your wallet.
+
+- Click **Download**
+
+- Once you have downloaded your wallet, you will be navigated to ATP overview page.
+
+- The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. Store this file in a secure location.
+
+
+### **STEP 6**: Connect to ATP instance using Oracle SQL Developer
+
+- Launch SQL Developer from the desktop and click Add Connection on top left.
+
+  ![](images/100-35.png)
+
+- Enter the following in New database connection:
+
+  - **Connection Name**: Name for your connection
+  - **Username**: `admin`
+  - **Password**: `WElcome_123#``
+  - **Connection Type**: `Cloud Wallet`
+  - **Role**: `Default`
+  - **Configuration File**: Click on Browse and select the wallet file you downloaded
+  - **Service**: `databasename_high` Database name followed by suffix low, medium or high. These suffixes determine degree of parallelism used and are relevant for a DSS workload. For OLTP workloads it's safe to select any of them. Example: atpdemodb_high
+
+  ![](images/100-36.png)
+
+- Click **Test** to test your connection and then **Save**. The Status bar will show Success if it is a successful connection.
+
+  ![](images/100-37.png)
+
+- Click **Connect**. You now have a secure connection to your cloud database.
+
+- You now have connected your Autonomous Transaction Processing Cloud instance to Oracle SQL Developer.
+
+  ![](images/100-38.png)
+
+
+*Congratualtion! You are now able to connect to an ATP instance.*
 
 
 
@@ -122,7 +248,7 @@ Once finished, it will be in the **Available** state as shown below:
 
 For this part of the lab, you would need an ATP instance to complete the JCS configuration.
 
-- Please verify the provisioning of a DBCS instance in **Step 2** has completed and is up and running.
+- Please verify the provisioning of a ATP instance in **Step 3** has completed and is up and running.
 
 - If this is running, then proceed to the following steps, otherwise, please wait until it is ready.
 
@@ -130,7 +256,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 
 
 
-### **STEP 3**: Create a JCS Instance
+### **STEP 7**: Create a JCS Instance
 
 - On the dashboard click the hamburger icon on the **Java** tile. Select **Open Service Console**.
 
@@ -140,7 +266,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 - Once in the Java Cloud Service Console page, create a new instance by clicking **Create Service** button.
 
 
-#### **STEP 3.1**: Basic Instance Configuration
+#### **STEP 5.1**: Basic Instance Configuration
 
 - Complete the new Create New Instance Page as illustrated below:
 
@@ -161,7 +287,7 @@ For this part of the lab, you would need an ATP instance to complete the JCS con
 - Click **Next**
 
 
-#### **STEP 3.2**: Detailed Instance Configuration
+#### **STEP 5.2**: Detailed Instance Configuration
 
 - On the Service Details page, click **Advanced** to show additional configuration options
 
@@ -225,7 +351,7 @@ Since the Build VM is a Compute instance, this can be shared among developers. T
 
 
 
-### **STEP 4**: Create a   Developer Cloud Instance
+### **STEP 6**: Create a   Developer Cloud Instance
 
 - Go back to your Dashboard page.
 
@@ -259,7 +385,7 @@ Since the Build VM is a Compute instance, this can be shared among developers. T
 
 
 
-#### **STEP 4.1**: Setup The OCI Connection
+#### **STEP 6.1**: Setup The OCI Connection
 
 You need to connect to the Oracle Cloud Infrastructure Compute (OCI Compute) because they provide the virtual machines (VMs) on which DevCS runs its builds. You need to connect to Oracle Cloud Infrastructure Object Storage (OCI Object Storage) because they are used to store build and Maven artifacts for DevCS projects. It is assumed you are an OCI user and have the access rights to set up connections to OCI Compute and OCI Object Storage.
 
@@ -291,7 +417,7 @@ You need to connect to the Oracle Cloud Infrastructure Compute (OCI Compute) bec
 
 
 
-#### **STEP 4.2**: Create a VM Template
+#### **STEP 6.2**: Create a VM Template
 
 A Build Virtual Machine (VM) is an OCI Compute VM that runs builds of jobs defined in the DevCS projects. A Build VM Template defines the operating system and the software installed on Build VMs.
 
@@ -323,7 +449,7 @@ In this section, you learn how to create a basic Build VM template that includes
 
 
 
-#### **STEP 4.3**: Configure the Software of a Build VM Template
+#### **STEP 6.3**: Configure the Software of a Build VM Template
 
 The VM template contains the minimum software required to run basic builds. We need to add additional software to the template in order to build our JET UI frontend. The additional components are Grandle and Node.js.
 
@@ -346,7 +472,7 @@ The VM template contains the minimum software required to run basic builds. We n
 
 
 
-#### **STEP 4.4**: Create a Virtual Machine for Build and Develop
+#### **STEP 6.4**: Create a Virtual Machine for Build and Develop
 
 **This step is Optional**
 
