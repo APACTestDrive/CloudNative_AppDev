@@ -64,7 +64,7 @@ You can also access the OCI Console URL from your Cloud Dashboard.
 
   ![](images/100-3.png)
 
-- Make sure you're in your region, otherwise select your region from the dropdown menu.
+- Make sure you're in your region, otherwise select your region from the Regions dropdown list.
 
   ![](images/100-4.png)
 
@@ -323,6 +323,18 @@ The final page is the summary page about the configuration before submitting the
 When the request has been accepted, the Java Cloud Service Console page appears and shows the new instance. The instance now is in Maintenance (Progress) mode. Click **In Progress** link to get more information about the status.
 
 **NOTE**: Your JCS instance will be ready in about 30 minutes. Whilst we are waiting for the JCS instance to be provisioned, we can work on other components such as Developer Cloud Service.
+
+- You can come back to the JCS Console later to check its status and IP address.
+
+  ![](images/100-39.png)
+
+- Click on the **demoJCS** instance.
+
+  ![](images/100-40.png)
+
+- Take note of the **Public IP** address as you will need this later.
+
+
 
 *Congratulation! You have now completed the provisioning of a JCS instance for hosting the JET UI frontend.*
 

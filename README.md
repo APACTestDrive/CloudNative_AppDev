@@ -5,9 +5,25 @@
 
 ## Introduction
 
-This Oracle Cloud workshop contains the hands on lab material to demonstrate a typical DevOps workflow of a cloud native application using Oracle AppDev Platform. Participants will be able to appreciate and experience how to use Oracle Cloud Services to implement cloud native applications using a real use case scenario based on a loyalty rewards system for a coffee shop. This includes services such as Oracle Developer Cloud Service, Java Cloud Service and Database Cloud Service.
+This Oracle Cloud workshop contains the hands on lab material to demonstrate a typical DevOps workflow of a cloud native application using Oracle AppDev Platform. Participants will be able to appreciate and experience how to use Oracle Cloud Services to implement cloud native applications using a real use case scenario based on a loyalty rewards system for a coffee shop. This includes services such as Oracle Developer Cloud Service, Java Cloud Service and Autonomous Transaction Processing Database.
 
 The lab will also show how to work with Open Source tools in Oracle Developer Cloud Service for managing your software lifecycle as well as how to build, deploy and promote to different environments. With Continuous Integration and Delivery as core principles, it will illustrate how issues are tracked, managed and released.
+
+In addition we want to bring awareness of Oracle's approach to modernising your application and development lifecycle through either one of:
+
+  - **Re-Tool**: Revamp toolchain to improve productivity
+  - **Re-Platform**: Automate and standardise environments
+  - **Re-Factor**: Rewrite and decouple, from monolith to cloud native
+
+These approaches are supported by six key values that are developer focused and delivers real outcomes.
+
+- **Modern**: Integrated with modern app dev services
+- **Open**: Choice of programming languages, tools and deployment options
+- **Easy**: Self service provisioning and no management
+- **Reduce Cost**: Do more with less through automation
+- **Reduce Risk**: Safeguard from downtime and automation with less human errors
+- **Gain Time**: Developer focus more on coding with less dependency
+
 
 
 ## Continuous Integration and Continuous Delivery Hands On Lab

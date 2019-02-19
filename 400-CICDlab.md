@@ -17,6 +17,8 @@ In this exercise, we will:
 - Make changes to your code and trigger a build
 - Observe the CI/CD process in action
 - Validate your Cafe Supremo application
+- Scaling a JCS instance
+- Scaling an ATP instance
 
 
 ## Developing with Brackets
@@ -143,6 +145,9 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 
   ![](images/400-19.png)
 
+
+  ### STEP 4: Verify Your Deployment
+
 - Let's verify your changes to see if the JET UI frontend is able to call the APIs in the Reward Service backend. Enter
 
   `http://<JCS IP address>/cafesupremo` in your browser replacing the `<JCS IP address>` with the IP address of your newly provisioned JCS instance.
@@ -180,9 +185,88 @@ Let's try out the CI/CD pipeline by making code changes and pushing the committe
 - If you can increment the points, accumulated coupons and redeem coupons, then you have successfully connected to your Autonomous Transaction Database.
 
 
-**Congratulation!! You have completed the lab and have a working CI/CD pipeline for an agile application.**
+*Congratulation!! You have completed a working CI/CD pipeline for an agile application.*
 
-**You have completed all the labs.**
+
+## Scaling a Java Cloud Service Instance
+
+**This section is optional**
+
+Scaling lets you add or remove resources for a Java Cloud Service instance on demand in response to changes in load on the service instance. You can scale Java Cloud Service instance by scaling a cluster or a node.
+
+You can scale out a cluster by adding a node to the cluster and you can scale in a cluster by removing removing a selected node from the cluster. By default, the service scales in a cluster gracefully by shutting down any Oracle software running on the node.
+
+
+### STEP 4: Scaling Java Cloud Service Cluster
+
+To increase resources in response to larger workloads, you can scale out an Oracle Java Cloud Service instance by adding a node.
+
+- Go to your Java Cloud Console.
+
+  ![](images/400-28.png)
+
+- Click on **demoJCS**, the service instance to which you want to add a node.
+
+- Select **Scale Out** from the **Manage this instance** list by clicking on the hamburger icon at the top right hand corner.
+
+  ![](images/400-29.png)
+
+- Click on **Scale Out** to confirm the action.
+
+  ![](images/400-30.png)
+
+- After a while you will be to see the second node being added to the cluster.
+
+  ![](images/400-31.png)
+
+  **NOTE**: This may take 15 to 20 minutes to complete.
+
+- To scale in, you simply remove the node from the cluster by clicking on the hamburger icon at the top right hand corner of the node you want to remove.
+
+  ![](images/400-32.png)
+
+- Select **Remove Node** from the menu list
+
+  ![](images/400-33.png)
+
+- Check **Force scale in VMs** checkbox and click **Remove Node** to confirm.
+
+  **NOTE**: This may take 15 to 20 minutes to complete.
+
+*Congratulation!! You have completed the scaling of a JCS cluster.*
+
+
+
+
+## Scaling an Autonomous Transaction Processing Instance
+
+Autonomous Transaction Processing provides all of the performance of the Oracle Database in an environment that is tuned and optimised for transaction processing workloads. ATP database provisions in a few minutes and requires very little manual ongoing administration.
+
+Scaling in the context of an ATP database means increasing or decreasing the amount of CPU or storage resources allocated to the service. Scaling an ATP instance is easy, flexible and can be done without any downtime so your application can continue to run unaffected while the scaling operation is in progress.
+
+
+
+### STEP 5: Log into Your Cloud Account and Navigate to ATP Console
+
+- Log into your cloud account and navigate to ATP console.
+
+- Click **ATP_Demo_DB** database instance to see details of it.
+
+  ![](images/100-10.png)
+
+- On the instance details page, select **Scale Up/Down** button at the top
+
+  ![](images/400-26.png)
+
+- You can scale up or down by changing the CPU count or storage size.
+
+  ![](images/400-27.png)
+
+- Click **Update** to commit the changes.
+
+
+
+**Congratulation!! You have completed all the labs.**
 
 
 [Return to Cloud Native Development Home](README.md)
