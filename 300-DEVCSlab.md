@@ -194,11 +194,11 @@ The Reward Service Backend has already been provisioned for you by your instruct
 
 You need to verify your access to this Rewards Service by making a REST API call to the RewardService.
 
-  - Enter `https://<rewardservice hostname>/loyalty/v2/points/10001` in your browser, substituting the hostname with one provided by your instructor.
+  - Enter `http://<rewardservice hostname>:8080/loyalty/v2/points/10001` in your browser, substituting the hostname with one provided by your instructor.
 
     If successful, you should see a return text of `{"points":0}` indicating zero reward points
 
-  - Enter `https://<rewardservice hostname>/loyalty/v2/coupon/10001` in your browser, substituting the hostname with one provided by your instructor.
+  - Enter `http://<rewardservice hostname>:8080/loyalty/v2/coupon/10001` in your browser, substituting the hostname with one provided by your instructor.
 
     If successful, you should see a return text of `{"coupon":0}` indicating zero coupons
 
