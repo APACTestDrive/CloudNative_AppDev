@@ -120,7 +120,7 @@ You are an application developer who will be developing a brand new cloud native
 * Since the Rewards Service is developed by a different team, this microservice will be integrated once it is ready
 * We will show how you can improve your team’s productivity and quickly rollout new services by adopting CI/CD in Oracle AppDev Platform
 
-  ![](images/demo/demo-02.png) ![](images/demo/demo-03.png) ![](images/demo/demo-04.png)
+  ![](images/demo/demo-02.png) ![](images/demo/demo-04.png)
 
 
 
