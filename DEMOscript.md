@@ -93,7 +93,7 @@ You are an application developer who will be developing a brand new cloud native
 
 * The application flows like this:
 
-  1. A customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account
+  - A customer logs into the Cafe Supremo JET UI frontend on her mobile phone to check her rewards account
   - This makes a REST API call to the Node.js Reward Service running in a Docker container hosted in a Kubernetes cluster.
   - The Reward Service looks up the customer database to verify customer credential and retreive customer account details.
   - Returns the rewards detail back to JET UI frontend
