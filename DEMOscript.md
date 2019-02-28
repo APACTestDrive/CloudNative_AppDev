@@ -423,8 +423,49 @@ From the Agile page, you can create or open a board. Use the filter views availa
   ![](images/demo/demo-47.png)
 
 
+## Step 10: Scaling JCS
 
-Congratulation!! You have completed the demo.
+If we have time we can demonstrate how to increase resources in response to larger workloads, you can scale out an Oracle Java Cloud Service instance by adding a node.
+
+- Go to your Java Cloud Console.
+
+  ![](images/400-28.png)
+
+- Click on **demoJCS**, the service instance to which you want to add a node.
+
+- Select **Scale Out** from the **Manage this instance** list by clicking on the hamburger icon at the top right hand corner.
+
+  ![](images/demo/demo-48.png)
+
+- Click on **Scale Out** to confirm the action. But we won't do it right now as it can take 20 minutes to provision.
+
+  ![](images/demo/demo-49.png)
+
+
+
+
+### STEP 11: Scaling an Autonomous Transaction Processing Instance
+
+Scaling in the context of an ATP database means increasing or decreasing the amount of CPU or storage resources allocated to the service. Scaling an ATP instance is easy, flexible and can be done without any downtime so your application can continue to run unaffected while the scaling operation is in progress.
+
+
+- Log into your cloud account and navigate to ATP console.
+
+- Go into your ATP instance details page and select **Scale Up/Down** button at the top
+
+  ![](images/demo/demo-50.png)
+
+- You can scale up or down by changing the CPU count or storage size.
+
+  ![](images/demo/demo-51.png)
+
+- Click **Update** to commit the changes.
+
+
+
+
+
+**Congratulation!! You have completed the demo.**
 
 
 [Return to Cafe Supremo Home](README.md)
